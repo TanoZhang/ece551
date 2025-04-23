@@ -12,10 +12,13 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
 	output logic TX; //output from telemetry module
 	
 	//Cadence signals
+	logic cadence_filt; //output of the cadence_filt module
+
+
+
 	logic [24:0] cadence_per; // 25 bit count used for the timer
 	logic [4:0] cadence_cnt; //Used to count the rising edges of cadence_filt
 	logic clr; //??active high?? used to clear the cadence count and the final flop (comes from cadence_per timer)
-	logic cadence_filt; //output of the cadence_filt module
 	logic cadence_filt_flopped; //flop the cadence filt once
 	logic cadence_rise; //high if rising edge of cadence_filt
 	logic not_pedaling_flopped;
@@ -24,13 +27,12 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
 	
 	//accumulator signals
 	logic [11:0] avg_curr; //calculated avg_curr using the accumulator
+	logic [11:0] target_curr;
 	logic [13:0] curr_accum;
 	logic curr_accum_full;
 	logic [21:0] avg_curr_smpl;
 	logic [16:0] torque_accum;
 	logic [11:0] avg_torque;
-	
-	logic [11:0] target_curr;
 	
 	// FAST SIM
 	parameter FAST_SIM = 0;
