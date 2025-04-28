@@ -57,34 +57,33 @@
   /////////////////////////////////////
   // Instantiate reset synchronizer //
   ///////////////////////////////////
-  <instantiate reset_synch>
+  rst_synch iRst_synch(.RST_n(RST_n), .clk(clk), .rst_n(rst_n));
   
   ///////////////////////////////////////////////////////
   // Instantiate A2D_intf to read torque & batt level //
   /////////////////////////////////////////////////////
-  <instantiate A2D_intf>
-
+	A2D_intf iA2D_intf(.clk(clk), .rst_n(rst_n), .MISO(A2D_MISO), .batt(batt), .curr(curr), .brake(brake), .torque(torque), .SS_n(A2D_SS_n), .SCLK(A2D_SCLK), .MOSI(A2D_MOSI));
 				 
   ////////////////////////////////////////////////////////////
   // Instantiate SensorCondition block to filter & average //
   // readings and provide cadence_vec, and zero_cadence   //
   /////////////////////////////////////////////////////////
-  <instantiate sensorCondition> (include FAST_SIM)
+	sensorCondition #(FAST_SIM) iSensorCondition(.clk(clk), .rst_n(rst_n), .torque(torque), .cadence(cadence), .curr(curr), .incline(incline), .setting(setting), .batt(batt), .error(error), .not_pedaling(not_pedaling), .TX(TX));
 					   
   ///////////////////////////////////////////////////
   // Instantiate PID to determine drive magnitude //
   /////////////////////////////////////////////////		   
-  <instantiate PID> (include FAST_SIM)
+	PID #(FAST_SIM) iPID(.clk(clk), .rst_n(rst_n), .error(error), .not_pedaling(not_pedaling), .drv_mag(drv_mag));
   
   ////////////////////////////////////////////////
   // Instantiate brushless DC motor controller //
   //////////////////////////////////////////////
-  <instantiate brushless>
+	brushless brushless(.clk(clk), .drv_mag(drv_mag), .hallGrn(hallGrn), .hallYlw(hallYlw), .hallBlu(hallBlu), .brake_n(brake_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu));
 
   ///////////////////////////////
   // Instantiate motor driver //
   /////////////////////////////
-  <instantiate mtr_drv>
+	mtr_drv iMtr_drv(.clk(clk), .rst_n(rst_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu), .highGrn(highGrn), .lowGrn(lowGrn), .highYlw(highYlw), .lowYlw(lowYlw), .highBlu(highBlu), .lowBlu(lowBlu));
 
   /////////////////////////////////////////////////////////////
   // Instantiate inertial sensor to measure incline (pitch) //

@@ -32,18 +32,18 @@
   ///////////////////////////////////////////////
   // Declare any needed internal signals here //
   /////////////////////////////////////////////
-  wire rst_n;									// global reset from reset_synch
+  //wire rst_n;									// global reset from reset_synch
   logic tgglMd_F1, tgglMd_F2, tgglMd_F3; // used to detect a rising edge of tgglMd
-  logic [11:0] batt, curr, torque, brake;
-  logic [12:0] incline;
-  logic [12:0] error;
-  logic not_pedaling;
-  logic [11:0] drv_mag;
-  logic brake_n;
-  logic [10:0] duty;
-  logic [1:0] selGrn;
-  logic [1:0] selYlw;
-  logic [1:0] selBlu;
+  //logic [11:0] batt, curr, torque, brake;
+  //logic [12:0] incline;
+  //logic [12:0] error;
+  //logic not_pedaling;
+  //logic [11:0] drv_mag;
+  //logic brake_n;
+  //logic [10:0] duty;
+  //logic [1:0] selGrn;
+  //logic [1:0] selYlw;
+  //logic [1:0] selBlu;
   logic vld;
   
   ///////// Any needed macros follow /////////
