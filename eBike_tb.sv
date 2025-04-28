@@ -13,7 +13,6 @@ module eBike_tb();
   reg tgglMd;					// push button for assist mode
   reg [15:0] YAW_RT;			// models angular rate of incline (+ => uphill)
 
-
   //////////////////////////////////////////////////
   // Declare any internal signal to interconnect //
   ////////////////////////////////////////////////
@@ -21,6 +20,7 @@ module eBike_tb();
   wire highGrn,lowGrn,highYlw,lowYlw,highBlu,lowBlu;
   wire hallGrn,hallBlu,hallYlw;
   wire inertSS_n,inertSCLK,inertMISO,inertMOSI,inertINT;
+
   wire cadence;
   wire [1:0] LED;			// hook to setting from PB_intf
   
@@ -65,7 +65,7 @@ module eBike_tb();
   //////////////////////////////////////////////////////////
 			 
   initial begin
-    <your magic here>
+  
 	
   end
   

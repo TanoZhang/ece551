@@ -1,6 +1,6 @@
 module eBike_tb();
 
-	reg clk,RST_n;
+	//reg clk,RST_n;
 	reg [11:0] BATT;				// analog values you apply to AnalogModel
 	reg [11:0] BRAKE,TORQUE;		// analog values
 	reg cadence;					// you have to have some way of applying a cadence signal
@@ -601,7 +601,5 @@ module eBike_tb();
 	// alternate the clock
   	always
 		#10 clk = ~clk;
-		
 
 endmodule
-
