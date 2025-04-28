@@ -1,20 +1,20 @@
 module eBike_tb();
 
 	//reg clk,RST_n;
-	reg [11:0] BATT;				// analog values you apply to AnalogModel
-	reg [11:0] BRAKE,TORQUE;		// analog values
-	reg cadence;					// you have to have some way of applying a cadence signal
+	//reg [11:0] BATT;				// analog values you apply to AnalogModel
+	//reg [11:0] BRAKE,TORQUE;		// analog values
+	//reg cadence;					// you have to have some way of applying a cadence signal
 	reg tgglMd;	
-	reg [15:0] YAW_RT;			// models angular rate of incline
+	//reg [15:0] YAW_RT;			// models angular rate of incline
   
-	wire A2D_SS_n,A2D_MOSI,A2D_SCLK,A2D_MISO;		// A2D SPI interface
-	wire highGrn,lowGrn,highYlw;					// FET control
-	wire lowYlw,highBlu,lowBlu;					//   PWM signals
-	wire hallGrn,hallBlu,hallYlw;					// hall sensor outputs
-	wire inertSS_n,inertSCLK,inertMISO,inertMOSI,inertINT;	// Inert sensor SPI bus
+	//wire A2D_SS_n,A2D_MOSI,A2D_SCLK,A2D_MISO;		// A2D SPI interface
+	//wire highGrn,lowGrn,highYlw;					// FET control
+	//wire lowYlw,highBlu,lowBlu;					//   PWM signals
+	//wire hallGrn,hallBlu,hallYlw;					// hall sensor outputs
+	//wire inertSS_n,inertSCLK,inertMISO,inertMOSI,inertINT;	// Inert sensor SPI bus
   
-	wire [1:0] setting;		// drive LEDs on real design
-	wire [11:0] curr;			// comes from eBikePhysics back to AnalogModel
+	wire [1:0] setting;		// drive LEDs on real design same on LED
+	//wire [11:0] curr;			// comes from eBikePhysics back to AnalogModel
 	
 	localparam FAST_SIM = 1;
 	

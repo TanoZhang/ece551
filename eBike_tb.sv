@@ -20,12 +20,13 @@ module eBike_tb();
   wire highGrn,lowGrn,highYlw,lowYlw,highBlu,lowBlu;
   wire hallGrn,hallBlu,hallYlw;
   wire inertSS_n,inertSCLK,inertMISO,inertMOSI,inertINT;
-
   wire cadence;
+  logic [11:0] curr;		// comes from hub_wheel_model
+
+
   wire [1:0] LED;			// hook to setting from PB_intf
   
   wire signed [11:0] coilGY,coilYB,coilBG;
-  logic [11:0] curr;		// comes from hub_wheel_model
   wire [11:0] BATT_TX, TORQUE_TX, CURR_TX;
   logic vld_TX;
   
