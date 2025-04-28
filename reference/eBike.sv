@@ -27,7 +27,7 @@
   input logic cadence;			// pulse input from pedal cadence sensor
   input logic tgglMd;				// used to select setting[1:0] (from PB switch)
   output reg [1:0] setting;	// 11 => easy, 10 => normal, 01 => hard, 00 => off
-  output logic TX;				// serial output of measured batt,curr,torque
+  output  logic TX;				// serial output of measured batt,curr,torque
   
   ///////////////////////////////////////////////
   // Declare any needed internal signals here //

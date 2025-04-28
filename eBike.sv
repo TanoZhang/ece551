@@ -37,14 +37,15 @@
   wire rst_n;									// global reset from reset_synch
   wire [11:0] torque, batt, curr, brake;		// Raw A2D results
   wire signed [12:0] error;
-  wire cadence;
   wire not_pedaling;
   wire [10:0] duty;
   wire [1:0] selGrn, selYlw, selBlu;
   wire signed [12:0] incline;
   wire [11:0] drv_mag;
   wire brake_n;
+  
   wire PWM_synch;
+  wire cadence;
   wire [2:0] scale;
   
   ////////////////////////////////////////////////////////
