@@ -7,7 +7,7 @@ module eBike_tb();
 	localparam errorThreshold = 50;  // Threshold for determining if avg_curr is close enough to target
 
 	///////////////////////////
-	// Stimulus of type reg //
+	// Stimulus of typea reg //
 	/////////////////////////
 	reg clk, RST_n;
 	reg [11:0] BATT;				// analog values - battery voltage
