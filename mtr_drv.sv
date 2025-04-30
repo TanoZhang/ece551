@@ -11,7 +11,8 @@ module mtr_drv (
     output tri           lowYlw,  // low side drive for yellow coil
     output tri           highBlu, // high side drive for blue coil
     output tri           lowBlu,  // low side drive for blue coil
-output logic PWM_synch
+
+   output logic PWM_synch
 );
 
     // Internal signals from PWM and nonoverlap modules
