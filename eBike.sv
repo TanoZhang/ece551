@@ -36,14 +36,16 @@
   //////////////////////////////////////////
   wire rst_n;									// global reset from reset_synch
   wire [11:0] torque, batt, curr, brake;		// Raw A2D results
+  wire signed [12:0] incline;
   wire signed [12:0] error;
-  wire cadence;
+  wire [11:0] drv_mag;
+  wire brake_n;
   wire not_pedaling;
   wire [10:0] duty;
   wire [1:0] selGrn, selYlw, selBlu;
-  wire signed [12:0] incline;
-  wire [11:0] drv_mag;
-  wire brake_n;
+
+  logic tgglMd_F1, tgglMd_F2, tgglMd_F3; // used to detect a rising edge of tgglMd
+  wire cadence;
   wire PWM_synch;
   wire [2:0] scale;
   
@@ -56,43 +58,44 @@
   /////////////////////////////////////
   // Instantiate reset synchronizer //
   ///////////////////////////////////
-  <instantiate reset_synch>
+	rst_synch iRst_synch(.RST_n(RST_n), .clk(clk), .rst_n(rst_n));
   
   ///////////////////////////////////////////////////////
   // Instantiate A2D_intf to read torque & batt level //
   /////////////////////////////////////////////////////
-  <instantiate A2D_intf>
-
+	A2D_intf iA2D_intf(.clk(clk), .rst_n(rst_n), .MISO(A2D_MISO), .batt(batt), .curr(curr), .brake(brake), .torque(torque), .SS_n(A2D_SS_n), .SCLK(A2D_SCLK), .MOSI(A2D_MOSI));
 				 
   ////////////////////////////////////////////////////////////
   // Instantiate SensorCondition block to filter & average //
   // readings and provide cadence_vec, and zero_cadence   //
   /////////////////////////////////////////////////////////
-  <instantiate sensorCondition> (include FAST_SIM)
+	sensorCondition #(FAST_SIM) iSensorCondition(.clk(clk), .rst_n(rst_n), .torque(torque), .cadence(cadence), .curr(curr), .incline(incline), .setting(setting), .batt(batt), .error(error), .not_pedaling(not_pedaling), .TX(TX));
 					   
   ///////////////////////////////////////////////////
   // Instantiate PID to determine drive magnitude //
   /////////////////////////////////////////////////		   
-  <instantiate PID> (include FAST_SIM)
+	PID #(FAST_SIM) iPID(.clk(clk), .rst_n(rst_n), .error(error), .not_pedaling(not_pedaling), .drv_mag(drv_mag));
   
   ////////////////////////////////////////////////
   // Instantiate brushless DC motor controller //
   //////////////////////////////////////////////
-  <instantiate brushless>
+	brushless iBrushless(.clk(clk), .drv_mag(drv_mag), .hallGrn(hallGrn), .hallYlw(hallYlw), .hallBlu(hallBlu), .brake_n(brake_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu));
 
   ///////////////////////////////
   // Instantiate motor driver //
   /////////////////////////////
-  <instantiate mtr_drv>
+	mtr_drv iMtr_drv(.clk(clk), .rst_n(rst_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu), .highGrn(highGrn), .lowGrn(lowGrn), .highYlw(highYlw), .lowYlw(lowYlw), .highBlu(highBlu), .lowBlu(lowBlu));
 
   /////////////////////////////////////////////////////////////
   // Instantiate inertial sensor to measure incline (pitch) //
   ///////////////////////////////////////////////////////////
-  <instantiate inert_intf>
+	inert_intf iInert_intf(.clk(clk), .rst_n(rst_n), .incline(incline), .vld(vld), .INT(inertINT), .SS_n(inertSS_n), .SCLK(inertSCLK), .MOSI(inertMOSI), .MISO(inertMISO));
 					
   /////////////////////////////////////////////////////////////////
   // Instantiate PB_intf block to establish setting/LED & scale //
   ///////////////////////////////////////////////////////////////
   <instantiate PB_intf>
+
+
 
 endmodule
