@@ -5,7 +5,7 @@
 // - The duty cycle is set by the `duty` input (0 to 2047).
 // - The PWM signal (`PWM_sig`) is HIGH when `counter < duty`, otherwise LOW.
 // - The synchronization signal (`PWM_synch`) pulses HIGH when `counter == 1`.
-// - The clock is 50 MHz, so one full PWM period lasts 40.96 µs.
+// - The clock is 50 MHz, so one full PWM period lasts 40.96 s.
 //
 // The output `PWM_sig` is glitch-free, ensuring stable motor control.
 //
@@ -14,6 +14,7 @@ module PWM (
     input logic clk,             // 50MHz system clock
     input logic rst_n,           // Active-low reset
     input logic [10:0] duty,     // 11-bit duty cycle input (range: 0 - 2047)
+
     output logic PWM_sig,        // PWM output (glitch-free)
     output logic PWM_synch       // Synchronization pulse (high when counter == 1)
 );
