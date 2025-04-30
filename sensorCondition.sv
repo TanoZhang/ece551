@@ -13,9 +13,6 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
 	
 	//Cadence signals
 	logic cadence_filt; //output of the cadence_filt module
-
-
-
 	logic [24:0] cadence_per; // 25 bit count used for the timer
 	logic [4:0] cadence_cnt; //Used to count the rising edges of cadence_filt
 	logic clr; //??active high?? used to clear the cadence count and the final flop (comes from cadence_per timer)

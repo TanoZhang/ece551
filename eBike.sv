@@ -43,11 +43,10 @@
   wire signed [12:0] incline;
   wire [11:0] drv_mag;
   wire brake_n;
-  
-  logic tgglMd_F1, tgglMd_F2, tgglMd_F3; // used to detect a rising edge of tgglMd
   wire PWM_synch;
-  wire cadence;
   wire [2:0] scale;
+
+  wire cadence;
   
   ////////////////////////////////////////////////////////
   // Brake lever input is converted as analog, but     //
@@ -79,12 +78,12 @@
   ////////////////////////////////////////////////
   // Instantiate brushless DC motor controller //
   //////////////////////////////////////////////
-	brushless brushless(.clk(clk), .drv_mag(drv_mag), .hallGrn(hallGrn), .hallYlw(hallYlw), .hallBlu(hallBlu), .brake_n(brake_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu));
+	brushless brushless(.clk(clk), .rst_n(rst_n), .drv_mag(drv_mag), .PWM_synch(PWM_synch),  .hallGrn(hallGrn), .hallYlw(hallYlw), .hallBlu(hallBlu), .brake_n(brake_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu));
 
   ///////////////////////////////
   // Instantiate motor driver //
   /////////////////////////////
-	mtr_drv iMtr_drv(.clk(clk), .rst_n(rst_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu), .highGrn(highGrn), .lowGrn(lowGrn), .highYlw(highYlw), .lowYlw(lowYlw), .highBlu(highBlu), .lowBlu(lowBlu));
+	mtr_drv iMtr_drv(.clk(clk), .rst_n(rst_n), .duty(duty), .selGrn(selGrn), .selYlw(selYlw), .selBlu(selBlu), .highGrn(highGrn), .lowGrn(lowGrn), .highYlw(highYlw), .lowYlw(lowYlw), .highBlu(highBlu), .lowBlu(lowBlu), .PWM_synch(PWM_synch));
 
   /////////////////////////////////////////////////////////////
   // Instantiate inertial sensor to measure incline (pitch) //
@@ -94,6 +93,5 @@
   /////////////////////////////////////////////////////////////////
   // Instantiate PB_intf block to establish setting/LED & scale //
   ///////////////////////////////////////////////////////////////
-  <instantiate PB_intf>
-
+  PB_intf iPB_intf (.clk(clk), .rst_n(rst_n), .tgglMd(tgglMd), .setting(setting), .scale(scale), .LED(LED));
 endmodule
