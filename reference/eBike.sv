@@ -33,7 +33,7 @@
   // Declare any needed internal signals here //
   /////////////////////////////////////////////
   //wire rst_n;									// global reset from reset_synch
-  logic tgglMd_F1, tgglMd_F2, tgglMd_F3; // used to detect a rising edge of tgglMd
+  //logic tgglMd_F1, tgglMd_F2, tgglMd_F3; // used to detect a rising edge of tgglMd
   //logic [11:0] batt, curr, torque, brake;
   //logic [12:0] incline;
   //logic [12:0] error;
@@ -119,26 +119,3 @@
 	assign brake_n = (brake < 12'h800) ? 0 : 1;
 
 endmodule
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
