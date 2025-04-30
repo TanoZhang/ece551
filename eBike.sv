@@ -44,6 +44,7 @@
   wire [11:0] drv_mag;
   wire brake_n;
   
+  logic tgglMd_F1, tgglMd_F2, tgglMd_F3; // used to detect a rising edge of tgglMd
   wire PWM_synch;
   wire cadence;
   wire [2:0] scale;
@@ -88,7 +89,7 @@
   /////////////////////////////////////////////////////////////
   // Instantiate inertial sensor to measure incline (pitch) //
   ///////////////////////////////////////////////////////////
-  <instantiate inert_intf>
+	inert_intf iInert_intf(.clk(clk), .rst_n(rst_n), .incline(incline), .vld(vld), .INT(inertINT), .SS_n(inertSS_n), .SCLK(inertSCLK), .MOSI(inertMOSI), .MISO(inertMISO));
 					
   /////////////////////////////////////////////////////////////////
   // Instantiate PB_intf block to establish setting/LED & scale //
