@@ -1,10 +1,10 @@
-module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, batt, error, not_pedaling, TX);
+module sensorCondition(clk, rst_n, torque, cadence, curr, incline, setting, batt, error, not_pedaling, TX);
 	input logic clk, rst_n;
 	input logic [11:0] torque; //raw torque signal from A2D_intf
-	input logic cadence_raw; //raw (unfiltered) cadence signal
+	input logic cadence; //raw (unfiltered) cadence signal
 	input logic [11:0] curr; //raw measurement of current through the motor
 	input logic [12:0] incline; //positive for uphill, negative for downhill
-	input logic [2:0] scale; //assist level setting (off, low, med, high)
+	input logic [1:0] setting; //assist level setting (off, low, med, high)
 	input logic [11:0] batt; //raw battery voltage
 	localparam LOW_BATT_THRES = 12'hA98;
 	output logic signed [12:0] error; //SIGNED error signal to PID
@@ -12,13 +12,10 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
 	output logic TX; //output from telemetry module
 	
 	//Cadence signals
-	logic cadence_filt; //output of the cadence_filt module
-
-
-
 	logic [24:0] cadence_per; // 25 bit count used for the timer
 	logic [4:0] cadence_cnt; //Used to count the rising edges of cadence_filt
 	logic clr; //??active high?? used to clear the cadence count and the final flop (comes from cadence_per timer)
+	logic cadence_filt; //output of the cadence_filt module
 	logic cadence_filt_flopped; //flop the cadence filt once
 	logic cadence_rise; //high if rising edge of cadence_filt
 	logic not_pedaling_flopped;
@@ -27,15 +24,16 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
 	
 	//accumulator signals
 	logic [11:0] avg_curr; //calculated avg_curr using the accumulator
-	logic [11:0] target_curr;
 	logic [13:0] curr_accum;
 	logic curr_accum_full;
 	logic [21:0] avg_curr_smpl;
 	logic [16:0] torque_accum;
 	logic [11:0] avg_torque;
 	
+	logic [11:0] target_curr;
+	
 	// FAST SIM
-	parameter FAST_SIM = 0;
+	parameter FAST_SIM = 1;
 
 
 /********************
@@ -63,7 +61,7 @@ module sensorCondition(clk, rst_n, torque, cadence_raw, curr, incline, scale, ba
 	
 
 	//Produce the cadence_filt signal (CHANGE THE FAST SIM FOR TESTING)
-	cadence_filt #(FAST_SIM) iCadence_Filt(.clk(clk), .rst_n(rst_n), .cadence(cadence), .cadence_filt(cadence_filt));
+	cadence_filt iCadence_Filt(.clk(clk), .rst_n(rst_n), .cadence(cadence), .cadence_filt(cadence_filt), .cadence_rise(cadence_rise));
 	
 	//Flop the cadence filt for rising edge detection
 	

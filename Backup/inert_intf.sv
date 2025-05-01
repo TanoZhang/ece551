@@ -1,11 +1,11 @@
 
 module inert_intf (
     input clk, rst_n,       
-    input INT,          //Active high interrupt from sensor. 
+    input INT,          //Active high interrupt from sensor.
+    input MISO,         //SPI data in 
     output logic SS_n,        //Active low chip select for SPI
     output logic SCLK,        //SPI clock
     output MOSI,        //SPI data out
-    input MISO,         //SPI data in
     output logic signed [12:0] incline, //Incline data from inertial integrator
     output logic vld     //Valid data from inertial integrator
 );
