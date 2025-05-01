@@ -1,4 +1,4 @@
-module PID(clk,rst_n,target_curr,avg_curr,drv_duty);
+module PID_cntrl(clk,rst_n,target_curr,avg_curr,drv_duty);
 
   input clk;					// system clock
   input rst_n;					// active low asynch reset

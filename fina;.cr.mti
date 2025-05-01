@@ -1,0 +1,362 @@
+{C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/telemetry.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/telemetry.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module telemetry
+
+Top level modules:
+	telemetry
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/nonoverlap_test.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/nonoverlap_test.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module nonoverlap_test
+-- Compiling module stim
+-- Compiling module observer
+
+Top level modules:
+	nonoverlap_test
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/coil_volt.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/coil_volt.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module coil_volt
+
+Top level modules:
+	coil_volt
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PWM.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PWM.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PWM
+
+Top level modules:
+	PWM
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PB_rise.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PB_rise.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PB_rise
+
+Top level modules:
+	PB_rise
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/counter_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/counter_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module up_dwn_tb
+
+Top level modules:
+	up_dwn_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inertial_integrator.sv} {2 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inertial_integrator.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module inertial_integrator
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	inertial_integrator
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/A2D_intf.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/A2D_intf.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module A2D_intf
+
+Top level modules:
+	A2D_intf
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/synch_detect_tb.v} {1 {vlog -work work -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/synch_detect_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module synch_detect_tb
+
+Top level modules:
+	synch_detect_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless_mtr_drv_tb2.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless_mtr_drv_tb2.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brushless_mtr_drv_tb2
+
+Top level modules:
+	brushless_mtr_drv_tb2
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/candence_meas_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/candence_meas_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cadence_meas_tb
+
+Top level modules:
+	cadence_meas_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/mtr_drv.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/mtr_drv.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mtr_drv
+
+Top level modules:
+	mtr_drv
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_LU.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_LU.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cadence_LU
+
+Top level modules:
+	cadence_LU
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless_mtr_drv_tb-1.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless_mtr_drv_tb-1.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brushless_mtr_drv_tb
+
+Top level modules:
+	brushless_mtr_drv_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID.sv} {2 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PID
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID.sv(46): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID.sv(47): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID.sv(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	PID
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/UART_rcv.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/UART_rcv.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_rcv
+
+Top level modules:
+	UART_rcv
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PID_tb
+
+Top level modules:
+	PID_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brushless
+
+Top level modules:
+	brushless
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/rst_synch.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/rst_synch.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module rst_synch
+
+Top level modules:
+	rst_synch
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PB_inft.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PB_inft.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PB_intf
+
+Top level modules:
+	PB_intf
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/hub_wheel_model.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/hub_wheel_model.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module hub_wheel_model
+
+Top level modules:
+	hub_wheel_model
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID_cntrl_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID_cntrl_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PID_cntrl_tb
+
+Top level modules:
+	PID_cntrl_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/mtr_drv-1.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/mtr_drv-1.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mtr_drv
+
+Top level modules:
+	mtr_drv
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/sensorCondition_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/sensorCondition_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sensorCondition_tb
+
+Top level modules:
+	sensorCondition_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/ADC128S.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/ADC128S.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ADC128S
+
+Top level modules:
+	ADC128S
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_filter.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_filter.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cadence_filt
+
+Top level modules:
+	cadence_filt
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/desiredDrive.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/desiredDrive.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module desiredDrive
+
+Top level modules:
+	desiredDrive
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant_PID.sv} {2 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant_PID.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module plant_PID
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant_PID.sv(55): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant_PID.sv(70): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant_PID.sv(71): (vlog-2284) Empty $unit scope found.
+
+Top level modules:
+	plant_PID
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/dff.v} {1 {vlog -work work -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/dff.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/A2D_test.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/A2D_test.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module A2D_test
+
+Top level modules:
+	A2D_test
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/UART_tx.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/UART_tx.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID_cntrl.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PID_cntrl.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PID
+
+Top level modules:
+	PID
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/SPI_ADC128S.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/SPI_ADC128S.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PWM_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/PWM_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PWM_tb
+
+Top level modules:
+	PWM_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inert_intf_test.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inert_intf_test.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module inert_intf_test
+
+Top level modules:
+	inert_intf_test
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/HW4P6.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/HW4P6.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module HW4P6
+
+Top level modules:
+	HW4P6
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/counter_tb.v} {1 {vlog -work work -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/counter_tb.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module up_dwn_tb
+
+Top level modules:
+	up_dwn_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/SPI_mnrch.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/SPI_mnrch.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module SPI_mnrch
+
+Top level modules:
+	SPI_mnrch
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_filt_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_filt_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cadence_filt_tb
+
+Top level modules:
+	cadence_filt_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/counter.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/counter.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/nonoverlap-1.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/nonoverlap-1.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module nonoverlap
+
+Top level modules:
+	nonoverlap
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/eBikePhysics.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/eBikePhysics.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module eBikePhysics
+
+Top level modules:
+	eBikePhysics
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/AnalogModel.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/AnalogModel.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module AnalogModel
+
+Top level modules:
+	AnalogModel
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/eBike_tb.sv} {2 {vlog -work work -sv -stats=none {C:\Users\Ahsok\OneDrive - UW-Madison\Documents\ECE551\final project\eBike_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module eBike_tb
+** Warning: C:\Users\Ahsok\OneDrive - UW-Madison\Documents\ECE551\final project\eBike_tb.sv(103): (vlog-2244) Variable 'testcase' is implicitly static. You must either explicitly declare it as static or automatic
+or remove the initialization in the declaration of variable.
+
+Top level modules:
+	eBike_tb
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/throttle.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/throttle.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module throttle
+
+Top level modules:
+	throttle
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/plant.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module plant
+
+Top level modules:
+	plant
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_meas.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/cadence_meas.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cadence_meas
+
+Top level modules:
+	cadence_meas
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless-1.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/brushless-1.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brushless
+
+Top level modules:
+	brushless
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/mult_accum.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/mult_accum.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mult_accum
+
+Top level modules:
+	mult_accum
+
+} {} {}} {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inert_intf.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Ahsok/OneDrive - UW-Madison/Documents/ECE551/final project/inert_intf.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module inert_intf
+
+Top level modules:
+	inert_intf
+
+} {} {}}

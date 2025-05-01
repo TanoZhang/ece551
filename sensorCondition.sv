@@ -21,7 +21,7 @@ module sensorCondition (
     logic [4:0]  cadence_out;           // cadence from LU
     logic        cadence_rise;          // Rising edge detect
     logic        not_pedaling_flopped;  // Flopped not pedaling signal
-
+    logic [2:0]  scale;
     // Signals for current and torque averaging
     logic [11:0] avg_curr;              // Average current
     logic [11:0] target_curr;           // Target current
@@ -30,6 +30,9 @@ module sensorCondition (
     logic [21:0] avg_curr_smpl;         // Current sampling counter
     logic [16:0] torque_accum;          // Torque accumulator
     logic [11:0] avg_torque;            // Average torque
+    
+    assign curr_accum_full = &curr_accum;
+
 
     // Fast simulation support
     generate 
@@ -40,7 +43,7 @@ module sensorCondition (
     endgenerate
 
     // Instantiate cadence modules
-    cadence_filt #(FAST_SIM) iCadence_Filt (
+    cadence_filt iCadence_Filt (
         .clk(clk),
         .rst_n(rst_n),
         .cadence(cadence),
@@ -52,7 +55,8 @@ module sensorCondition (
         .clk(clk),
         .rst_n(rst_n),
         .cadence_filt(cadence_filt),
-        .cadence_per(cadence_per)
+        .cadence_per(cadence_per),
+	.not_pedaling()
     );
 
     cadence_LU iCadence_LU (
@@ -77,7 +81,7 @@ module sensorCondition (
             curr_accum <= 1'b0;
         end else begin
             avg_curr_smpl <= avg_curr_smpl + 1'b1;
-            if (curr_accum_full)
+            if (!curr_accum_full)
                 curr_accum <= ((curr_accum * 3) >> 2) + curr;
         end
     end
