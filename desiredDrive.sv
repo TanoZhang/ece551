@@ -1,7 +1,7 @@
 module desiredDrive (
     input  logic [11:0] avg_torque,
     input  logic [4:0] cadence,
-    input  logic [12:0] incline,
+    input  logic signed [12:0] incline,
     input  logic [2:0] scale,
     input  logic not_pedaling,
     output logic [11:0] target_curr

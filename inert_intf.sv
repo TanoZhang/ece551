@@ -3,7 +3,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	output SS_n;
 	output MOSI;
 	output SCLK; 
-	output [12:0] incline;
+	output signed [12:0] incline;
 	output reg vld;
 	
 	logic INT_ff1, INT_ff2, init_done;
