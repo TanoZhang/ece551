@@ -1,0 +1,1223 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/WINDOWS/System32
+vA2D_intf
+Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z1 !s110 1746063138
+!i10b 1
+!s100 :3>M?@V=`Vcoo>j;`?RF01
+I_14A^fk36VH49kFU5:z<_1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 A2D_intf_sv_unit
+S1
+Z3 dC:/Users/dothe/Downloads/Backup
+Z4 w1746059389
+8C:/Users/dothe/Downloads/Backup/A2D_intf.sv
+FC:/Users/dothe/Downloads/Backup/A2D_intf.sv
+L0 1
+Z5 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z6 !s108 1746063138.000000
+!s107 C:/Users/dothe/Downloads/Backup/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/A2D_intf.sv|
+!i113 1
+Z7 o-work work -sv
+n@a2@d_intf
+vA2D_test
+R0
+R1
+!i10b 1
+!s100 Tec;4NW<Z]anN^LMWJXR00
+I_PbQK2za0fKHb?06NLd953
+R2
+!s105 A2D_test_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/A2D_test.sv
+FC:/Users/dothe/Downloads/Backup/A2D_test.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/A2D_test.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/A2D_test.sv|
+!i113 1
+R7
+n@a2@d_test
+vADC128S
+R0
+R1
+!i10b 1
+!s100 46ElXGa;<nZCj`bV[:Gec1
+IS7G]=`XQc0VcUK=>6I@`S3
+R2
+!s105 ADC128S_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/ADC128S.sv
+FC:/Users/dothe/Downloads/Backup/ADC128S.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/ADC128S.sv|
+!i113 1
+R7
+n@a@d@c128@s
+vAnalogModel
+R0
+R1
+!i10b 1
+!s100 4eG2J8UaKn7ma>z3;z_V41
+IP:hIHaT9hi477Wf>OPZL[0
+R2
+!s105 AnalogModel_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/AnalogModel.sv
+FC:/Users/dothe/Downloads/Backup/AnalogModel.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/AnalogModel.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/AnalogModel.sv|
+!i113 1
+R7
+n@analog@model
+vbrushless
+R0
+Z8 !s110 1746063137
+!i10b 1
+!s100 LM?omK=GPHm>?0K6;8A]:2
+I;QAnA5ZfKTck0fRH[>5:e1
+R2
+!s105 brushless2d1_sv_unit
+S1
+R3
+Z9 w1746059391
+8C:/Users/dothe/Downloads/Backup/brushless-1.sv
+FC:/Users/dothe/Downloads/Backup/brushless-1.sv
+L0 25
+R5
+r1
+!s85 0
+31
+Z10 !s108 1746063137.000000
+!s107 C:/Users/dothe/Downloads/Backup/brushless-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/brushless-1.sv|
+!i113 1
+R7
+vbrushless_mtr_drv_tb
+R0
+R8
+!i10b 1
+!s100 ER:g]acI^gJR9=Q_E4I7[1
+IX9d>GgiNIam@3oA=dFW>?1
+R2
+!s105 brushless_mtr_drv_tb2d1_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv
+FC:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv
+L0 9
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv|
+!i113 1
+R7
+vbrushless_mtr_drv_tb2
+R0
+Z11 !s110 1746063139
+!i10b 1
+!s100 0i^Qd=fBVKSUjf`d;`9811
+IGM8abmkQL^9DCMJ[LoFKk2
+R2
+!s105 brushless_mtr_drv_tb2_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv
+FC:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv|
+!i113 1
+R7
+vcadence_filt
+R0
+R8
+!i10b 1
+!s100 J4AUYF@4QU>nN>[6QVTSL0
+IijiO3;[m]@=2oHnn?Q[T30
+R2
+!s105 cadence_filter_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/cadence_filter.sv
+FC:/Users/dothe/Downloads/Backup/cadence_filter.sv
+Z12 L0 13
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/cadence_filter.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_filter.sv|
+!i113 1
+R7
+vcadence_filt_tb
+R0
+R1
+!i10b 1
+!s100 oVc1k444XT]QNI^]AeZ2h2
+I=JJ>Tina6XlN??mN`BQ^G2
+R2
+!s105 cadence_filt_tb_sv_unit
+S1
+R3
+Z13 w1746059390
+8C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv
+FC:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv|
+!i113 1
+R7
+vcadence_LU
+R0
+R11
+!i10b 1
+!s100 `9zdfR8ob91U:9jOjzCFf0
+I?W`=K`m4ninaYPm0[V9bU0
+R2
+!s105 cadence_LU_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/cadence_LU.sv
+FC:/Users/dothe/Downloads/Backup/cadence_LU.sv
+L0 1
+R5
+r1
+!s85 0
+31
+Z14 !s108 1746063139.000000
+!s107 C:/Users/dothe/Downloads/Backup/cadence_LU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_LU.sv|
+!i113 1
+R7
+ncadence_@l@u
+vcadence_meas
+R0
+R8
+!i10b 1
+!s100 BoI^1?Z>VU0mk;O2?n8SH1
+IBa1J3ZzSV[8`dTnhO0YaK2
+R2
+!s105 cadence_meas_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/cadence_meas.sv
+FC:/Users/dothe/Downloads/Backup/cadence_meas.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/cadence_meas.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_meas.sv|
+!i113 1
+R7
+vcadence_meas_tb
+R0
+R8
+!i10b 1
+!s100 GEX1:13]GDQ4b;>^Qj`[o3
+Ic2aQkJoOe8=S9Hao;DEB42
+R2
+!s105 candence_meas_tb_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv
+FC:/Users/dothe/Downloads/Backup/candence_meas_tb.sv
+L0 3
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv|
+!i113 1
+R7
+vcoil_volt
+R0
+R1
+!i10b 1
+!s100 6=c3_2eYf:E9G`LaAB@lh2
+IWU<>b6TmVFAAXbkAQibXA0
+R2
+!s105 coil_volt_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/coil_volt.sv
+FC:/Users/dothe/Downloads/Backup/coil_volt.sv
+L0 6
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/coil_volt.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/coil_volt.sv|
+!i113 1
+R7
+vcounter
+R0
+R1
+!i10b 1
+!s100 TFDZ]9Ro=mCjXLOACddZz1
+I5FZFjnmB3^2EgbUzg^k8_2
+R2
+!s105 counter_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/counter.sv
+FC:/Users/dothe/Downloads/Backup/counter.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/counter.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/counter.sv|
+!i113 1
+R7
+vdesiredDrive
+R0
+R8
+!i10b 1
+!s100 c28NE99]PzbA4V=n4i=`i2
+I1`1d:DeE;kfKoEj:MN6S?0
+R2
+!s105 desiredDrive_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/desiredDrive.sv
+FC:/Users/dothe/Downloads/Backup/desiredDrive.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/desiredDrive.sv|
+!i113 1
+R7
+ndesired@drive
+vdff
+R1
+!i10b 1
+!s100 6=9kC^I]@0c[cYOK7XNXE3
+I@O>]V`T3C;kTWRa:MH=zl3
+R2
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/dff.v
+FC:/Users/dothe/Downloads/Backup/dff.v
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/dff.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dothe/Downloads/Backup/dff.v|
+!i113 1
+Z15 o-work work
+veBike
+R0
+R1
+!i10b 1
+!s100 GHI7R29<h@iIa0R?Ol6OJ0
+IjW=`8eL57=G?^omj?kFCI0
+R2
+!s105 eBike_sv_unit
+S1
+R3
+w1746061688
+8C:/Users/dothe/Downloads/Backup/eBike.sv
+FC:/Users/dothe/Downloads/Backup/eBike.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/eBike.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/eBike.sv|
+!i113 1
+R7
+ne@bike
+veBike_tb
+R0
+R1
+!i10b 1
+!s100 SJT>n:7PIGcRmC3QJNE8m3
+I49>2oIXeJl7dRLN1BWYFo2
+R2
+!s105 eBike_tb_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/eBike_tb.sv
+FC:/Users/dothe/Downloads/Backup/eBike_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/eBike_tb.sv|
+!i113 1
+R7
+ne@bike_tb
+veBikePhysics
+R0
+R1
+!i10b 1
+!s100 b>>FcINQh98XM2@P;2So52
+IFDiz29kjJ9VSiQA>Hc3hh1
+R2
+!s105 eBikePhysics_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/eBikePhysics.sv
+FC:/Users/dothe/Downloads/Backup/eBikePhysics.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/eBikePhysics.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/eBikePhysics.sv|
+!i113 1
+R7
+ne@bike@physics
+vhub_wheel_model
+R0
+R1
+!i10b 1
+!s100 G<nX5b6_dAL3;nhiS:Ml10
+I:5?B9=@nkih;z:b^jhV<72
+R2
+!s105 hub_wheel_model_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv
+FC:/Users/dothe/Downloads/Backup/hub_wheel_model.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv|
+!i113 1
+R7
+vHW4P6
+R0
+R11
+!i10b 1
+!s100 SWIgPkeY^UMzPdMjI0jV]0
+IWlC2HLZ[cCR?kgmhEmcz03
+R2
+!s105 HW4P6_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/HW4P6.sv
+FC:/Users/dothe/Downloads/Backup/HW4P6.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/HW4P6.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/HW4P6.sv|
+!i113 1
+R7
+n@h@w4@p6
+vinert_intf
+R0
+R1
+!i10b 1
+!s100 QKD6iIBm_HbgW:=n`Y<fn2
+I7`=K:0d[S3cbRHBD1e>g`0
+R2
+!s105 inert_intf_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/inert_intf.sv
+FC:/Users/dothe/Downloads/Backup/inert_intf.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/inert_intf.sv|
+!i113 1
+R7
+vinert_intf_test
+R0
+R1
+!i10b 1
+!s100 >h4a`2cBM^[>M^P9<ZPP^2
+I:<P6^1QfgK4LYCmzJA8YC1
+R2
+!s105 inert_intf_test_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/inert_intf_test.sv
+FC:/Users/dothe/Downloads/Backup/inert_intf_test.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/inert_intf_test.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/inert_intf_test.sv|
+!i113 1
+R7
+vinertial_integrator
+R0
+R1
+!i10b 1
+!s100 7`?i_@AYb:hd;@[UM2;X_1
+IISaSEh`TM`j^GTn1F=6o23
+R2
+!s105 inertial_integrator_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/inertial_integrator.sv
+FC:/Users/dothe/Downloads/Backup/inertial_integrator.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/inertial_integrator.sv|
+!i113 1
+R7
+vmtr_drv
+R0
+R8
+!i10b 1
+!s100 ?95QRO0[EjKHg>A=ji?BX3
+IJ`=:zP>XS3VQ8l>]h7T_:3
+R2
+!s105 mtr_drv2d1_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv
+FC:/Users/dothe/Downloads/Backup/mtr_drv-1.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv|
+!i113 1
+R7
+vmult_accum
+R0
+R1
+!i10b 1
+!s100 =BDfhR<>6C0MWe;8>b0aF0
+Ic@:nLG56WoPZ<03RH_ZD<0
+R2
+!s105 mult_accum_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/mult_accum.sv
+FC:/Users/dothe/Downloads/Backup/mult_accum.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/mult_accum.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/mult_accum.sv|
+!i113 1
+R7
+vnonoverlap
+R0
+R8
+!i10b 1
+!s100 GZcQSgmAIYJnDQLRmAz[Y2
+IK?Kcj`PBY3SSbk@<Eh5d51
+R2
+!s105 nonoverlap2d1_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv
+FC:/Users/dothe/Downloads/Backup/nonoverlap-1.sv
+L0 9
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv|
+!i113 1
+R7
+vnonoverlap_test
+R0
+R1
+!i10b 1
+!s100 m[=HbPMSc:9cE>Nnk6g_Q2
+IYXa8o_Y`Y6zh8MR;:A?^o2
+R2
+Z16 !s105 nonoverlap_test_sv_unit
+S1
+R3
+R13
+Z17 8C:/Users/dothe/Downloads/Backup/nonoverlap_test.sv
+Z18 FC:/Users/dothe/Downloads/Backup/nonoverlap_test.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+Z19 !s107 C:/Users/dothe/Downloads/Backup/nonoverlap_test.sv|
+Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/nonoverlap_test.sv|
+!i113 1
+R7
+vobserver
+R0
+R1
+!i10b 1
+!s100 KS<R2[_^fX:lGXA5Nj8YY2
+I5l]O_G:3zj[J1B;=N]jHM1
+R2
+R16
+S1
+R3
+R13
+R17
+R18
+L0 116
+R5
+r1
+!s85 0
+31
+R6
+R19
+R20
+!i113 1
+R7
+vPB_intf
+R0
+R8
+!i10b 1
+!s100 :M<8c?`E>^F>c>knL7X`K2
+I0NUiGG@7YF8;bTnK4cT1h3
+R2
+!s105 PB_inft_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/PB_inft.sv
+FC:/Users/dothe/Downloads/Backup/PB_inft.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/PB_inft.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PB_inft.sv|
+!i113 1
+R7
+n@p@b_intf
+vPB_rise
+R0
+R11
+!i10b 1
+!s100 fU93JYY0k4IDM3I:Jk11T2
+I3MPl22LVhKmGYUD]@89H<0
+R2
+!s105 PB_rise_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/PB_rise.sv
+FC:/Users/dothe/Downloads/Backup/PB_rise.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/PB_rise.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PB_rise.sv|
+!i113 1
+R7
+n@p@b_rise
+vPID
+R0
+R8
+!i10b 1
+!s100 7V[8XL6cgVzTb<0<3ffYP3
+IWB>0B:`ZONQc]BhQ7z;2D3
+R2
+!s105 PID_sv_unit
+S1
+R3
+w1746061712
+8C:/Users/dothe/Downloads/Backup/PID.sv
+FC:/Users/dothe/Downloads/Backup/PID.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/PID.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID.sv|
+!i113 1
+R7
+n@p@i@d
+vPID_cntrl
+R0
+R11
+!i10b 1
+!s100 ?UQ7VN[S`3BZBeGZ@^^V`3
+IV1J]Qo8hl@gHQYH=6=j0;0
+R2
+!s105 PID_cntrl_sv_unit
+S1
+R3
+w1746060952
+8C:/Users/dothe/Downloads/Backup/PID_cntrl.sv
+FC:/Users/dothe/Downloads/Backup/PID_cntrl.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/PID_cntrl.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID_cntrl.sv|
+!i113 1
+R7
+n@p@i@d_cntrl
+vPID_cntrl_tb
+R0
+R11
+!i10b 1
+!s100 h1IVGY`AY3^EA`6<G7dgB0
+I=4:zXl^oe=OK>gcH3T6d00
+R2
+!s105 PID_cntrl_tb_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv
+FC:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv|
+!i113 1
+R7
+n@p@i@d_cntrl_tb
+vPID_tb
+R0
+R8
+!i10b 1
+!s100 ;Ih@`JNHObGiR`2YoPLi?3
+Ilc2N<_PZW?cjZ;[CdmhMT0
+R2
+!s105 PID_tb_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/PID_tb.sv
+FC:/Users/dothe/Downloads/Backup/PID_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/PID_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID_tb.sv|
+!i113 1
+R7
+n@p@i@d_tb
+vplant
+R0
+R1
+!i10b 1
+!s100 MY_aRNWYU[n73`;TR?7jk2
+I_Tm@I[ADk`zg0f]Vk[2^21
+R2
+!s105 plant_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/plant.sv
+FC:/Users/dothe/Downloads/Backup/plant.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/plant.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/plant.sv|
+!i113 1
+R7
+vplant_PID
+R0
+R1
+!i10b 1
+!s100 A`OSI3@RflS2TcOogmg=32
+IeG]]LAE1LfXT^3_DL5VRV0
+R2
+!s105 plant_PID_sv_unit
+S1
+R3
+R13
+Z21 8C:/Users/dothe/Downloads/Backup/plant_PID.sv
+Z22 FC:/Users/dothe/Downloads/Backup/plant_PID.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+Z23 !s107 C:/Users/dothe/Downloads/Backup/plant_PID.sv|
+Z24 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/plant_PID.sv|
+!i113 1
+R7
+nplant_@p@i@d
+Xplant_PID_sv_unit
+R0
+R1
+!i10b 1
+!s100 ZOBCm;J`Lg>lL3h24PRUK0
+IUzKN@`U[laf=Hd_[`3>:k3
+VUzKN@`U[laf=Hd_[`3>:k3
+!i103 1
+S1
+R3
+R13
+R21
+R22
+L0 70
+R5
+r1
+!s85 0
+31
+R6
+R23
+R24
+!i113 1
+R7
+nplant_@p@i@d_sv_unit
+vPWM
+R0
+R8
+!i10b 1
+!s100 k2@<=P;GGal0;mFeD1U`n0
+I1;bZjkc6nUTFKR[BLElJL0
+R2
+!s105 PWM_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/PWM.sv
+FC:/Users/dothe/Downloads/Backup/PWM.sv
+R12
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/PWM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PWM.sv|
+!i113 1
+R7
+n@p@w@m
+vPWM_tb
+R0
+R8
+!i10b 1
+!s100 T?lklGilen9_cK4g4QFGL0
+IG52[Z^_FkZ44]NbWm10VY3
+R2
+!s105 PWM_tb_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/PWM_tb.sv
+FC:/Users/dothe/Downloads/Backup/PWM_tb.sv
+L0 12
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/PWM_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PWM_tb.sv|
+!i113 1
+R7
+n@p@w@m_tb
+vrst_synch
+R0
+R1
+!i10b 1
+!s100 k?z4JXl42hPF[d=:KA@N[3
+I90OR=e;CTnjbH>li2;c423
+R2
+!s105 rst_synch_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/rst_synch.sv
+FC:/Users/dothe/Downloads/Backup/rst_synch.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/rst_synch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/rst_synch.sv|
+!i113 1
+R7
+vsensorCondition
+R0
+R1
+!i10b 1
+!s100 21aUkBbW1GUU]^W;=8DB51
+INaW4EQ;3hMK[`GnIB5SNz0
+R2
+!s105 sensorCondition_sv_unit
+S1
+R3
+w1746063134
+8C:/Users/dothe/Downloads/Backup/sensorCondition.sv
+FC:/Users/dothe/Downloads/Backup/sensorCondition.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/sensorCondition.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/sensorCondition.sv|
+!i113 1
+R7
+nsensor@condition
+vsensorCondition_tb
+R0
+R1
+!i10b 1
+!s100 1mzg7KHc:b8glmN4m^aS]1
+IC6FSjhhjgn<:zdde:GO>43
+R2
+!s105 sensorCondition_tb_sv_unit
+S1
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv
+FC:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv|
+!i113 1
+R7
+nsensor@condition_tb
+vSPI_ADC128S
+R0
+R11
+!i10b 1
+!s100 ;E62=i88@ghW83DU@9;CK1
+Ik@;oXeCggG^^GYQQWMz501
+R2
+!s105 SPI_ADC128S_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv
+FC:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv|
+!i113 1
+R7
+n@s@p@i_@a@d@c128@s
+vSPI_mnrch
+R0
+R11
+!i10b 1
+!s100 Y;JaT@Kl>G^H53M^ijd<I3
+I4HPL6E@z_gZ^3AzLRRn2l0
+R2
+!s105 SPI_mnrch_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/SPI_mnrch.sv
+FC:/Users/dothe/Downloads/Backup/SPI_mnrch.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/SPI_mnrch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/SPI_mnrch.sv|
+!i113 1
+R7
+n@s@p@i_mnrch
+vstim
+R0
+R1
+!i10b 1
+!s100 <An]O73M[TZS_i2im4[<D0
+I7^0EPBC0LEWZ1zSaNYB?b2
+R2
+R16
+S1
+R3
+R13
+R17
+R18
+L0 47
+R5
+r1
+!s85 0
+31
+R6
+R19
+R20
+!i113 1
+R7
+vsynch_detect_tb
+R8
+!i10b 1
+!s100 8;Pah_aLI`V0U<<CfP]M<3
+I1`6Y@BZoamBl8A4>i<n9o3
+R2
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/synch_detect_tb.v
+FC:/Users/dothe/Downloads/Backup/synch_detect_tb.v
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/synch_detect_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dothe/Downloads/Backup/synch_detect_tb.v|
+!i113 1
+R15
+vtelemetry
+R0
+R8
+!i10b 1
+!s100 6Ql^7[W=B@[TQ:UJUNW723
+IWXT:ZaimgH=`QC^6C3VXb1
+R2
+!s105 telemetry_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/telemetry.sv
+FC:/Users/dothe/Downloads/Backup/telemetry.sv
+L0 19
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/telemetry.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/telemetry.sv|
+!i113 1
+R7
+vthrottle
+R0
+R8
+!i10b 1
+!s100 ;1L_<JY]0imcFE59`GDK01
+I4Q59ZY84R2iFDaYRbJVVm0
+R2
+!s105 throttle_sv_unit
+S1
+R3
+R9
+8C:/Users/dothe/Downloads/Backup/throttle.sv
+FC:/Users/dothe/Downloads/Backup/throttle.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/throttle.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/throttle.sv|
+!i113 1
+R7
+vUART_rcv
+R0
+R11
+!i10b 1
+!s100 MBb47WGd32`OOK8:kRfJX3
+IoAnoEQk9<9n]z:bdV0nl03
+R2
+!s105 UART_rcv_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/UART_rcv.sv
+FC:/Users/dothe/Downloads/Backup/UART_rcv.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/dothe/Downloads/Backup/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/UART_rcv.sv|
+!i113 1
+R7
+n@u@a@r@t_rcv
+vUART_tx
+R0
+R8
+!i10b 1
+!s100 gg7Z3ATZmDYoMNdni17W63
+I]FjaH6EzZ7EebAi?Ef@ci2
+R2
+!s105 UART_tx_sv_unit
+S1
+R3
+R4
+8C:/Users/dothe/Downloads/Backup/UART_tx.sv
+FC:/Users/dothe/Downloads/Backup/UART_tx.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/dothe/Downloads/Backup/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/UART_tx.sv|
+!i113 1
+R7
+n@u@a@r@t_tx
+vup_dwn_tb
+R1
+!i10b 1
+!s100 7NW6S]llCPRZXoFAn5^[l2
+Ia_4[j2fooTJL?I;Mi`IKL2
+R2
+R3
+R13
+8C:/Users/dothe/Downloads/Backup/counter_tb.v
+FC:/Users/dothe/Downloads/Backup/counter_tb.v
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/dothe/Downloads/Backup/counter_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dothe/Downloads/Backup/counter_tb.v|
+!i113 1
+R15

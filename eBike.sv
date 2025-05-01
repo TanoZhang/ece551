@@ -4,7 +4,7 @@
 			 inertSS_n,inertSCLK,inertMOSI,inertMISO,
 			 inertINT,cadence,TX,tgglMd,LED);
 			 
-  //parameter FAST_SIM = 0;		// accelerate simulation by default
+  parameter FAST_SIM = 1;		// accelerate simulation by default
 
   input clk;				// 50MHz clk
   input RST_n;				// active low RST_n from push button
@@ -45,7 +45,7 @@
   wire brake_n;
   wire PWM_synch;
   wire [2:0] scale;
-
+  wire [1:0] setting;
   wire cadence;
   
   ////////////////////////////////////////////////////////
@@ -73,7 +73,7 @@
   ///////////////////////////////////////////////////
   // Instantiate PID to determine drive magnitude //
   /////////////////////////////////////////////////		   
-	PID #(FAST_SIM) iPID(.clk(clk), .rst_n(rst_n), .error(error), .not_pedaling(not_pedaling), .drv_mag(drv_mag));
+	PID #(FAST_SIM) iPID (.clk(clk), .rst_n(rst_n), .error(error), .not_pedaling(not_pedaling), .drv_mag(drv_mag));
   
   ////////////////////////////////////////////////
   // Instantiate brushless DC motor controller //

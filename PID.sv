@@ -5,7 +5,7 @@ module PID(clk, rst_n, error, not_pedaling, drv_mag);
 	
 	output logic [11:0] drv_mag;
 	
-	parameter FAST_SIM = 0;
+	parameter FAST_SIM = 1;
 	
 	logic [17:0] integrator, sign_extended_error, added_error, sat_error, integrator_in;
 	logic [19:0] counter;
