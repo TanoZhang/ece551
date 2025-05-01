@@ -3,7 +3,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	output SS_n;
 	output MOSI;
 	output SCLK; 
-	output [12:0] incline;
+	output signed [12:0] incline;
 	output reg vld;
 	
 	logic INT_ff1, INT_ff2, init_done;
@@ -13,13 +13,13 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	logic [2:0] RR_sig_init;
 	logic [2:0] RR_sig;
 	logic RR_sig_inc, RR_init_sig_inc, reg_en;
-	logic [15:0] rd_data, cmd; 
+	logic [15:0] resp, cmd; 
 	logic [15:0] addr_data_init, addr_data;
 	logic [7:0] rollL, rollH, yawL, yawH, AYL, AYH, AZL, AZH;
 	logic [15:0] roll_rt, yaw_rt, AY, AZ;
-	logic wrt;
+	logic snd;
 
-	SPI_mnrch mine(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .wrt(wrt), .cmd(cmd), .MISO(MISO), .rd_data(rd_data), .done(done));
+	SPI_mnrch mine(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .snd(snd), .cmd(cmd), .MISO(MISO), .resp(resp), .done(done));
     	inertial_integrator me(.clk(clk),.rst_n(rst_n),.vld(vld),.roll_rt(roll_rt),.yaw_rt(yaw_rt),.AY(AY),.AZ(AZ),.incline(incline));
 	
 	// logic ENABLE;
@@ -48,7 +48,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			rollL <= 8'h00;
 		else if(RR_sig == 3'h0 && reg_en) begin 
-			rollL <= rd_data[7:0];
+			rollL <= resp[7:0];
 			
 		end
 	
@@ -57,7 +57,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			rollH <= 8'h00;
 		else if(RR_sig == 3'h1 && reg_en) begin
-			rollH <= rd_data[7:0];
+			rollH <= resp[7:0];
 			
 		end
 	end
@@ -65,7 +65,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			yawL <= 8'h00;
 		else if(RR_sig == 3'h2 && reg_en) begin
-			yawL <= rd_data[7:0];
+			yawL <= resp[7:0];
 			
 		end
 	end
@@ -73,7 +73,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			yawH <= 8'h00;
 		else if(RR_sig == 3'h3 && reg_en) begin
-			yawH <= rd_data[7:0];
+			yawH <= resp[7:0];
 			
 		end
 	end
@@ -81,7 +81,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			AYL <= 8'h00;
 		else if(RR_sig == 3'h4 && reg_en) begin
-			AYL <= rd_data[7:0];
+			AYL <= resp[7:0];
 			
 		end
 	end
@@ -89,7 +89,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			AYH <= 8'h00;
 		else if(RR_sig == 3'h5 && reg_en) begin
-			AYH <= rd_data[7:0];
+			AYH <= resp[7:0];
 			
 		end
 	end
@@ -97,7 +97,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			AZL <= 8'h00;
 		else if(RR_sig == 3'h6 && reg_en) begin
-			AZL <= rd_data[7:0];
+			AZL <= resp[7:0];
 			
 		end
 	end
@@ -105,7 +105,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 		if(!rst_n)
 			AZH <= 8'h00;
 		else if(RR_sig == 3'h7 && reg_en) begin
-			AZH <= rd_data[7:0];
+			AZH <= resp[7:0];
 			
 		end
 	end
@@ -160,7 +160,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	end
 	
 	always_comb begin 
-		wrt = 0;
+		snd = 0;
 		//capture = 0;
 		nxt_state = state;
 		vld = 0;
@@ -173,7 +173,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 				nxt_state = INITIALIZE;
 			
 			INITIALIZE: begin
-				wrt = 1;
+				snd = 1;
 				nxt_state = WAIT_INITIALIZE;
 				
 			end
@@ -195,7 +195,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 				end
 			end
 			START_READ: begin
-					wrt = 1;
+					snd = 1;
 					nxt_state = WAIT_READ;
 				
 			end

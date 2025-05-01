@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f MIXED_VERSIONS
 13
 !s112 1.1
 !i10d 8192
@@ -9,1215 +10,1350 @@ z2
 cModel Technology
 dC:/WINDOWS/System32
 vA2D_intf
-Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z1 !s110 1746063138
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1746129342
 !i10b 1
-!s100 :3>M?@V=`Vcoo>j;`?RF01
-I_14A^fk36VH49kFU5:z<_1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-!s105 A2D_intf_sv_unit
+!s100 gc8TI>8YiGlZT`CEVi<092
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IhYCS28Be=R1DH78m[;jfF3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z3 dC:/Users/dothe/Downloads/Backup
-Z4 w1746059389
-8C:/Users/dothe/Downloads/Backup/A2D_intf.sv
-FC:/Users/dothe/Downloads/Backup/A2D_intf.sv
-L0 1
-Z5 OV;L;10.4d;61
+Z4 dC:/Users/Simon/Documents/GitHub/ece551
+w1746111877
+8C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv
+FC:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv
+!i122 1567
+L0 1 83
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1746063138.000000
-!s107 C:/Users/dothe/Downloads/Backup/A2D_intf.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/A2D_intf.sv|
+Z6 !s108 1746129342.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv|
 !i113 1
 Z7 o-work work -sv
+Z8 tCvgOpt 0
 n@a2@d_intf
 vA2D_test
 R0
 R1
 !i10b 1
-!s100 Tec;4NW<Z]anN^LMWJXR00
-I_PbQK2za0fKHb?06NLd953
+!s100 @a>9HQ:>L61M`Q]T>ULHM3
 R2
-!s105 A2D_test_sv_unit
-S1
+IQQ97Z19aS:VC>A6NdiB>:0
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/A2D_test.sv
-FC:/Users/dothe/Downloads/Backup/A2D_test.sv
-L0 1
+Z9 w1746111027
+8C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv
+FC:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv
+!i122 1568
+L0 1 66
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/dothe/Downloads/Backup/A2D_test.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/A2D_test.sv|
+!s107 C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv|
 !i113 1
 R7
+R8
 n@a2@d_test
 vADC128S
 R0
-R1
+Z10 !s110 1746129343
 !i10b 1
-!s100 46ElXGa;<nZCj`bV[:Gec1
-IS7G]=`XQc0VcUK=>6I@`S3
+!s100 iL2zkc^KeI[4_PCXk?lB03
 R2
-!s105 ADC128S_sv_unit
-S1
+InYaZCUM^62XjUDnm[?g=I1
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/ADC128S.sv
-FC:/Users/dothe/Downloads/Backup/ADC128S.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv
+FC:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv
+!i122 1569
+L0 1 112
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/dothe/Downloads/Backup/ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/ADC128S.sv|
+!s107 C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv|
 !i113 1
 R7
+R8
 n@a@d@c128@s
 vAnalogModel
 R0
-R1
+R10
 !i10b 1
-!s100 4eG2J8UaKn7ma>z3;z_V41
-IP:hIHaT9hi477Wf>OPZL[0
+!s100 V5Mo]QPJ?<ojR=o8>V^H10
 R2
-!s105 AnalogModel_sv_unit
-S1
+Iek6eP[f2?jHja7]jSgR3M1
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/AnalogModel.sv
-FC:/Users/dothe/Downloads/Backup/AnalogModel.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv
+FC:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv
+!i122 1570
+Z11 L0 1 111
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/AnalogModel.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/AnalogModel.sv|
+Z12 !s108 1746129343.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv|
 !i113 1
 R7
+R8
 n@analog@model
 vbrushless
 R0
-Z8 !s110 1746063137
+R10
 !i10b 1
-!s100 LM?omK=GPHm>?0K6;8A]:2
-I;QAnA5ZfKTck0fRH[>5:e1
+!s100 F1RQEmR7Q@?2zI1o`S4Zg1
 R2
-!s105 brushless2d1_sv_unit
-S1
+IK0`LQR838M;67ME`[D4US2
 R3
-Z9 w1746059391
-8C:/Users/dothe/Downloads/Backup/brushless-1.sv
-FC:/Users/dothe/Downloads/Backup/brushless-1.sv
-L0 25
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv
+FC:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv
+!i122 1574
+L0 25 155
 R5
 r1
 !s85 0
 31
-Z10 !s108 1746063137.000000
-!s107 C:/Users/dothe/Downloads/Backup/brushless-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/brushless-1.sv|
+R12
+!s107 C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv|
 !i113 1
 R7
+R8
 vbrushless_mtr_drv_tb
 R0
-R8
+R10
 !i10b 1
-!s100 ER:g]acI^gJR9=Q_E4I7[1
-IX9d>GgiNIam@3oA=dFW>?1
+!s100 Ei>B7[Q>[kjDVCd1G:iWm1
 R2
-!s105 brushless_mtr_drv_tb2d1_sv_unit
-S1
+IX=0eE8ZUV1IaT1JCa6PT03
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv
-FC:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv
-L0 9
+8C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv
+FC:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv
+!i122 1572
+L0 9 143
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv|
+R12
+!s107 C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv|
 !i113 1
 R7
+R8
 vbrushless_mtr_drv_tb2
 R0
-Z11 !s110 1746063139
+R10
 !i10b 1
-!s100 0i^Qd=fBVKSUjf`d;`9811
-IGM8abmkQL^9DCMJ[LoFKk2
+!s100 ffFOXXBZ<flceXO`0M_880
 R2
-!s105 brushless_mtr_drv_tb2_sv_unit
-S1
+IQI0nng:ZglU9WKTSRaS3z2
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv
-FC:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv
+FC:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv
+!i122 1573
+L0 1 59
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv|
+R12
+!s107 C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv|
 !i113 1
 R7
+R8
 vcadence_filt
 R0
-R8
+Z13 !s110 1746129344
 !i10b 1
-!s100 J4AUYF@4QU>nN>[6QVTSL0
-IijiO3;[m]@=2oHnn?Q[T30
+!s100 N5QI9E=LNWJh1KFcc?IX:2
 R2
-!s105 cadence_filter_sv_unit
-S1
+Ie9D7GNJU=67Bc`VHfFPJ80
 R3
-R9
-8C:/Users/dothe/Downloads/Backup/cadence_filter.sv
-FC:/Users/dothe/Downloads/Backup/cadence_filter.sv
-Z12 L0 13
+S1
+R4
+w1746124046
+8C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv
+FC:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv
+!i122 1576
+L0 13 93
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/cadence_filter.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_filter.sv|
+R12
+!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv|
 !i113 1
 R7
+R8
 vcadence_filt_tb
 R0
-R1
+R10
 !i10b 1
-!s100 oVc1k444XT]QNI^]AeZ2h2
-I=JJ>Tina6XlN??mN`BQ^G2
+!s100 lMYPF8gb[]z]i2Y4g2^=c0
 R2
-!s105 cadence_filt_tb_sv_unit
-S1
+I]R^SU]NOmV;HeBEV3k@0V3
 R3
-Z13 w1746059390
-8C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv
-FC:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv
+!i122 1575
+L0 1 95
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv|
+R12
+!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv|
 !i113 1
 R7
+R8
 vcadence_LU
 R0
-R11
+R13
 !i10b 1
-!s100 `9zdfR8ob91U:9jOjzCFf0
-I?W`=K`m4ninaYPm0[V9bU0
+!s100 BTkJ1lgHmZ_j@E3b@lDg@0
 R2
-!s105 cadence_LU_sv_unit
-S1
+I:AQak`8McSlZi`H7OJiQ53
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/cadence_LU.sv
-FC:/Users/dothe/Downloads/Backup/cadence_LU.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv
+FC:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv
+!i122 1577
+L0 1 237
 R5
 r1
 !s85 0
 31
-Z14 !s108 1746063139.000000
-!s107 C:/Users/dothe/Downloads/Backup/cadence_LU.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_LU.sv|
+Z14 !s108 1746129344.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv|
 !i113 1
 R7
+R8
 ncadence_@l@u
 vcadence_meas
 R0
-R8
+R13
 !i10b 1
-!s100 BoI^1?Z>VU0mk;O2?n8SH1
-IBa1J3ZzSV[8`dTnhO0YaK2
+!s100 5?3m:jGUA`H]R6BO3Tm]33
 R2
-!s105 cadence_meas_sv_unit
-S1
+IKK7C@odeN_KYlKQziHgd_0
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/cadence_meas.sv
-FC:/Users/dothe/Downloads/Backup/cadence_meas.sv
-L0 1
+8C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv
+FC:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv
+!i122 1578
+Z15 L0 1 75
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/cadence_meas.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/cadence_meas.sv|
+R14
+!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv|
 !i113 1
 R7
+R8
 vcadence_meas_tb
 R0
-R8
+R13
 !i10b 1
-!s100 GEX1:13]GDQ4b;>^Qj`[o3
-Ic2aQkJoOe8=S9Hao;DEB42
+!s100 CPBYzobo6;Y5GN0nOMQd33
 R2
-!s105 candence_meas_tb_sv_unit
-S1
+I>`2VaOoTzHhVV_L?zi;:j3
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv
-FC:/Users/dothe/Downloads/Backup/candence_meas_tb.sv
-L0 3
+8C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv
+!i122 1579
+L0 3 103
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv|
+R14
+!s107 C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv|
 !i113 1
 R7
+R8
 vcoil_volt
 R0
-R1
-!i10b 1
-!s100 6=c3_2eYf:E9G`LaAB@lh2
-IWU<>b6TmVFAAXbkAQibXA0
-R2
-!s105 coil_volt_sv_unit
-S1
-R3
 R13
-8C:/Users/dothe/Downloads/Backup/coil_volt.sv
-FC:/Users/dothe/Downloads/Backup/coil_volt.sv
-L0 6
+!i10b 1
+!s100 4m?i0G0:H=2hDnM2Hd9JV0
+R2
+ITYzHIV4nnF:HODEXfVEeT0
+R3
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv
+FC:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv
+!i122 1580
+L0 6 146
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/coil_volt.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/coil_volt.sv|
+R14
+!s107 C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv|
 !i113 1
 R7
+R8
 vcounter
 R0
-R1
-!i10b 1
-!s100 TFDZ]9Ro=mCjXLOACddZz1
-I5FZFjnmB3^2EgbUzg^k8_2
-R2
-!s105 counter_sv_unit
-S1
-R3
 R13
-8C:/Users/dothe/Downloads/Backup/counter.sv
-FC:/Users/dothe/Downloads/Backup/counter.sv
-L0 1
+!i10b 1
+!s100 nzzAZ[DG_Oej8G9FRYF@n0
+R2
+ImbGCH>?JXSTD]FV6^8ST51
+R3
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/counter.sv
+FC:/Users/Simon/Documents/GitHub/ece551/counter.sv
+!i122 1581
+L0 1 25
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/counter.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/counter.sv|
+R14
+!s107 C:/Users/Simon/Documents/GitHub/ece551/counter.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/counter.sv|
 !i113 1
 R7
+R8
 vdesiredDrive
 R0
-R8
+Z16 !s110 1746129345
 !i10b 1
-!s100 c28NE99]PzbA4V=n4i=`i2
-I1`1d:DeE;kfKoEj:MN6S?0
+!s100 86i<[<o_ElKeJdiSV@U?:2
 R2
-!s105 desiredDrive_sv_unit
-S1
+I1AWF]35o:_>]S]Cg2JQT_2
 R3
-R9
-8C:/Users/dothe/Downloads/Backup/desiredDrive.sv
-FC:/Users/dothe/Downloads/Backup/desiredDrive.sv
-L0 1
+S1
+R4
+w1746128929
+8C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv
+FC:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv
+!i122 1584
+L0 1 51
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/desiredDrive.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/desiredDrive.sv|
+R14
+!s107 C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv|
 !i113 1
 R7
+R8
 ndesired@drive
 vdff
-R1
+R16
 !i10b 1
-!s100 6=9kC^I]@0c[cYOK7XNXE3
-I@O>]V`T3C;kTWRa:MH=zl3
+!s100 HCnK_>zhS>[GBLoK9HcO[2
 R2
+IdUIMfB8Fb`EB5NkbV6_5c0
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/dff.v
-FC:/Users/dothe/Downloads/Backup/dff.v
-L0 1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/dff.v
+FC:/Users/Simon/Documents/GitHub/ece551/dff.v
+!i122 1585
+L0 1 10
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/dff.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dothe/Downloads/Backup/dff.v|
+Z17 !s108 1746129345.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/dff.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/dff.v|
 !i113 1
-Z15 o-work work
+Z18 o-work work
+R8
 veBike
 R0
-R1
+R16
 !i10b 1
-!s100 GHI7R29<h@iIa0R?Ol6OJ0
-IjW=`8eL57=G?^omj?kFCI0
+!s100 _n2k3mI<1@j69ffSbPUk_3
 R2
-!s105 eBike_sv_unit
-S1
+IQn>Wo?WSP^<KK6VlWATkO1
 R3
-w1746061688
-8C:/Users/dothe/Downloads/Backup/eBike.sv
-FC:/Users/dothe/Downloads/Backup/eBike.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/eBike.sv
+FC:/Users/Simon/Documents/GitHub/ece551/eBike.sv
+!i122 1586
+L0 1 97
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/eBike.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/eBike.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/eBike.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBike.sv|
 !i113 1
 R7
+R8
 ne@bike
 veBike_tb
 R0
-R1
+R16
 !i10b 1
-!s100 SJT>n:7PIGcRmC3QJNE8m3
-I49>2oIXeJl7dRLN1BWYFo2
+!s100 Q]eACgfbQ8b_[Sb<O8WJ>2
 R2
-!s105 eBike_tb_sv_unit
-S1
+IoYYn>A7JTZOznZM_d2=5Y3
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/eBike_tb.sv
-FC:/Users/dothe/Downloads/Backup/eBike_tb.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv
+!i122 1587
+L0 1 596
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/eBike_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/eBike_tb.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv|
 !i113 1
 R7
+R8
 ne@bike_tb
+veBike_tb2
+R0
+Z19 !s110 1746129349
+!i10b 1
+!s100 R^L<O4L`QNEo?<6kjinM00
+R2
+IggWNM_edDUiAecD_gNNh>0
+R3
+S1
+R4
+w1746129338
+8C:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv
+FC:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv
+!i122 1619
+Z20 L0 1 70
+R5
+r1
+!s85 0
+31
+Z21 !s108 1746129349.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv|
+!i113 1
+R7
+R8
+ne@bike_tb2
 veBikePhysics
 R0
-R1
+R16
 !i10b 1
-!s100 b>>FcINQh98XM2@P;2So52
-IFDiz29kjJ9VSiQA>Hc3hh1
+!s100 PNjLQzoiQ__SDogeMQ;GT2
 R2
-!s105 eBikePhysics_sv_unit
-S1
+IWEZ?[LTbbb4dSINR[m?7h2
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/eBikePhysics.sv
-FC:/Users/dothe/Downloads/Backup/eBikePhysics.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv
+FC:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv
+!i122 1588
+L0 1 530
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/eBikePhysics.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/eBikePhysics.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv|
 !i113 1
 R7
+R8
 ne@bike@physics
 vhub_wheel_model
 R0
-R1
+R16
 !i10b 1
-!s100 G<nX5b6_dAL3;nhiS:Ml10
-I:5?B9=@nkih;z:b^jhV<72
+!s100 Xab4F<9U`I`1mP5@b_nMJ1
 R2
-!s105 hub_wheel_model_sv_unit
-S1
+IYPNQW]9LCSCFmRzUNPKOi0
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv
-FC:/Users/dothe/Downloads/Backup/hub_wheel_model.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv
+FC:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv
+!i122 1589
+L0 1 171
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv|
 !i113 1
 R7
+R8
 vHW4P6
 R0
-R11
+R16
 !i10b 1
-!s100 SWIgPkeY^UMzPdMjI0jV]0
-IWlC2HLZ[cCR?kgmhEmcz03
+!s100 9S3SHW9Co6_[QfM?7LjYB1
 R2
-!s105 HW4P6_sv_unit
-S1
+Iz8[WzJA=7D0KAhYAT1fzQ0
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/HW4P6.sv
-FC:/Users/dothe/Downloads/Backup/HW4P6.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv
+FC:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv
+!i122 1590
+L0 1 64
 R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/dothe/Downloads/Backup/HW4P6.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/HW4P6.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv|
 !i113 1
 R7
+R8
 n@h@w4@p6
 vinert_intf
 R0
-R1
+R16
 !i10b 1
-!s100 QKD6iIBm_HbgW:=n`Y<fn2
-I7`=K:0d[S3cbRHBD1e>g`0
+!s100 >4@iHJAE;5dhO5XQIb0_N1
 R2
-!s105 inert_intf_sv_unit
-S1
+IQ=TSb[WQnRY:_70^fID363
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/inert_intf.sv
-FC:/Users/dothe/Downloads/Backup/inert_intf.sv
-L0 2
+S1
+R4
+w1746128688
+8C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv
+FC:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv
+!i122 1591
+L0 1 222
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/inert_intf.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/inert_intf.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv|
 !i113 1
 R7
+R8
 vinert_intf_test
 R0
-R1
+Z22 !s110 1746129346
 !i10b 1
-!s100 >h4a`2cBM^[>M^P9<ZPP^2
-I:<P6^1QfgK4LYCmzJA8YC1
+!s100 LjUCCde@9ZK8ADS:UQ5z_2
 R2
-!s105 inert_intf_test_sv_unit
-S1
+Ikll;5PhEi2_JmU3:Q@^6R2
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/inert_intf_test.sv
-FC:/Users/dothe/Downloads/Backup/inert_intf_test.sv
-L0 1
+S1
+R4
+w1746115361
+8C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv
+FC:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv
+!i122 1592
+L0 1 71
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/inert_intf_test.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/inert_intf_test.sv|
+R17
+!s107 C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv|
 !i113 1
 R7
+R8
 vinertial_integrator
 R0
-R1
+R22
 !i10b 1
-!s100 7`?i_@AYb:hd;@[UM2;X_1
-IISaSEh`TM`j^GTn1F=6o23
+!s100 [6z<Zb`Hh??iFaMz_396V0
 R2
-!s105 inertial_integrator_sv_unit
-S1
+IOVznKfm1Znm7HPM@lff4L2
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/inertial_integrator.sv
-FC:/Users/dothe/Downloads/Backup/inertial_integrator.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv
+FC:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv
+!i122 1593
+L0 1 106
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/inertial_integrator.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/inertial_integrator.sv|
+Z23 !s108 1746129346.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv|
 !i113 1
 R7
+R8
 vmtr_drv
 R0
-R8
+R22
 !i10b 1
-!s100 ?95QRO0[EjKHg>A=ji?BX3
-IJ`=:zP>XS3VQ8l>]h7T_:3
+!s100 eF2?jJRMozb_PWmcgX<ha3
 R2
-!s105 mtr_drv2d1_sv_unit
-S1
+IMD@FiG6d8CCTgc@HmCEK03
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv
-FC:/Users/dothe/Downloads/Backup/mtr_drv-1.sv
-L0 1
+8C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv
+FC:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv
+!i122 1595
+L0 1 131
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv|
+R23
+!s107 C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv|
 !i113 1
 R7
+R8
 vmult_accum
 R0
-R1
+R22
 !i10b 1
-!s100 =BDfhR<>6C0MWe;8>b0aF0
-Ic@:nLG56WoPZ<03RH_ZD<0
+!s100 YUm>nOE`:[Zb:A>3fNm4R0
 R2
-!s105 mult_accum_sv_unit
-S1
+In1JQ3^JkDBX4Z3jQ0mfd]0
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/mult_accum.sv
-FC:/Users/dothe/Downloads/Backup/mult_accum.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv
+FC:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv
+!i122 1596
+Z24 L0 1 29
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/mult_accum.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/mult_accum.sv|
+R23
+!s107 C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv|
 !i113 1
 R7
+R8
 vnonoverlap
 R0
-R8
+R22
 !i10b 1
-!s100 GZcQSgmAIYJnDQLRmAz[Y2
-IK?Kcj`PBY3SSbk@<Eh5d51
+!s100 d?6O4:3Flc]i87Q7AaNAl2
 R2
-!s105 nonoverlap2d1_sv_unit
-S1
+IV4d7ZoPi<A@oRIG0FKD[d3
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv
-FC:/Users/dothe/Downloads/Backup/nonoverlap-1.sv
-L0 9
+8C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv
+FC:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv
+!i122 1598
+L0 9 58
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv|
+R23
+!s107 C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv|
 !i113 1
 R7
+R8
 vnonoverlap_test
 R0
-R1
+R22
 !i10b 1
-!s100 m[=HbPMSc:9cE>Nnk6g_Q2
-IYXa8o_Y`Y6zh8MR;:A?^o2
+!s100 d`hhB_aRC]ncW4V[dEe]:2
 R2
-Z16 !s105 nonoverlap_test_sv_unit
-S1
+I_fBD;[<Rc6QRM8dK7NZDJ2
 R3
-R13
-Z17 8C:/Users/dothe/Downloads/Backup/nonoverlap_test.sv
-Z18 FC:/Users/dothe/Downloads/Backup/nonoverlap_test.sv
-L0 1
+S1
+R4
+R9
+Z25 8C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv
+Z26 FC:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv
+!i122 1597
+Z27 L0 1 44
 R5
 r1
 !s85 0
 31
-R6
-Z19 !s107 C:/Users/dothe/Downloads/Backup/nonoverlap_test.sv|
-Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/nonoverlap_test.sv|
+R23
+Z28 !s107 C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv|
+Z29 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv|
 !i113 1
 R7
+R8
 vobserver
 R0
-R1
+R22
 !i10b 1
-!s100 KS<R2[_^fX:lGXA5Nj8YY2
-I5l]O_G:3zj[J1B;=N]jHM1
+!s100 clP3o1@M[fii5OXQczY2F2
 R2
-R16
-S1
+IaFW@B:fI9?XH2?;J>CHOS2
 R3
-R13
-R17
-R18
-L0 116
+S1
+R4
+R9
+R25
+R26
+!i122 1597
+L0 116 112
 R5
 r1
 !s85 0
 31
-R6
-R19
-R20
+R23
+R28
+R29
 !i113 1
 R7
+R8
 vPB_intf
 R0
-R8
+R22
 !i10b 1
-!s100 :M<8c?`E>^F>c>knL7X`K2
-I0NUiGG@7YF8;bTnK4cT1h3
+!s100 FB[AaPhXHJP9VL:YTUN8A2
 R2
-!s105 PB_inft_sv_unit
-S1
+I:E7JK6[<8P]IAe92e_:eE0
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/PB_inft.sv
-FC:/Users/dothe/Downloads/Backup/PB_inft.sv
-L0 1
+8C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv
+!i122 1599
+R27
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/PB_inft.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PB_inft.sv|
+R23
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv|
 !i113 1
 R7
+R8
 n@p@b_intf
 vPB_rise
 R0
-R11
+R22
 !i10b 1
-!s100 fU93JYY0k4IDM3I:Jk11T2
-I3MPl22LVhKmGYUD]@89H<0
+!s100 2XT4C_>3J1d;[o6WUce`T2
 R2
-!s105 PB_rise_sv_unit
-S1
+IEo^[I[6hlBID0YKl<8i>V3
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/PB_rise.sv
-FC:/Users/dothe/Downloads/Backup/PB_rise.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv
+!i122 1600
+Z30 L0 1 26
 R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/dothe/Downloads/Backup/PB_rise.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PB_rise.sv|
+R23
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv|
 !i113 1
 R7
+R8
 n@p@b_rise
 vPID
 R0
-R8
+Z31 !s110 1746129347
 !i10b 1
-!s100 7V[8XL6cgVzTb<0<3ffYP3
-IWB>0B:`ZONQc]BhQ7z;2D3
+!s100 Zfbz21eK3ZMeZXB7FePfL1
 R2
-!s105 PID_sv_unit
-S1
+IWWmX]J250:SFHF<NB5@<e0
 R3
-w1746061712
-8C:/Users/dothe/Downloads/Backup/PID.sv
-FC:/Users/dothe/Downloads/Backup/PID.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/PID.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PID.sv
+!i122 1601
+R20
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/PID.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID.sv|
+Z32 !s108 1746129347.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PID.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID.sv|
 !i113 1
 R7
+R8
 n@p@i@d
 vPID_cntrl
 R0
-R11
+R31
 !i10b 1
-!s100 ?UQ7VN[S`3BZBeGZ@^^V`3
-IV1J]Qo8hl@gHQYH=6=j0;0
+!s100 Zh@>jaIR<zZfAWg;gd;=i2
 R2
-!s105 PID_cntrl_sv_unit
-S1
+IZ;8SX6D:QDjd]=MnWg6oF3
 R3
-w1746060952
-8C:/Users/dothe/Downloads/Backup/PID_cntrl.sv
-FC:/Users/dothe/Downloads/Backup/PID_cntrl.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv
+!i122 1602
+R15
 R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/dothe/Downloads/Backup/PID_cntrl.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID_cntrl.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv|
 !i113 1
 R7
+R8
 n@p@i@d_cntrl
 vPID_cntrl_tb
 R0
-R11
+R31
 !i10b 1
-!s100 h1IVGY`AY3^EA`6<G7dgB0
-I=4:zXl^oe=OK>gcH3T6d00
+!s100 dlj;]VRTUj2nQA3MUM]3i2
 R2
-!s105 PID_cntrl_tb_sv_unit
-S1
+I<]lYd4MZ6@_EbLjz:kFfS0
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv
-FC:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv
+!i122 1603
+L0 1 42
 R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID_cntrl_tb.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv|
 !i113 1
 R7
+R8
 n@p@i@d_cntrl_tb
 vPID_tb
 R0
-R8
+R31
 !i10b 1
-!s100 ;Ih@`JNHObGiR`2YoPLi?3
-Ilc2N<_PZW?cjZ;[CdmhMT0
+!s100 3]TVDE]JZ`U:E=I_YzXEX2
 R2
-!s105 PID_tb_sv_unit
-S1
+IXb?[29Fj04;_kW>b4QNN]0
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/PID_tb.sv
-FC:/Users/dothe/Downloads/Backup/PID_tb.sv
-L0 1
+8C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv
+!i122 1604
+Z33 L0 1 20
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/PID_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PID_tb.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv|
 !i113 1
 R7
+R8
 n@p@i@d_tb
 vplant
 R0
-R1
+R31
 !i10b 1
-!s100 MY_aRNWYU[n73`;TR?7jk2
-I_Tm@I[ADk`zg0f]Vk[2^21
+!s100 5k7Pg;`moWdl<G;d`WG_83
 R2
-!s105 plant_sv_unit
-S1
+ITY2PC6cNo1T0m:BJPOzZ71
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/plant.sv
-FC:/Users/dothe/Downloads/Backup/plant.sv
-L0 1
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/plant.sv
+FC:/Users/Simon/Documents/GitHub/ece551/plant.sv
+!i122 1605
+L0 1 49
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/plant.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/plant.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/plant.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/plant.sv|
 !i113 1
 R7
+R8
 vplant_PID
-R0
-R1
-!i10b 1
-!s100 A`OSI3@RflS2TcOogmg=32
-IeG]]LAE1LfXT^3_DL5VRV0
-R2
 !s105 plant_PID_sv_unit
-S1
+DXx4 work 17 plant_PID_sv_unit 0 22 AM[2VY<=oZ:d[e7H7iE`f0
+R0
+R31
+!i10b 1
+!s100 YEF^k88elm^9k<=gF8MMY1
+R2
+I]n6XL[4<9K_3e=9HjW]^_1
 R3
-R13
-Z21 8C:/Users/dothe/Downloads/Backup/plant_PID.sv
-Z22 FC:/Users/dothe/Downloads/Backup/plant_PID.sv
-L0 1
+S1
+R4
+R9
+Z34 8C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv
+Z35 FC:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv
+!i122 1606
+R20
 R5
 r1
 !s85 0
 31
-R6
-Z23 !s107 C:/Users/dothe/Downloads/Backup/plant_PID.sv|
-Z24 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/plant_PID.sv|
+R32
+Z36 !s107 C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv|
+Z37 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv|
 !i113 1
 R7
+R8
 nplant_@p@i@d
 Xplant_PID_sv_unit
 R0
-R1
-!i10b 1
-!s100 ZOBCm;J`Lg>lL3h24PRUK0
-IUzKN@`U[laf=Hd_[`3>:k3
-VUzKN@`U[laf=Hd_[`3>:k3
-!i103 1
-S1
-R3
-R13
-R21
-R22
-L0 70
-R5
+R31
+VAM[2VY<=oZ:d[e7H7iE`f0
 r1
 !s85 0
+!i10b 1
+!s100 gQWL:;1Q99DccZB@5@1nH0
+IAM[2VY<=oZ:d[e7H7iE`f0
+!i103 1
+S1
+R4
+R9
+R34
+R35
+!i122 1606
+L0 70 0
+R5
 31
-R6
-R23
-R24
+R32
+R36
+R37
 !i113 1
 R7
+R8
 nplant_@p@i@d_sv_unit
 vPWM
 R0
-R8
+R31
 !i10b 1
-!s100 k2@<=P;GGal0;mFeD1U`n0
-I1;bZjkc6nUTFKR[BLElJL0
+!s100 4RcF4C[S5GbY_QFG2ASSV1
 R2
-!s105 PWM_sv_unit
-S1
+IEf3OIVB>8D1alGf]WiIld2
 R3
-R9
-8C:/Users/dothe/Downloads/Backup/PWM.sv
-FC:/Users/dothe/Downloads/Backup/PWM.sv
-R12
+S1
+R4
+w1746119396
+8C:/Users/Simon/Documents/GitHub/ece551/PWM.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PWM.sv
+!i122 1607
+L0 1 27
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/PWM.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PWM.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PWM.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PWM.sv|
 !i113 1
 R7
+R8
 n@p@w@m
 vPWM_tb
 R0
-R8
+R31
 !i10b 1
-!s100 T?lklGilen9_cK4g4QFGL0
-IG52[Z^_FkZ44]NbWm10VY3
+!s100 QXGKeo_Gj`2BZ<RD]8SEU3
 R2
-!s105 PWM_tb_sv_unit
-S1
+Ij8ZJX`:6m:8Al0437D2kW3
 R3
+S1
+R4
 R9
-8C:/Users/dothe/Downloads/Backup/PWM_tb.sv
-FC:/Users/dothe/Downloads/Backup/PWM_tb.sv
-L0 12
+8C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv
+!i122 1608
+L0 12 40
 R5
 r1
 !s85 0
 31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/PWM_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/PWM_tb.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv|
 !i113 1
 R7
+R8
 n@p@w@m_tb
 vrst_synch
 R0
-R1
+Z38 !s110 1746129348
 !i10b 1
-!s100 k?z4JXl42hPF[d=:KA@N[3
-I90OR=e;CTnjbH>li2;c423
+!s100 ]FC0EYNgoE0mJjFeYzdC=0
 R2
-!s105 rst_synch_sv_unit
-S1
+IQOZUPcZooe=k4BG_lL4RK3
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/rst_synch.sv
-FC:/Users/dothe/Downloads/Backup/rst_synch.sv
-L0 1
+S1
+R4
+Z39 w1746111028
+8C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv
+FC:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv
+!i122 1609
+R33
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/rst_synch.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/rst_synch.sv|
+R32
+!s107 C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv|
 !i113 1
 R7
+R8
 vsensorCondition
 R0
-R1
+R38
 !i10b 1
-!s100 21aUkBbW1GUU]^W;=8DB51
-INaW4EQ;3hMK[`GnIB5SNz0
+!s100 N>SU:_FdR4ZgSnXFXOLQW2
 R2
-!s105 sensorCondition_sv_unit
-S1
+IJG1g;ni30Wm<b:FgMj8X63
 R3
-w1746063134
-8C:/Users/dothe/Downloads/Backup/sensorCondition.sv
-FC:/Users/dothe/Downloads/Backup/sensorCondition.sv
-L0 1
+S1
+R4
+w1746126130
+8C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv
+FC:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv
+!i122 1610
+L0 1 132
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/sensorCondition.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/sensorCondition.sv|
+Z40 !s108 1746129348.000000
+!s107 C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv|
 !i113 1
 R7
+R8
 nsensor@condition
 vsensorCondition_tb
 R0
-R1
+R38
 !i10b 1
-!s100 1mzg7KHc:b8glmN4m^aS]1
-IC6FSjhhjgn<:zdde:GO>43
+!s100 ?[jDT=]EoP@;@Xz<GZjMb3
 R2
-!s105 sensorCondition_tb_sv_unit
-S1
+ImzVUhR6bcN<G]74VA5<N^3
 R3
-R13
-8C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv
-FC:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv
-L0 1
+S1
+R4
+w1746126004
+8C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv
+FC:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv
+!i122 1611
+R30
 R5
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv|
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv|
 !i113 1
 R7
+R8
 nsensor@condition_tb
 vSPI_ADC128S
 R0
-R11
+R38
 !i10b 1
-!s100 ;E62=i88@ghW83DU@9;CK1
-Ik@;oXeCggG^^GYQQWMz501
+!s100 93oj0i;UV@::cHMPGHMJ>1
 R2
-!s105 SPI_ADC128S_sv_unit
-S1
+IbMLcRUJ<CAe;BnRI;aUga2
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv
-FC:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv
+FC:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv
+!i122 1612
+L0 1 140
 R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv|
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv|
 !i113 1
 R7
+R8
 n@s@p@i_@a@d@c128@s
 vSPI_mnrch
 R0
-R11
+R38
 !i10b 1
-!s100 Y;JaT@Kl>G^H53M^ijd<I3
-I4HPL6E@z_gZ^3AzLRRn2l0
+!s100 50o`dWSZH>`Y?MVPSa?7]1
 R2
-!s105 SPI_mnrch_sv_unit
-S1
+I[>8MZ?5o2SQn2AUhT0L0>2
 R3
+S1
 R4
-8C:/Users/dothe/Downloads/Backup/SPI_mnrch.sv
-FC:/Users/dothe/Downloads/Backup/SPI_mnrch.sv
-L0 1
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv
+FC:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv
+!i122 1613
+L0 1 124
 R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/dothe/Downloads/Backup/SPI_mnrch.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/SPI_mnrch.sv|
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv|
 !i113 1
 R7
+R8
 n@s@p@i_mnrch
 vstim
 R0
-R1
+R22
 !i10b 1
-!s100 <An]O73M[TZS_i2im4[<D0
-I7^0EPBC0LEWZ1zSaNYB?b2
+!s100 <MTmhhTUl`miQ9[:hE<Wk2
 R2
-R16
-S1
+IKIQA?>g98H=O7cWhDn:T13
 R3
-R13
-R17
-R18
-L0 47
+S1
+R4
+R9
+R25
+R26
+!i122 1597
+L0 47 68
 R5
 r1
 !s85 0
 31
-R6
-R19
-R20
+R23
+R28
+R29
 !i113 1
 R7
+R8
 vsynch_detect_tb
-R8
+R38
 !i10b 1
-!s100 8;Pah_aLI`V0U<<CfP]M<3
-I1`6Y@BZoamBl8A4>i<n9o3
+!s100 _iF?go?NPbzh>PM5jeRG91
 R2
-R3
-R9
-8C:/Users/dothe/Downloads/Backup/synch_detect_tb.v
-FC:/Users/dothe/Downloads/Backup/synch_detect_tb.v
-L0 1
-R5
-r1
-!s85 0
-31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/synch_detect_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dothe/Downloads/Backup/synch_detect_tb.v|
-!i113 1
-R15
-vtelemetry
-R0
-R8
-!i10b 1
-!s100 6Ql^7[W=B@[TQ:UJUNW723
-IWXT:ZaimgH=`QC^6C3VXb1
-R2
-!s105 telemetry_sv_unit
-S1
-R3
-R9
-8C:/Users/dothe/Downloads/Backup/telemetry.sv
-FC:/Users/dothe/Downloads/Backup/telemetry.sv
-L0 19
-R5
-r1
-!s85 0
-31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/telemetry.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/telemetry.sv|
-!i113 1
-R7
-vthrottle
-R0
-R8
-!i10b 1
-!s100 ;1L_<JY]0imcFE59`GDK01
-I4Q59ZY84R2iFDaYRbJVVm0
-R2
-!s105 throttle_sv_unit
-S1
-R3
-R9
-8C:/Users/dothe/Downloads/Backup/throttle.sv
-FC:/Users/dothe/Downloads/Backup/throttle.sv
-L0 1
-R5
-r1
-!s85 0
-31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/throttle.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/throttle.sv|
-!i113 1
-R7
-vUART_rcv
-R0
-R11
-!i10b 1
-!s100 MBb47WGd32`OOK8:kRfJX3
-IoAnoEQk9<9n]z:bdV0nl03
-R2
-!s105 UART_rcv_sv_unit
-S1
+IVDdV98P9`0ZQmKV8V;i<D2
 R3
 R4
-8C:/Users/dothe/Downloads/Backup/UART_rcv.sv
-FC:/Users/dothe/Downloads/Backup/UART_rcv.sv
-L0 1
+R39
+8C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v
+FC:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v
+!i122 1614
+L0 1 50
+R5
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v|
+!i113 1
+R18
+R8
+vtelemetry
+R0
+R38
+!i10b 1
+!s100 h9`T`E>YWa^Ol<jfBL=i`0
+R2
+ICzH0LKKUMDRI^2Uo?Mf6i3
+R3
+S1
+R4
+R39
+8C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv
+FC:/Users/Simon/Documents/GitHub/ece551/telemetry.sv
+!i122 1615
+L0 19 160
+R5
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv|
+!i113 1
+R7
+R8
+vthrottle
+R0
+R38
+!i10b 1
+!s100 94l2aWJUemMMD;HHRHjae2
+R2
+IcHKZ2eYJVL:mc@[]dB8XR2
+R3
+S1
+R4
+R39
+8C:/Users/Simon/Documents/GitHub/ece551/throttle.sv
+FC:/Users/Simon/Documents/GitHub/ece551/throttle.sv
+!i122 1616
+L0 1 200
+R5
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/throttle.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/throttle.sv|
+!i113 1
+R7
+R8
+vUART_rcv
+R0
+R19
+!i10b 1
+!s100 e?H4N6Ja[5LK1c7S6k>G20
+R2
+IkNSaB1>kV46RdKGTUZLO[2
+R3
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv
+FC:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv
+!i122 1617
+R11
+R5
+r1
+!s85 0
+31
+R40
+!s107 C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv|
+!i113 1
+R7
+R8
+n@u@a@r@t_rcv
+vUART_tx
+R0
+R19
+!i10b 1
+!s100 :Q@`FTZ_K_VTzGPje<fZh0
+R2
+IM^V]l>g1eeYC;k11d^chU3
+R3
+S1
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv
+FC:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv
+!i122 1618
+R11
+R5
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv|
+!i113 1
+R7
+R8
+n@u@a@r@t_tx
+vup_dwn_tb
+R13
+!i10b 1
+!s100 OPj73?<`C1gXgkbCoan<C1
+R2
+Il=ZS^]S:z3E3[hJEiWVNi1
+R3
+R4
+R9
+8C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v
+FC:/Users/Simon/Documents/GitHub/ece551/counter_tb.v
+!i122 1583
+R24
 R5
 r1
 !s85 0
 31
 R14
-!s107 C:/Users/dothe/Downloads/Backup/UART_rcv.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/UART_rcv.sv|
+!s107 C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v|
 !i113 1
-R7
-n@u@a@r@t_rcv
-vUART_tx
-R0
+R18
 R8
-!i10b 1
-!s100 gg7Z3ATZmDYoMNdni17W63
-I]FjaH6EzZ7EebAi?Ef@ci2
-R2
-!s105 UART_tx_sv_unit
-S1
-R3
-R4
-8C:/Users/dothe/Downloads/Backup/UART_tx.sv
-FC:/Users/dothe/Downloads/Backup/UART_tx.sv
-L0 1
-R5
-r1
-!s85 0
-31
-R10
-!s107 C:/Users/dothe/Downloads/Backup/UART_tx.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/dothe/Downloads/Backup/UART_tx.sv|
-!i113 1
-R7
-n@u@a@r@t_tx
-vup_dwn_tb
-R1
-!i10b 1
-!s100 7NW6S]llCPRZXoFAn5^[l2
-Ia_4[j2fooTJL?I;Mi`IKL2
-R2
-R3
-R13
-8C:/Users/dothe/Downloads/Backup/counter_tb.v
-FC:/Users/dothe/Downloads/Backup/counter_tb.v
-L0 1
-R5
-r1
-!s85 0
-31
-R6
-!s107 C:/Users/dothe/Downloads/Backup/counter_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/dothe/Downloads/Backup/counter_tb.v|
-!i113 1
-R15

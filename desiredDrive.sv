@@ -1,7 +1,7 @@
 module desiredDrive (
     input  logic [11:0] avg_torque,
     input  logic [4:0] cadence,
-    input  logic [12:0] incline,
+    input  logic signed [12:0] incline,
     input  logic [2:0] scale,
     input  logic not_pedaling,
     output logic [11:0] target_curr
@@ -42,10 +42,10 @@ module desiredDrive (
     always_comb begin
         if (not_pedaling)
             target_curr = 12'h000;
-        else if (|assist_prod[29:26])
+        else if (|assist_prod[29:27])
             target_curr = 12'hFFF; // Cap at max if overflow
         else
-            target_curr = assist_prod[25:14];
+            target_curr = assist_prod[26:15];
     end
 
 endmodule

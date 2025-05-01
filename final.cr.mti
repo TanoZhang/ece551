@@ -1,9 +1,32 @@
-C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv
+C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv {2 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eBike_tb
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv(103): (vlog-2244) Variable 'testcase' is implicitly static. You must either explicitly declare it as static or automatic
+or remove the initialization in the declaration of variable.
+
+Top level modules:
+	eBike_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/throttle.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/throttle.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module throttle
+
+Top level modules:
+	throttle
+
+} {} {}} C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/mtr_drv-1.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module mtr_drv
 
 Top level modules:
 	mtr_drv
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
 
 } {} {}} C:/Users/dothe/Downloads/Backup/PID.sv {2 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PID.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -24,7 +47,14 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 ** Error: (vlog-13069) C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb.sv(38): near "<<": syntax error, unexpected << or <<<.
 
 
-} {4.0 5.0} {}} C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv
+} {4.0 5.0} {}} C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cadence_meas
+
+Top level modules:
+	cadence_meas
+
+} {} {}} C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/cadence_filt_tb.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module cadence_filt_tb
 
@@ -37,6 +67,20 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 
 Top level modules:
 	A2D_test
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module inert_intf_test
+
+Top level modules:
+	inert_intf_test
 
 } {} {}} C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb2.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -52,6 +96,20 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	counter
 
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sensorCondition_tb
+
+Top level modules:
+	sensorCondition_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cadence_filt_tb
+
+Top level modules:
+	cadence_filt_tb
+
 } {} {}} C:/Users/dothe/Downloads/Backup/plant_PID.sv {2 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/plant_PID.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module plant_PID
@@ -65,19 +123,37 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	plant_PID
 
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv {2 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module A2D_intf
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv(66): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv(71): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv(76): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv(81): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	A2D_intf
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/counter.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/counter.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module counter
+
+Top level modules:
+	counter
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cadence_filt
+
+Top level modules:
+	cadence_filt
+
 } {} {}} C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/sensorCondition_tb.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module sensorCondition_tb
 
 Top level modules:
 	sensorCondition_tb
-
-} {} {}} C:/Users/dothe/Downloads/Backup/PID_cntrl.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PID_cntrl.sv
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module PID_cntrl
-
-Top level modules:
-	PID_cntrl
 
 } {} {}} C:/Users/dothe/Downloads/Backup/synch_detect_tb.v {1 {vlog -work work -stats=none C:/Users/dothe/Downloads/Backup/synch_detect_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -86,7 +162,54 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	synch_detect_tb
 
-} {} {}} C:/Users/dothe/Downloads/Backup/counter_tb.v {1 {vlog -work work -stats=none C:/Users/dothe/Downloads/Backup/counter_tb.v
+} {} {}} C:/Users/dothe/Downloads/Backup/PID_cntrl.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PID_cntrl.sv
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module PID_cntrl
+
+Top level modules:
+	PID_cntrl
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cadence_meas_tb
+
+Top level modules:
+	cadence_meas_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/brushless.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/brushless.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module brushless
+
+Top level modules:
+	brushless
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module AnalogModel
+
+Top level modules:
+	AnalogModel
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module rst_synch
+
+Top level modules:
+	rst_synch
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/dff.v {1 {vlog -work work -stats=none C:/Users/Simon/Documents/GitHub/ece551/dff.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dff
+
+Top level modules:
+	dff
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb.sv {0 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module brushless_mtr_drv_tb
+** Error: (vlog-13069) C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb.sv(38): near "<<": syntax error, unexpected << or <<<.
+
+} {4.0 5.0} {}} C:/Users/dothe/Downloads/Backup/counter_tb.v {1 {vlog -work work -stats=none C:/Users/dothe/Downloads/Backup/counter_tb.v
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module up_dwn_tb
 
@@ -134,12 +257,78 @@ or remove the initialization in the declaration of variable.
 Top level modules:
 	eBike_tb
 
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module sensorCondition
+
+Top level modules:
+	sensorCondition
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PWM_tb
+
+Top level modules:
+	PWM_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module brushless
+
+Top level modules:
+	brushless
+
 } {} {}} C:/Users/dothe/Downloads/Backup/throttle.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/throttle.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module throttle
 
 Top level modules:
 	throttle
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module nonoverlap_test
+-- Compiling module stim
+-- Compiling module observer
+
+Top level modules:
+	nonoverlap_test
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PWM.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PWM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PWM
+
+Top level modules:
+	PWM
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PB_rise
+
+Top level modules:
+	PB_rise
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mtr_drv
+
+Top level modules:
+	mtr_drv
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module UART_rcv
+
+Top level modules:
+	UART_rcv
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv {2 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module inertial_integrator
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv(32): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	inertial_integrator
 
 } {} {}} C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/brushless_mtr_drv_tb-1.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -169,19 +358,23 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	A2D_intf
 
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv {2 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module plant_PID
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv(55): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv(70): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv(71): (vlog-2284) Empty $unit scope found.
+-- Compiling package plant_PID_sv_unit
+
+Top level modules:
+	plant_PID
+
 } {} {}} C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/SPI_ADC128S.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module SPI_ADC128S
 
 Top level modules:
 	SPI_ADC128S
-
-} {} {}} C:/Users/dothe/Downloads/Backup/desiredDrive.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/desiredDrive.sv
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module desiredDrive
-
-Top level modules:
-	desiredDrive
 
 } {} {}} C:/Users/dothe/Downloads/Backup/PID_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PID_tb.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -190,19 +383,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	PID_tb
 
-} {} {}} C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv
+} {} {}} C:/Users/dothe/Downloads/Backup/desiredDrive.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/desiredDrive.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module cadence_meas_tb
+-- Compiling module desiredDrive
 
 Top level modules:
-	cadence_meas_tb
-
-} {} {}} C:/Users/dothe/Downloads/Backup/telemetry.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/telemetry.sv
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module telemetry
-
-Top level modules:
-	telemetry
+	desiredDrive
 
 } {} {}} C:/Users/dothe/Downloads/Backup/coil_volt.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/coil_volt.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -211,12 +397,82 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	coil_volt
 
-} {} {}} C:/Users/dothe/Downloads/Backup/inert_intf.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/inert_intf.sv
+} {} {}} C:/Users/dothe/Downloads/Backup/telemetry.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/telemetry.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module telemetry
+
+Top level modules:
+	telemetry
+
+} {} {}} C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/candence_meas_tb.sv
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module cadence_meas_tb
+
+Top level modules:
+	cadence_meas_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/mtr_drv.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/mtr_drv.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mtr_drv
+
+Top level modules:
+	mtr_drv
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PID_cntrl
+
+Top level modules:
+	PID_cntrl
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/eBike.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/eBike.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eBike
+
+Top level modules:
+	eBike
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module HW4P6
+
+Top level modules:
+	HW4P6
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module inert_intf
 
 Top level modules:
 	inert_intf
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v {1 {vlog -work work -stats=none C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module up_dwn_tb
+
+Top level modules:
+	up_dwn_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mult_accum
+
+Top level modules:
+	mult_accum
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module SPI_mnrch
+
+Top level modules:
+	SPI_mnrch
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PID_cntrl_tb
+
+Top level modules:
+	PID_cntrl_tb
 
 } {} {}} C:/Users/dothe/Downloads/Backup/mult_accum.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/mult_accum.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -225,12 +481,43 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	mult_accum
 
+} {} {}} C:/Users/dothe/Downloads/Backup/inert_intf.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/inert_intf.sv
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module inert_intf
+
+Top level modules:
+	inert_intf
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/counter_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/counter_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module up_dwn_tb
+
+Top level modules:
+	up_dwn_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PID.sv {2 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PID.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PID
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/PID.sv(46): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/PID.sv(47): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/Simon/Documents/GitHub/ece551/PID.sv(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	PID
+
 } {} {}} C:/Users/dothe/Downloads/Backup/AnalogModel.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/AnalogModel.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module AnalogModel
 
 Top level modules:
 	AnalogModel
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v {1 {vlog -work work -stats=none C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module synch_detect_tb
+
+Top level modules:
+	synch_detect_tb
 
 } {} {}} C:/Users/dothe/Downloads/Backup/counter_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/counter_tb.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -246,12 +533,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	UART_rcv
 
-} {} {}} C:/Users/dothe/Downloads/Backup/eBike.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/eBike.sv
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module eBike
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module desiredDrive
 
 Top level modules:
-	eBike
+	desiredDrive
 
 } {} {}} C:/Users/dothe/Downloads/Backup/cadence_filter.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/cadence_filter.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -260,12 +547,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	cadence_filt
 
-} {} {}} C:/Users/dothe/Downloads/Backup/brushless-1.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/brushless-1.sv
+} {} {}} C:/Users/dothe/Downloads/Backup/eBike.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/eBike.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module brushless
+-- Compiling module eBike
 
 Top level modules:
-	brushless
+	eBike
 
 } {} {}} C:/Users/dothe/Downloads/Backup/HW4P6.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/HW4P6.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -274,12 +561,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	HW4P6
 
-} {} {}} C:/Users/dothe/Downloads/Backup/PB_inft.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PB_inft.sv
+} {} {}} C:/Users/dothe/Downloads/Backup/brushless-1.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/brushless-1.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module PB_intf
+-- Compiling module brushless
 
 Top level modules:
-	PB_intf
+	brushless
 
 } {} {}} C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/nonoverlap-1.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -288,12 +575,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	nonoverlap
 
-} {} {}} C:/Users/dothe/Downloads/Backup/eBikePhysics.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/eBikePhysics.sv
+} {} {}} C:/Users/dothe/Downloads/Backup/PB_inft.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PB_inft.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module eBikePhysics
+-- Compiling module PB_intf
 
 Top level modules:
-	eBikePhysics
+	PB_intf
 
 } {} {}} C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/hub_wheel_model.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -302,12 +589,40 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	hub_wheel_model
 
+} {} {}} C:/Users/dothe/Downloads/Backup/eBikePhysics.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/eBikePhysics.sv
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module eBikePhysics
+
+Top level modules:
+	eBikePhysics
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module A2D_test
+
+Top level modules:
+	A2D_test
+
 } {} {}} C:/Users/dothe/Downloads/Backup/PWM.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PWM.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module PWM
 
 Top level modules:
 	PWM
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/plant.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/plant.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module plant
+
+Top level modules:
+	plant
+
+} {} {}} C:/Users/dothe/Downloads/Backup/ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/ADC128S.sv
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module ADC128S
+
+Top level modules:
+	ADC128S
 
 } {} {}} C:/Users/dothe/Downloads/Backup/inertial_integrator.sv {2 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/inertial_integrator.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -318,12 +633,12 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	inertial_integrator
 
-} {} {}} C:/Users/dothe/Downloads/Backup/ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/ADC128S.sv
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module ADC128S
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PB_intf
 
 Top level modules:
-	ADC128S
+	PB_intf
 
 } {} {}} C:/Users/dothe/Downloads/Backup/cadence_meas.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/cadence_meas.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -332,12 +647,54 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	cadence_meas
 
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module brushless_mtr_drv_tb
+
+Top level modules:
+	brushless_mtr_drv_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module cadence_LU
+
+Top level modules:
+	cadence_LU
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module coil_volt
+
+Top level modules:
+	coil_volt
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module hub_wheel_model
+
+Top level modules:
+	hub_wheel_model
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module telemetry
+
+Top level modules:
+	telemetry
+
 } {} {}} C:/Users/dothe/Downloads/Backup/PWM_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/PWM_tb.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 -- Compiling module PWM_tb
 
 Top level modules:
 	PWM_tb
+
+} {} {}} C:/Users/dothe/Downloads/Backup/cadence_LU.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/cadence_LU.sv
+Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+-- Compiling module cadence_LU
+
+Top level modules:
+	cadence_LU
 
 } {} {}} C:/Users/dothe/Downloads/Backup/brushless.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/brushless.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -346,12 +703,19 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 Top level modules:
 	brushless
 
-} {} {}} C:/Users/dothe/Downloads/Backup/cadence_LU.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/cadence_LU.sv
-Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
--- Compiling module cadence_LU
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ADC128S
 
 Top level modules:
-	cadence_LU
+	ADC128S
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module brushless_mtr_drv_tb2
+
+Top level modules:
+	brushless_mtr_drv_tb2
 
 } {} {}} C:/Users/dothe/Downloads/Backup/rst_synch.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/rst_synch.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
@@ -373,6 +737,27 @@ Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
 
 Top level modules:
 	plant
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module nonoverlap
+
+Top level modules:
+	nonoverlap
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PID_tb
+
+Top level modules:
+	PID_tb
+
+} {} {}} C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv {1 {vlog -work work -sv -stats=none C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module eBikePhysics
+
+Top level modules:
+	eBikePhysics
 
 } {} {}} C:/Users/dothe/Downloads/Backup/inert_intf_test.sv {1 {vlog -work work -sv -stats=none C:/Users/dothe/Downloads/Backup/inert_intf_test.sv
 Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
