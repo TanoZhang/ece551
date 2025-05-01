@@ -27,21 +27,26 @@ module sensorCondition (
     logic [11:0] target_curr;           // Target current
     logic [13:0] curr_accum;            // Current accumulator
     logic        curr_accum_full;       // Accumulator sample trigger
+	logic [21:0] cnt;                    // Timer for sample trigger
     logic [21:0] avg_curr_smpl;         // Current sampling counter
     logic [16:0] torque_accum;          // Torque accumulator
     logic [11:0] avg_torque;            // Average torque
     
-    assign curr_accum_full = &curr_accum;
 
 
     // Fast simulation support
     generate 
         if (FAST_SIM)
-            assign clr = &cadence_per[15:0];
+            assign curr_accum_full = &cnt[15:0];
         else
-            assign clr = &cadence_per;
+            assign curr_accum_full = &cnt;
     endgenerate
-
+	
+	// 22 bit counter for sampling
+	always_ff@(posedge clk, negedge rst_n)
+		if(!rst_n) cnt <= 22'h000000;
+		else cnt <= cnt + 1;
+	
     // Instantiate cadence modules
     cadence_filt iCadence_Filt (
         .clk(clk),
@@ -81,7 +86,7 @@ module sensorCondition (
             curr_accum <= 1'b0;
         end else begin
             avg_curr_smpl <= avg_curr_smpl + 1'b1;
-            if (!curr_accum_full)
+            if (curr_accum_full)
                 curr_accum <= ((curr_accum * 3) >> 2) + curr;
         end
     end

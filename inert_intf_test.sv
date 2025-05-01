@@ -17,7 +17,7 @@ logic [7:0] LED; // LED output for incline data
   always #10 clk = ~clk;
 
   // Reset synchronizer (from your reset_synch module)
-  reset_synch u_reset (
+  rst_synch u_reset (
     .clk  (clk),
     .RST_n(RST_n),
     .rst_n(rst_n)

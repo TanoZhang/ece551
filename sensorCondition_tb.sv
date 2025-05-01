@@ -5,7 +5,8 @@ module sensorCondition_tb();
 	logic [12:0] error, incline;
 	logic [1:0] setting;
 	
-	sensorCondition #(.FAST_SIM(1)) iDUT(clk, rst_n, torque, cadence, curr, incline, setting, batt, error, not_pedaling, TX);
+	sensorCondition #(.FAST_SIM(1)) iDUT(.clk(clk), .rst_n(rst_n), .torque(torque), .cadence(cadence), .curr(curr), .incline(incline), .setting(setting), .batt(batt),
+	.error(error), .not_pedaling(not_pedaling), .TX(TX));
 	
 	initial begin
 		clk = 0;
@@ -15,7 +16,7 @@ module sensorCondition_tb();
 		torque = 12'h2ff;
 		curr = 12'h3ff;
 		cadence = 0;
-		repeat(500000)@(posedge clk)
+		repeat(500000)@(posedge clk);
 		$stop();
 	end
 	
