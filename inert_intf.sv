@@ -1,7 +1,7 @@
 module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	input clk, rst_n, INT, MISO;
 	output SS_n;
-	ouptut MOSI;
+	outtut MOSI;
 	output SCLK; 
 	output [12:0] incline;
 	output reg vld;
