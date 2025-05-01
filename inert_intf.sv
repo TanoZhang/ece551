@@ -1,286 +1,222 @@
+module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
+	input clk, rst_n, INT, MISO;
+	output SS_n;
+	ouptut MOSI;
+	output SCLK; 
+	output [12:0] incline;
+	output reg vld;
+	
+	logic INT_ff1, INT_ff2, init_done;
+	logic done;
+    logic done_init;	
+	logic [15:0] cnt;
+	logic [2:0] RR_sig_init;
+	logic [2:0] RR_sig;
+	logic RR_sig_inc, RR_init_sig_inc, reg_en;
+	logic [15:0] rd_data, cmd; 
+	logic [15:0] addr_data_init, addr_data;
+	logic [7:0] rollL, rollH, yawL, yawH, AYL, AYH, AZL, AZH;
+	logic [15:0] roll_rt, yaw_rt, AY, AZ;
+	logic wrt;
 
-module inert_intf (
-    input clk, rst_n,       
-    input INT,          //Active high interrupt from sensor. 
-    output logic SS_n,        //Active low chip select for SPI
-    output logic SCLK,        //SPI clock
-    output MOSI,        //SPI data out
-    input MISO,         //SPI data in
-    output logic signed [12:0] incline, //Incline data from inertial integrator
-    output logic vld     //Valid data from inertial integrator
-);
+	SPI_mnrch mine(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .wrt(wrt), .cmd(cmd), .MISO(MISO), .rd_data(rd_data), .done(done));
+    inertial_integrator me(.clk(clk),.rst_n(rst_n),.vld(vld),.roll_rt(roll_rt),.yaw_rt(yaw_rt),.AY(AY),.AZ(AZ),.incline(incline));
+	
+	//logic ENABLE;
+	// The data registers :)
+	
+	// Double flop INT
+	always @(posedge clk, negedge rst_n) begin
+		if (!rst_n) begin
+			INT_ff1 <= 1'b0;
+			INT_ff2 <= 1'b0;
+		end
+		else begin
+			INT_ff1 <= INT;
+			INT_ff2 <= INT_ff1;
+		end
+	end
+	
+	 // Count
+	 always @(posedge clk, negedge rst_n) begin
+	    if(!rst_n)
+		   cnt <= 16'b0;
+		else 
+		    cnt <= cnt + 1;
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			rollL <= 8'h00;
+		else if(RR_sig == 3'h0 && reg_en) begin 
+			rollL <= rd_data[7:0];
+			
+		end
+	
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			rollH <= 8'h00;
+		else if(RR_sig == 3'h1 && reg_en) begin
+			rollH <= rd_data[7:0];
+			
+		end
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			yawL <= 8'h00;
+		else if(RR_sig == 3'h2 && reg_en) begin
+			yawL <= rd_data[7:0];
+			
+		end
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			yawH <= 8'h00;
+		else if(RR_sig == 3'h3 && reg_en) begin
+			yawH <= rd_data[7:0];
+			
+		end
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			AYL <= 8'h00;
+		else if(RR_sig == 3'h4 && reg_en) begin
+			AYL <= rd_data[7:0];
+			
+		end
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			AYH <= 8'h00;
+		else if(RR_sig == 3'h5 && reg_en) begin
+			AYH <= rd_data[7:0];
+			
+		end
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			AZL <= 8'h00;
+		else if(RR_sig == 3'h6 && reg_en) begin
+			AZL <= rd_data[7:0];
+			
+		end
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			AZH <= 8'h00;
+		else if(RR_sig == 3'h7 && reg_en) begin
+			AZH <= rd_data[7:0];
+			
+		end
+	end
 
-/*
- * internal signals
- */
-// data to be written to SPI. 
-logic [15:0] cmd;
+	// Assign the inputs to inertial_integrator 
+	 assign roll_rt = {rollH, rollL};
+	 assign yaw_rt = {yawH, yawL};
+	 assign AY = {AYH, AYL};
+	 assign AZ = {AZH, AZL};
+    
+    // RR initial counter
+	always @(posedge clk, negedge rst_n) begin
+		if (!rst_n) begin
+			RR_sig_init <= 4'b0;
+			//init_done <= 1'b0;
+		end
+		else if(done && !init_done) 
+			RR_sig_init <= RR_sig_init + 1;
+			//init_done <= 1'b1;
+	end
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			init_done <= 1'h0;
+		else if(done_init) begin
+			init_done <= 1'h1;
+		end
+	end
 
-// SPI interface signals:
-logic snd; 
-logic done;
-logic [15:0] resp; // Response from SPI interface.
-
-// 16 bit timer that waits until rst_n deasserts to start. 
-logic [15:0] timer; //Timer for 16 clock cycles
-
-logic INT_ff1, INT_ff2; // Flopped INT signal for meta-stability.
-
-// Inertial data registers.
-logic [7:0] rollL, rollH, 
-            yawL, yawH, // 8 bit registers for each axis.   
-            ayL, ayH, azL, azH;
-
-logic [7:0] LED;
-
-/**
- * Initialize modules.
- */ 
-SPI_mnrch iSPI_mnrch (
-    .clk(clk),
-    .rst_n(rst_n),
-    .SS_n(SS_n),
-    .SCLK(SCLK),
-    .MOSI(MOSI),
-    .MISO(MISO),
-    .snd(snd),
-    .cmd(cmd),
-    .done(done),
-    .resp(resp)
-);
-
-inertial_integrator iInertial_Integrator (
-    .clk(clk), 
-    .rst_n(rst_n),
-    .vld(vld),
-    .roll_rt({rollH, rollL}), // 16 bit roll rate data from inertial sensor.
-    .yaw_rt({yawH, yawL}),   // 16 bit yaw rate data from inertial sensor.
-    .AY({ayH, ayL}),         // 16 bit AY data from inertial sensor.
-    .AZ({azH, azL}),         // 16 bit AZ data from inertial sensor.
-    .incline(incline),       // 12 bit incline data from inertial sensor.
-    .LED(LED)               // 8 bit LED output for incline data.
-);
-
-// 16 bit timer block.
-always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-        timer <= 16'h0;
-    end else begin
-        timer <= timer + 1'b1;
-    end
-end
-
-// Double flopping INT signal. 
-always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-        INT_ff1 <= 1'b0;
-        INT_ff2 <= 1'b0;
-    end else begin
-        INT_ff1 <= INT; // First flip-flop for meta-stability.
-        INT_ff2 <= INT_ff1; // Second flip-flop for meta-stability.
-    end
-end
-
-typedef enum logic [3:0]{ INIT1, INIT2, INIT3, INIT4, READY, // READY - waiting for new data interrupt from sensor. 
-                          READ1, READ2, READ3, READ4,       // READ states - reading and storing data from sensor.
-                          READ5, READ6, READ7, READ8, VALID // VALID - indicate to inertial integrator that data is valid. 
-                        } state_t;
-
-state_t state, next_state; // State and next state variables for the FSM.
-
-// State register
-always_ff @(posedge clk or negedge rst_n) begin
-  if (!rst_n)
-    state <= INIT1;
-  else
-    state <= next_state;
-end
-
-always_comb begin
-    // Defaults: 
-    next_state = state; // Default to current state
-    snd = 1'b0; 
-    cmd = 16'h0D02;
-    vld = 1'b0;
-
-    case (state)
-        /**
-         *  INITIALIZATION SEQUENCE
-         */
-        INIT1: begin
-            cmd = 16'h0D02; // 0x0D02 - Enable interrupt upon data ready. 
-            // Wait for timer to expire before -> INIT2. 
-            if (&timer) begin
-                next_state = INIT2;
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = INIT1;
-            end
-        end
-
-        INIT2: begin
-            cmd = 16'h1053; // Setup accel for 208Hz data rate, +/- 2g accel range, 50Hz LPF
-            // Wait for done signal frm SPI. 
-            if (done) begin
-                next_state = INIT3;
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = INIT2;
-            end
-        end
-
-        INIT3: begin
-            cmd = 16'h1150; // Setup gyro for 208Hz data rate, +/- 245°/sec range.
-            // Wait for done signal frm SPI. 
-            if (done) begin
-                next_state = INIT4;
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = INIT3;
-            end
-        end
-
-        INIT4: begin
-            cmd = 16'h1460; // Turn rounding on for both accel and gyro
-            // Wait for done signal frm SPI. 
-            if (done) begin
-                next_state = READY;
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = INIT4;
-            end
-        end
-
-        /**
-         *  READY STATE
-         */
-        READY: begin
-            // Wait for INT signal to go high. 
-            if (INT_ff2) begin
-                next_state = READ1; // Go to READ state. 
-                snd = 1'b1; // initiate SPI transaction.
-            end else begin
-                next_state = READY; // Stay in READY state. 
-            end
-        end
-
-        /**
-         *  READ SEQUENCE 
-         *  note - all lower bits are don't cares. 
-         *  Data must be read into corresponding registers from lower bit of resp. 
-         */
-        READ1: begin
-            cmd = 16'hA4xx;
-            // Wait for done signal frm SPI. 
-            if (done) begin
-                next_state = READ2;
-                // Capture data from SPI.
-                rollL = resp[7:0]; // Read lower byte of roll data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ1;
-            end
-        end
-
-        READ2: begin
-            cmd = 16'hA5xx;
-            // Wait for done signal frm SPI. 
-            if (done) begin
-                next_state = READ3;
-                // Capture data from SPI.
-                rollH = resp[7:0]; // Read higher byte of roll data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ2;
-            end
-        end
-
-        READ3: begin
-            cmd = 16'hA6xx;
-            // Wait for done signal from SPI. 
-            if (done) begin
-                next_state = READ4;
-                // Capture data from SPI.
-                yawL = resp[7:0]; // Read lower byte of yaw data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ3;
-            end
-        end
-
-        READ4: begin
-            cmd = 16'hA7xx;
-            // Wait for done signal from SPI. 
-            if (done) begin
-                next_state = READ5;
-                // Capture data from SPI.
-                yawH = resp[7:0]; // Read higher byte of yaw data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ4;
-            end
-        end
-
-        READ5: begin
-            cmd = 16'hAAxx;
-            // Wait for done signal from SPI. 
-            if (done) begin
-                next_state = READ6;
-                // Capture data from SPI.
-                ayL = resp[7:0]; // Read lower byte of ay data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ5;
-            end
-        end
-
-        READ6: begin
-            cmd = 16'hABxx;
-            // Wait for done signal from SPI. 
-            if (done) begin
-                next_state = READ7;
-                // Capture data from SPI.
-                ayH = resp[7:0]; // Read higher byte of ay data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ6;
-            end
-        end
-
-        READ7: begin
-            cmd = 16'hACxx;
-            // Wait for done signal from SPI. 
-            if (done) begin
-                next_state = READ8;
-                // Capture data from SPI.
-                azL = resp[7:0]; // Read lower byte of az data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ7;
-            end
-        end
-
-        READ8: begin
-            cmd = 16'hADxx;
-            // Wait for done signal from SPI. 
-            if (done) begin
-                next_state = VALID;
-                // Capture data from SPI.
-                azH = resp[7:0]; // Read higher byte of az data.
-                snd = 1'b1; // initiate SPI transaction. 
-            end else begin
-                next_state = READ8;
-            end
-        end
-
-        VALID: begin
-            vld = 1'b1; // Indicate to inertial integrator that data is valid.
-            next_state = READY; // Go back to READY state.
-        end
-
-        default: begin
-            next_state = INIT1; // Default to INIT1 state.
-        end
-    endcase
-end
+	//assign init_done = (RR_sig_init ==4 ) ? 1 : 0; 
+	assign addr_data_init = RR_sig_init[1] ? (RR_sig_init[0] ? 16'h1460: 16'h1150) : (RR_sig_init[0] ? 16'h1053 : 16'h0D02);
+	//assign RR_sig_en = (RR_sig_en || ~rst_n) ? 0 : (rollL_en || rollH_en || yawL_en || yawH_en || AYL_en || AYH_en || AZL_en || AZH_en) ? 1 : 0;
+	// RR General Counter
+	always @(posedge clk, negedge rst_n) begin
+		if (!rst_n) 
+			RR_sig <= 3'b0;
+		else if(RR_sig_inc)
+			RR_sig <= RR_sig + 1;
+	end
+	
+	assign addr_data = RR_sig[2] ? (RR_sig[1] ? (RR_sig[0] ? 16'hAD00 : 16'hAC00) : (RR_sig[0] ? 16'hAB00 : 16'hAA00)) : RR_sig[1] ? (RR_sig[0] ? 16'hA700 : 16'hA600) : RR_sig[0] ? 16'hA500 : 16'hA400; 
+	assign cmd = init_done ? addr_data : addr_data_init;
+	// TODO : How to cycle through the different read signals
+	
+	typedef enum logic [2:0] {RESET, INITIALIZE, WAIT_INITIALIZE, START_READ,WAIT_INIT, SET_VALID, WAIT_READ} state_t;
+	state_t state, nxt_state;
+	
+	always @(posedge clk, negedge rst_n) begin
+		if (!rst_n)
+			state <= RESET;
+		else
+			state <= nxt_state;
+	end
+	
+	always_comb begin 
+		wrt = 0;
+		//capture = 0;
+		nxt_state = state;
+		vld = 0;
+		done_init= 0;
+		RR_sig_inc = 0;
+		RR_init_sig_inc = 0;
+		reg_en = 0;
+		case (state) 
+			RESET: if(&cnt)
+				nxt_state = INITIALIZE;
+			
+			INITIALIZE: begin
+				wrt = 1;
+				nxt_state = WAIT_INITIALIZE;
+				
+			end
+			WAIT_INITIALIZE: begin
+				if (done) begin
+					if(RR_sig_init == 3'h3) begin
+						done_init = 1;
+						nxt_state = WAIT_INIT;
+					end
+					else begin
+						RR_init_sig_inc = 1;
+						nxt_state = INITIALIZE;
+					end
+				end
+			end
+			WAIT_INIT: begin
+				if(INT_ff2) begin
+					nxt_state = START_READ;
+				end
+			end
+			START_READ: begin
+					wrt = 1;
+					nxt_state = WAIT_READ;
+				
+			end
+			WAIT_READ: begin
+				if(done) begin
+					reg_en = 1;
+					RR_sig_inc = 1;
+					if(RR_sig == 8'h7) 
+						nxt_state = SET_VALID;
+					
+					else
+						nxt_state = START_READ;
+				end
+			end
+			SET_VALID: begin
+				vld = 1;
+				nxt_state = WAIT_INIT;
+			
+			end
+			
+			default: nxt_state = RESET;
+			endcase
+		end
 endmodule
