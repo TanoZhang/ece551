@@ -1,14 +1,14 @@
 module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	input clk, rst_n, INT, MISO;
 	output SS_n;
-	outtut MOSI;
+	output MOSI;
 	output SCLK; 
 	output [12:0] incline;
 	output reg vld;
 	
 	logic INT_ff1, INT_ff2, init_done;
 	logic done;
-    logic done_init;	
+    	logic done_init;	
 	logic [15:0] cnt;
 	logic [2:0] RR_sig_init;
 	logic [2:0] RR_sig;
@@ -20,9 +20,9 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	logic wrt;
 
 	SPI_mnrch mine(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .wrt(wrt), .cmd(cmd), .MISO(MISO), .rd_data(rd_data), .done(done));
-    inertial_integrator me(.clk(clk),.rst_n(rst_n),.vld(vld),.roll_rt(roll_rt),.yaw_rt(yaw_rt),.AY(AY),.AZ(AZ),.incline(incline));
+    	inertial_integrator me(.clk(clk),.rst_n(rst_n),.vld(vld),.roll_rt(roll_rt),.yaw_rt(yaw_rt),.AY(AY),.AZ(AZ),.incline(incline));
 	
-	//logic ENABLE;
+	// logic ENABLE;
 	// The data registers :)
 	
 	// Double flop INT
