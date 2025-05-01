@@ -1,51 +1,37 @@
-module desiredDrive (
-    input  logic [11:0] avg_torque,
-    input  logic [4:0] cadence,
-    input  logic signed [12:0] incline,
-    input  logic [2:0] scale,
-    input  logic not_pedaling,
-    output logic [11:0] target_curr
-);
+module desiredDrive(avg_torque, cadence, not_pedaling, incline, scale, target_curr);
+	input [11:0] avg_torque;
+	input [4:0] cadence;
+	input not_pedaling;
+	input [12:0] incline;
+	input [2:0] scale;
+  
+	output [11:0] target_curr;
+  
+	logic [9:0] incline_sat;
+	logic [10:0] incline_factor;
+	logic [8:0] incline_lim;
+	logic [5:0] cadence_factor;
+	logic [12:0] torque_off;
+	logic [11:0] torque_pos;
+	logic [29:0] assist_prod;
+	
+	localparam TORQUE_MIN = 12'h380;
+	
+	assign incline_sat = (incline[12] && ~|incline[11:9]) ? 10'b1000000000 :
+                       (!incline[12] && |incline[11:9]) ? 10'b0111111111 :
+						incline[9:0];
 
-    localparam TORQUE_MIN = 12'h380; // Offset for torque sensor
-
-    // Compute torque offset
-    logic [12:0] torque_off;
-    assign torque_off = {1'b0, avg_torque} - TORQUE_MIN;
-
-    // Clip torque to zero
-    logic [11:0] torque_pos;
-    assign torque_pos = (torque_off[12]) ? 12'b0 : torque_off[11:0];
-
-    logic [9:0] incline_sat;
-    assign incline_sat = (incline > 10'sd511) ? 10'd511 :
-                         (incline < -10'sd512) ? 10'd0 : incline[9:0];
-
-    // Adjust incline factor
-    logic [10:0] incline_factor;
-    assign incline_factor = incline_sat + 11'd256;
-
-    //incline factor to max 511, min 0
-    logic [8:0] incline_lim;
-    assign incline_lim = (incline_factor[10]) ? 9'd0 :
-                         (incline_factor > 9'd511) ? 9'd511 : incline_factor[8:0];
-
-    logic [6:0] cadence_factor;
-    assign cadence_factor = (cadence > 5'd1) ? (cadence + 7'd32) : 7'd0;
-
-    // Compute assist amount
-    logic [29:0] assist_prod;
-    assign assist_prod = (not_pedaling) ? 30'b0 :
-                         (torque_pos * incline_lim * cadence_factor * scale);
-
-    //current output
-    always_comb begin
-        if (not_pedaling)
-            target_curr = 12'h000;
-        else if (|assist_prod[29:27])
-            target_curr = 12'hFFF; // Cap at max if overflow
-        else
-            target_curr = assist_prod[26:15];
-    end
-
+	assign incline_factor = {incline_sat[9], incline_sat} + 10'b0100000000;
+	assign incline_lim = (incline_factor[10]) ? 9'b000000000 :
+                       (!incline_factor[10] && |incline_factor[9]) ? 9'b111111111 :
+						incline_factor[8:0];
+	assign cadence_factor = (~|cadence) ? 5'b00000 :
+						cadence + 6'b100000;
+	assign torque_off = avg_torque - TORQUE_MIN;
+	assign torque_pos = (torque_off[12]) ? 12'h000 : torque_off[11:0];
+	assign assist_prod = (not_pedaling) ? 30'h00000000 :
+						torque_pos * incline_lim * cadence_factor * scale;
+	
+	assign target_curr = (assist_prod[29:27]) ? 12'hFFF :
+						assist_prod[26:15];
 endmodule
