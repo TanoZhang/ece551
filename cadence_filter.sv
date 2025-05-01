@@ -10,7 +10,9 @@
  *
  ******************************************************/
 
-module cadence_filt (
+module cadence_filt # (
+    parameter FAST_SIM = 1
+)(
     input  logic clk,          // 50MHz system clock
     input  logic rst_n,        // Active-low asynchronous reset
     input  logic cadence,      // Noisy raw cadence signal (bouncy and asynchronous)
@@ -22,7 +24,13 @@ module cadence_filt (
     logic q1, q2, q3;
     logic chngd_n;            // Signal to detect stability of cadence
     logic [15:0] stbl_cnt;    // Counter to ensure cadence stability
-
+	logic cnt_full;            //
+	
+	generate if (FAST_SIM)
+		assign cnt_full = &stbl_cnt[8:0];
+	else
+		assign cnt_full = &stbl_cnt;
+	endgenerate
     /***********************************************
      * First Flip-Flop Stage: Synchronization
      * - Captures the raw cadence input.
@@ -88,7 +96,7 @@ module cadence_filt (
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
             cadence_filt <= 1'b0; // Reset stable cadence signal
-        else if (&stbl_cnt)  // If all bits of stbl_cnt are 1 (stability threshold reached)
+        else if (cnt_full)  // If all bits of stbl_cnt are 1 (stability threshold reached)
             cadence_filt <= q3; // Update with stabilized cadence value
         else
             cadence_filt <= cadence_filt; // Hold previous value

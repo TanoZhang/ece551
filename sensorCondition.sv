@@ -21,18 +21,17 @@ module sensorCondition (
     logic [4:0]  cadence_out;           // cadence from LU
     logic        cadence_rise;          // Rising edge detect
     logic        not_pedaling_flopped;  // Flopped not pedaling signal
-    logic [2:0]  scale;
     // Signals for current and torque averaging
     logic [11:0] avg_curr;              // Average current
     logic [11:0] target_curr;           // Target current
     logic [13:0] curr_accum;            // Current accumulator
     logic        curr_accum_full;       // Accumulator sample trigger
+	logic [2:0]  scale;                  // Scale for desired Drive
 	logic [21:0] cnt;                    // Timer for sample trigger
     logic [21:0] avg_curr_smpl;         // Current sampling counter
     logic [16:0] torque_accum;          // Torque accumulator
     logic [11:0] avg_torque;            // Average torque
     
-
 
     // Fast simulation support
     generate 
@@ -48,7 +47,7 @@ module sensorCondition (
 		else cnt <= cnt + 1;
 	
     // Instantiate cadence modules
-    cadence_filt iCadence_Filt (
+    cadence_filt #(FAST_SIM) iCadence_Filt (
         .clk(clk),
         .rst_n(rst_n),
         .cadence(cadence),
@@ -61,7 +60,7 @@ module sensorCondition (
         .rst_n(rst_n),
         .cadence_filt(cadence_filt),
         .cadence_per(cadence_per),
-	.not_pedaling()
+	    .not_pedaling(not_pedaling)
     );
 
     cadence_LU iCadence_LU (
@@ -105,6 +104,8 @@ module sensorCondition (
 
     assign avg_torque = torque_accum >> 5;
 
+
+	assign scale = &setting ? 3'b111 : setting[1] ? 3'b101 : setting[0] ? 3'b011 : 3'b000;
     // Instantiate desired drive calculator
     desiredDrive iDesired (
         .avg_torque(avg_torque),
