@@ -1,7 +1,11 @@
 module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	input clk, rst_n, INT, MISO;
-	output SS_n, MOSI, SCLK; 
+	output SS_n;
+	ouptut MOSI;
+	output SCLK; 
 	output [12:0] incline;
+	output reg vld;
+	
 	logic INT_ff1, INT_ff2, init_done;
 	logic done;
         logic done_init;	
@@ -15,7 +19,7 @@ module inert_intf(clk, rst_n, incline, vld, INT, SS_n, SCLK, MOSI, MISO);
 	logic [7:0] rollL, rollH, yawL, yawH, AYL, AYH, AZL, AZH;
 	logic [15:0] roll_rt, yaw_rt, AY, AZ;
 	logic wrt;
-	output reg vld;
+
 	SPI_mstr mine(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .wrt(wrt), .cmd(cmd), .MISO(MISO), .rd_data(rd_data), .done(done));
     inertial_integrator me(.clk(clk),.rst_n(rst_n),.vld(vld),.roll_rt(roll_rt),.yaw_rt(yaw_rt),.AY(AY),.AZ(AZ),.incline(incline));
 	
