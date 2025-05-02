@@ -14,29 +14,29 @@ module sensorCondition #(parameter FAST_SIM = 0)
 );
 
     localparam [11:0] LOW_BATT_THRES = 12'hA98;
+
+    // internal signals
+    // current averaging
     logic [13:0] curr_accum;
     logic [11:0] avg_curr;
     logic include_curr;
     logic [21:0] curr_timer;
+    logic [11:0] target_curr;
+
+    // cadence measurement
     logic cadence_filt, cadence_rise;
     logic [7:0] cadence_per;
     logic [4:0] cadence;
+
+    // torque measurement
     logic [16:0] torque_accum;
     logic [11:0] avg_torque;
+
+    // pedaling detection
     logic not_pedaling_torque;
     logic pedaling_start;
-    logic [11:0] target_curr;
 
-
-    cadence_filt #(.FAST_SIM(FAST_SIM)) iDUT_filt (
-        .clk(clk),
-        .rst_n(rst_n),
-        .cadence(cadence_raw),
-        .cadence_filt(cadence_filt),
-        .cadence_rise(cadence_rise)
-    );
-
-    cadence_meas #(.FAST_SIM(FAST_SIM)) iDUT_meas (
+    cadence_meas #(.FAST_SIM(FAST_SIM)) iCAD_meas (
         .clk(clk),
         .rst_n(rst_n),
         .cadence_filt(cadence_filt),
@@ -44,7 +44,15 @@ module sensorCondition #(parameter FAST_SIM = 0)
         .not_pedaling(not_pedaling)
     );
 
-    cadence_LU iDUT_LU (
+    cadence_filt #(.FAST_SIM(FAST_SIM)) iCAD_filt (
+        .clk(clk),
+        .rst_n(rst_n),
+        .cadence(cadence_raw),
+        .cadence_filt(cadence_filt),
+        .cadence_rise(cadence_rise)
+    );
+
+    cadence_LU iCAD_LU (
         .cadence_per(cadence_per),
         .cadence(cadence)
     );
@@ -67,7 +75,7 @@ module sensorCondition #(parameter FAST_SIM = 0)
         .target_curr(target_curr)
     );
 
-    // Exponential Averaging: Current
+    // current averaging
     assign include_curr = (FAST_SIM) ? (&curr_timer[15:0]) : curr_timer[21];
 
     always_ff @(posedge clk or negedge rst_n) begin
@@ -77,6 +85,7 @@ module sensorCondition #(parameter FAST_SIM = 0)
             curr_timer <= curr_timer + 1;
     end
 
+    // current accumulation
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
             curr_accum <= 0;
@@ -86,16 +95,15 @@ module sensorCondition #(parameter FAST_SIM = 0)
 
     assign avg_curr = curr_accum[13:2];
 
-    // Exponential Averaging: Torque
+    // torque averaging
     assign pedaling_start = not_pedaling_torque & ~not_pedaling;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            torque_accum <= 0;
             not_pedaling_torque <= 1;
+            torque_accum <= 0;
         end else begin
             not_pedaling_torque <= not_pedaling;
-
             if (pedaling_start)
                 torque_accum <= {1'b0, torque, 4'b0};
             else if (cadence_rise)
@@ -105,7 +113,7 @@ module sensorCondition #(parameter FAST_SIM = 0)
 
     assign avg_torque = torque_accum[16:5];
 
-    // Error Computation
+    // compute error
     always_comb begin
         if (batt < LOW_BATT_THRES || not_pedaling)
             error = 13'd0;

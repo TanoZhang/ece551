@@ -31,55 +31,36 @@ module cadence_filt # (
 	else
 		assign cnt_full = &stbl_cnt;
 	endgenerate
-    /***********************************************
-     * First Flip-Flop Stage: Synchronization
-     * - Captures the raw cadence input.
-     * - Helps mitigate metastability issues.
-     ***********************************************/
+    
+    // capture raw cadence signal
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            q1 <= 1'b0; // Reset on active low
+            q1 <= 1'b0;
         else
-            q1 <= cadence; // Capture the cadence input
+            q1 <= cadence; 
     end
 
-    /***********************************************
-     * Second Flip-Flop Stage: Additional Synchronization
-     * - Further stabilizes the cadence signal.
-     ***********************************************/
+    // metastability for cadence signal. 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
             q2 <= 1'b0;
         else
-            q2 <= q1; // Shift input from q1
+            q2 <= q1;
     end
-
-    /***********************************************
-     * Third Flip-Flop Stage: Delayed Version
-     * - Used to detect changes in cadence.
-     ***********************************************/
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
             q3 <= 1'b0;
         else
-            q3 <= q2; // Shift input from q2
+            q3 <= q2; 
     end
 
-    /***********************************************
-     * Combinational Logic:
-     * - `cadence_rise`: Generates a pulse when `q2` transitions from 0 to 1.
-     * - `chngd_n`: Detects whether cadence has remained stable.
-     ***********************************************/
+    // Detect rising edge and stability of cadence signal
     always_comb begin
-        cadence_rise = q2 & ~q3;  // Rising edge detection
-        chngd_n = ~(q2 ^ q3);     // Stability check (XNOR operation)
+        cadence_rise = q2 & ~q3; 
+        chngd_n = ~(q2 ^ q3);    
     end
 
-    /***********************************************
-     * Stability Counter:
-     * - Increments if the cadence signal remains unchanged.
-     * - Resets when cadence changes.
-     ***********************************************/
+    // stability counter
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
             stbl_cnt <= 16'h0000; // Reset counter
@@ -89,17 +70,14 @@ module cadence_filt # (
             stbl_cnt <= 16'h0000; // Reset if cadence changes
     end
 
-    /***********************************************
-     * Stable Cadence Output:
-     * - Updates `cadence_filt` when the counter reaches its max value.
-     ***********************************************/
+    // update cadence_filt when timer is full
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)
-            cadence_filt <= 1'b0; // Reset stable cadence signal
-        else if (cnt_full)  // If all bits of stbl_cnt are 1 (stability threshold reached)
-            cadence_filt <= q3; // Update with stabilized cadence value
+            cadence_filt <= 1'b0;
+        else if (cnt_full) 
+            cadence_filt <= q3; 
         else
-            cadence_filt <= cadence_filt; // Hold previous value
+            cadence_filt <= cadence_filt;
     end
 
 endmodule

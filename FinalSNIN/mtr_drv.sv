@@ -30,7 +30,7 @@ module mtr_drv(
     );
 
     // Green non-overlap driver
-    nonoverlap GRN_NVL(
+    nonoverlap GRN(
         .clk(clk),
         .rst_n(rst_n),
         .highIn(grn1),              
@@ -40,7 +40,7 @@ module mtr_drv(
     );
 
     // Yellow non-overlap driver
-    nonoverlap YLW_NVL(
+    nonoverlap YLW(
         .clk(clk),
         .rst_n(rst_n),
         .highIn(ylw1),
@@ -50,7 +50,7 @@ module mtr_drv(
     );
 
     // Blue non-overlap driver
-    nonoverlap BLU_NVL(
+    nonoverlap BLU(
         .clk(clk),
         .rst_n(rst_n),
         .highIn(blu1),
@@ -61,19 +61,19 @@ module mtr_drv(
 
     // Selector logic
     always_comb begin
-        // Green output logic
-        {grn1, grn2} = (selGrn == 2'b01) ? {~PWM_sig, PWM_sig} :  
-                       (selGrn == 2'b10) ? {PWM_sig, ~PWM_sig} :   
-                       (selGrn == 2'b11) ? {1'b0, PWM_sig} :      
-                                           {1'b0, 1'b0};          
-
-        // Yellow output logic
+        // Yellow output
         {ylw1, ylw2} = (selYlw == 2'b01) ? {~PWM_sig, PWM_sig} :
                        (selYlw == 2'b10) ? {PWM_sig, ~PWM_sig} :
                        (selYlw == 2'b11) ? {1'b0, PWM_sig} :
                                            {1'b0, 1'b0};
+
+        // Green output
+        {grn1, grn2} = (selGrn == 2'b01) ? {~PWM_sig, PWM_sig} :  
+                       (selGrn == 2'b10) ? {PWM_sig, ~PWM_sig} :   
+                       (selGrn == 2'b11) ? {1'b0, PWM_sig} :      
+                                           {1'b0, 1'b0};   
         
-        // Blue output logic
+        // Blue output
         {blu1, blu2} = (selBlu == 2'b01) ? {~PWM_sig, PWM_sig} :
                        (selBlu == 2'b10) ? {PWM_sig, ~PWM_sig} :
                        (selBlu == 2'b11) ? {1'b0, PWM_sig} :

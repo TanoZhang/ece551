@@ -109,10 +109,10 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 if (done) begin
                     snd = 1;
                     rollH = 1;
-                    nxt_state = YAW_H;
+                    nxt_state = READ4;
                 end
             end
-            YAW_H: begin
+            READ4: begin
                 cmd = 16'hA7xx;
                 if (done) begin
                     snd = 1;
