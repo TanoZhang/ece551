@@ -1,0 +1,620 @@
+Analysis & Synthesis report for inert_intf_test
+Thu May  1 23:07:57 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |inert_intf_test|inert_intf:u_dut|state
+  9. State Machine - |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|state
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for Inferred Entity Instance: inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1
+ 15. Parameter Settings for Inferred Entity Instance: inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0
+ 16. lpm_mult Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "inert_intf:u_dut|inertial_integrator:iInertial_integrator"
+ 18. Port Connectivity Checks: "inert_intf:u_dut|SPI_mnrch:iSPI_mnrch"
+ 19. Port Connectivity Checks: "inert_intf:u_dut"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                        ;
++------------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May  1 23:07:57 2025          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                      ; inert_intf_test                                ;
+; Top-level Entity Name              ; inert_intf_test                                ;
+; Family                             ; Cyclone IV E                                   ;
+; Total logic elements               ; 492                                            ;
+;     Total combinational functions  ; 413                                            ;
+;     Dedicated logic registers      ; 213                                            ;
+; Total registers                    ; 213                                            ;
+; Total pins                         ; 15                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
++------------------------------------+------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                            ; inert_intf_test    ; inert_intf_test    ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; SPI_mnrch.sv                     ; yes             ; User SystemVerilog HDL File  ; I:/ece551/final project/FinalSoIN/SPI_mnrch.sv                                    ;         ;
+; reset_synch.sv                   ; yes             ; User SystemVerilog HDL File  ; I:/ece551/final project/FinalSoIN/reset_synch.sv                                  ;         ;
+; inertial_integrator.sv           ; yes             ; User SystemVerilog HDL File  ; I:/ece551/final project/FinalSoIN/inertial_integrator.sv                          ;         ;
+; inert_intf.sv                    ; yes             ; User SystemVerilog HDL File  ; I:/ece551/final project/FinalSoIN/inert_intf.sv                                   ;         ;
+; inert_intf_test.sv               ; yes             ; User SystemVerilog HDL File  ; I:/ece551/final project/FinalSoIN/inert_intf_test.sv                              ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_ekh.tdf               ; yes             ; Auto-Generated Megafunction  ; I:/ece551/final project/FinalSoIN/db/add_sub_ekh.tdf                              ;         ;
+; db/add_sub_k9h.tdf               ; yes             ; Auto-Generated Megafunction  ; I:/ece551/final project/FinalSoIN/db/add_sub_k9h.tdf                              ;         ;
+; db/add_sub_ikh.tdf               ; yes             ; Auto-Generated Megafunction  ; I:/ece551/final project/FinalSoIN/db/add_sub_ikh.tdf                              ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 492       ;
+;                                             ;           ;
+; Total combinational functions               ; 413       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 115       ;
+;     -- 3 input functions                    ; 191       ;
+;     -- <=2 input functions                  ; 107       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 185       ;
+;     -- arithmetic mode                      ; 228       ;
+;                                             ;           ;
+; Total registers                             ; 213       ;
+;     -- Dedicated logic registers            ; 213       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 15        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 213       ;
+; Total fan-out                               ; 2005      ;
+; Average fan-out                             ; 3.06      ;
++---------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                          ; Entity Name         ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |inert_intf_test                                  ; 413 (1)             ; 213 (8)                   ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |inert_intf_test                                                                                                                                                             ; inert_intf_test     ; work         ;
+;    |inert_intf:u_dut|                             ; 412 (42)            ; 203 (96)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut                                                                                                                                            ; inert_intf          ; work         ;
+;       |SPI_mnrch:iSPI_mnrch|                      ; 46 (46)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch                                                                                                                       ; SPI_mnrch           ; work         ;
+;       |inertial_integrator:iInertial_integrator|  ; 324 (180)           ; 76 (76)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator                                                                                                   ; inertial_integrator ; work         ;
+;          |lpm_mult:Mult0|                         ; 72 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0                                                                                    ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                  ; 72 (44)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore            ; work         ;
+;                |mpar_add:padder|                  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
+;                      |add_sub_k9h:auto_generated| ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_k9h:auto_generated ; add_sub_k9h         ; work         ;
+;                   |lpm_add_sub:adder[1]|          ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                            ; lpm_add_sub         ; work         ;
+;                      |add_sub_ekh:auto_generated| ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_ekh:auto_generated ; add_sub_ekh         ; work         ;
+;          |lpm_mult:Mult1|                         ; 72 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1                                                                                    ; lpm_mult            ; work         ;
+;             |multcore:mult_core|                  ; 72 (44)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core                                                                 ; multcore            ; work         ;
+;                |mpar_add:padder|                  ; 28 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                 ; mpar_add            ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub         ; work         ;
+;                      |add_sub_k9h:auto_generated| ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_k9h:auto_generated ; add_sub_k9h         ; work         ;
+;                   |lpm_add_sub:adder[1]|          ; 14 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]                            ; lpm_add_sub         ; work         ;
+;                      |add_sub_ekh:auto_generated| ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|add_sub_ekh:auto_generated ; add_sub_ekh         ; work         ;
+;    |rst_synch:u_reset|                            ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |inert_intf_test|rst_synch:u_reset                                                                                                                                           ; rst_synch           ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |inert_intf_test|inert_intf:u_dut|state                                                                                                                                                        ;
++--------------+--------------+------------+------------+------------+------------+-------------+-------------+--------------+--------------+------------+-------------+-------------+-------------+-------------+
+; Name         ; state.FINISH ; state.AZ_H ; state.AZ_L ; state.AY_H ; state.AY_L ; state.YAW_H ; state.YAW_L ; state.ROLL_H ; state.ROLL_L ; state.WAIT ; state.INIT4 ; state.INIT3 ; state.INIT2 ; state.INIT1 ;
++--------------+--------------+------------+------------+------------+------------+-------------+-------------+--------------+--------------+------------+-------------+-------------+-------------+-------------+
+; state.INIT1  ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 0           ;
+; state.INIT2  ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 1           ; 1           ;
+; state.INIT3  ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 1           ; 0           ; 1           ;
+; state.INIT4  ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 1           ; 0           ; 0           ; 1           ;
+; state.WAIT   ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 1          ; 0           ; 0           ; 0           ; 1           ;
+; state.ROLL_L ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 1            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.ROLL_H ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 1            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.YAW_L  ; 0            ; 0          ; 0          ; 0          ; 0          ; 0           ; 1           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.YAW_H  ; 0            ; 0          ; 0          ; 0          ; 0          ; 1           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AY_L   ; 0            ; 0          ; 0          ; 0          ; 1          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AY_H   ; 0            ; 0          ; 0          ; 1          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AZ_L   ; 0            ; 0          ; 1          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.AZ_H   ; 0            ; 1          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
+; state.FINISH ; 1            ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0            ; 0            ; 0          ; 0           ; 0           ; 0           ; 1           ;
++--------------+--------------+------------+------------+------------+------------+-------------+-------------+--------------+--------------+------------+-------------+-------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------+
+; State Machine - |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|state ;
++-------------------+------------+-----------------+---------------------------+
+; Name              ; state.IDLE ; state.BACKPORCH ; state.SHIFT_STATE         ;
++-------------------+------------+-----------------+---------------------------+
+; state.IDLE        ; 0          ; 0               ; 0                         ;
+; state.SHIFT_STATE ; 1          ; 0               ; 1                         ;
+; state.BACKPORCH   ; 1          ; 1               ; 0                         ;
++-------------------+------------+-----------------+---------------------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; inert_intf:u_dut|state~4              ; Lost fanout        ;
+; inert_intf:u_dut|state~5              ; Lost fanout        ;
+; inert_intf:u_dut|state~6              ; Lost fanout        ;
+; inert_intf:u_dut|state~7              ; Lost fanout        ;
+; Total Number of Removed Registers = 4 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 213   ;
+; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Load   ; 5     ;
+; Number of registers using Asynchronous Clear ; 161   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 151   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|SS_n ; 1       ;
+; Total number of inverted registers = 1     ;         ;
++--------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|shift_reg[14] ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|shift_reg[8]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|bit_cntr[4]   ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|Selector2     ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |inert_intf_test|inert_intf:u_dut|Selector1                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+-----------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                      ;
++------------------------------------------------+--------------+-----------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                            ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                                   ;
+; LPM_WIDTHB                                     ; 10           ; Untyped                                                   ;
+; LPM_WIDTHP                                     ; 26           ; Untyped                                                   ;
+; LPM_WIDTHR                                     ; 26           ; Untyped                                                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                   ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                   ;
+; LATENCY                                        ; 0            ; Untyped                                                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                   ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                                   ;
+; USE_EAB                                        ; OFF          ; Untyped                                                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                   ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                   ;
++------------------------------------------------+--------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-----------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                      ;
++------------------------------------------------+--------------+-----------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                              ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                            ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                                   ;
+; LPM_WIDTHB                                     ; 10           ; Untyped                                                   ;
+; LPM_WIDTHP                                     ; 26           ; Untyped                                                   ;
+; LPM_WIDTHR                                     ; 26           ; Untyped                                                   ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                   ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                   ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                   ;
+; LATENCY                                        ; 0            ; Untyped                                                   ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                   ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                                   ;
+; USE_EAB                                        ; OFF          ; Untyped                                                   ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                   ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                   ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                   ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                   ;
++------------------------------------------------+--------------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                                   ;
++---------------------------------------+--------------------------------------------------------------------------+
+; Name                                  ; Value                                                                    ;
++---------------------------------------+--------------------------------------------------------------------------+
+; Number of entity instances            ; 2                                                                        ;
+; Entity Instance                       ; inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 16                                                                       ;
+;     -- LPM_WIDTHB                     ; 10                                                                       ;
+;     -- LPM_WIDTHP                     ; 26                                                                       ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                                      ;
+;     -- USE_EAB                        ; OFF                                                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                       ;
+; Entity Instance                       ; inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                                                       ;
+;     -- LPM_WIDTHB                     ; 10                                                                       ;
+;     -- LPM_WIDTHP                     ; 26                                                                       ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                       ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                                      ;
+;     -- USE_EAB                        ; OFF                                                                      ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                     ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                       ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                       ;
++---------------------------------------+--------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "inert_intf:u_dut|inertial_integrator:iInertial_integrator" ;
++------+--------+----------+------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                    ;
++------+--------+----------+------------------------------------------------------------+
+; LED  ; Output ; Info     ; Explicitly unconnected                                     ;
++------+--------+----------+------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "inert_intf:u_dut|SPI_mnrch:iSPI_mnrch"                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; cmd[3..2]   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[14]     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cmd[7]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; resp[15..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "inert_intf:u_dut"                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; incline[12..9] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; incline[0]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 15                          ;
+; cycloneiii_ff         ; 213                         ;
+;     CLR               ; 31                          ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 130                         ;
+;     ENA SCLR          ; 5                           ;
+;     SLD               ; 5                           ;
+;     plain             ; 26                          ;
+; cycloneiii_lcell_comb ; 414                         ;
+;     arith             ; 228                         ;
+;         2 data inputs ; 63                          ;
+;         3 data inputs ; 165                         ;
+;     normal            ; 186                         ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 115                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 4.06                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Thu May  1 23:07:40 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off inert_intf_test -c inert_intf_test
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file spi_mnrch.sv
+    Info (12023): Found entity 1: SPI_mnrch File: I:/ece551/final project/FinalSoIN/SPI_mnrch.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file reset_synch.sv
+    Info (12023): Found entity 1: rst_synch File: I:/ece551/final project/FinalSoIN/reset_synch.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file inertial_integrator.sv
+    Info (12023): Found entity 1: inertial_integrator File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file inert_intf.sv
+    Info (12023): Found entity 1: inert_intf File: I:/ece551/final project/FinalSoIN/inert_intf.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file inert_intf_test.sv
+    Info (12023): Found entity 1: inert_intf_test File: I:/ece551/final project/FinalSoIN/inert_intf_test.sv Line: 1
+Info (12127): Elaborating entity "inert_intf_test" for the top level hierarchy
+Info (12128): Elaborating entity "rst_synch" for hierarchy "rst_synch:u_reset" File: I:/ece551/final project/FinalSoIN/inert_intf_test.sv Line: 20
+Info (12128): Elaborating entity "inert_intf" for hierarchy "inert_intf:u_dut" File: I:/ece551/final project/FinalSoIN/inert_intf_test.sv Line: 33
+Info (10264): Verilog HDL Case Statement information at inert_intf.sv(52): all case item expressions in this case statement are onehot File: I:/ece551/final project/FinalSoIN/inert_intf.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at inert_intf.sv(165): truncated value with size 32 to match size of target (16) File: I:/ece551/final project/FinalSoIN/inert_intf.sv Line: 165
+Info (12128): Elaborating entity "SPI_mnrch" for hierarchy "inert_intf:u_dut|SPI_mnrch:iSPI_mnrch" File: I:/ece551/final project/FinalSoIN/inert_intf.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at SPI_mnrch.sv(26): truncated value with size 32 to match size of target (5) File: I:/ece551/final project/FinalSoIN/SPI_mnrch.sv Line: 26
+Warning (10230): Verilog HDL assignment warning at SPI_mnrch.sv(32): truncated value with size 32 to match size of target (5) File: I:/ece551/final project/FinalSoIN/SPI_mnrch.sv Line: 32
+Info (10264): Verilog HDL Case Statement information at SPI_mnrch.sv(59): all case item expressions in this case statement are onehot File: I:/ece551/final project/FinalSoIN/SPI_mnrch.sv Line: 59
+Info (12128): Elaborating entity "inertial_integrator" for hierarchy "inert_intf:u_dut|inertial_integrator:iInertial_integrator" File: I:/ece551/final project/FinalSoIN/inert_intf.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at inertial_integrator.sv(81): truncated value with size 13 to match size of target (12) File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 81
+Warning (10034): Output port "LED" at inertial_integrator.sv(11) has no driver File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 11
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "inert_intf:u_dut|inertial_integrator:iInertial_integrator|Mult1" File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 91
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "inert_intf:u_dut|inertial_integrator:iInertial_integrator|Mult0" File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 90
+Info (12130): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 91
+Info (12133): Instantiated megafunction "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" with the following parameter: File: I:/ece551/final project/FinalSoIN/inertial_integrator.sv Line: 91
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "10"
+    Info (12134): Parameter "LPM_WIDTHP" = "26"
+    Info (12134): Parameter "LPM_WIDTHR" = "26"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ekh.tdf
+    Info (12023): Found entity 1: add_sub_ekh File: I:/ece551/final project/FinalSoIN/db/add_sub_ekh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_k9h.tdf
+    Info (12023): Found entity 1: add_sub_k9h File: I:/ece551/final project/FinalSoIN/db/add_sub_k9h.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 138
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 115
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ikh.tdf
+    Info (12023): Found entity 1: add_sub_ikh File: I:/ece551/final project/FinalSoIN/db/add_sub_ikh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "inert_intf:u_dut|inertial_integrator:iInertial_integrator|lpm_mult:Mult1" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (13000): Registers with preset signals will power-up high File: I:/ece551/final project/FinalSoIN/SPI_mnrch.sv Line: 10
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file I:/ece551/final project/FinalSoIN/inert_intf_test.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 509 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 494 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4851 megabytes
+    Info: Processing ended: Thu May  1 23:07:57 2025
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in I:/ece551/final project/FinalSoIN/inert_intf_test.map.smsg.
+
+

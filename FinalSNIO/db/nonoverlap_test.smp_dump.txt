@@ -1,0 +1,7 @@
+
+State Machine - |nonoverlap_test|observer:iCHK|state
+Name state.HIGH_AFTER_FALL state.DEADBANDfall state.RISE state.WAIT_CHANGE 
+state.WAIT_CHANGE 0 0 0 0 
+state.RISE 0 0 1 1 
+state.DEADBANDfall 0 1 0 1 
+state.HIGH_AFTER_FALL 1 0 0 1 

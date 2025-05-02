@@ -1,0 +1,50 @@
+D:/Final/temp/mtr_drv.sv {1 {vlog -work work -sv -stats=none {D:\Final\temp\mtr_drv.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mtr_drv
+
+Top level modules:
+	mtr_drv
+
+} {} {}} D:/Final/temp/brushless.sv {1 {vlog -work work -sv -stats=none D:/Final/temp/brushless.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brushless
+
+Top level modules:
+	brushless
+
+} {} {}} D:/Final/temp/hub_wheel_model.sv {1 {vlog -work work -sv -stats=none D:/Final/temp/hub_wheel_model.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module hub_wheel_model
+
+Top level modules:
+	hub_wheel_model
+
+} {} {}} D:/Final/temp/coil_volt.sv {1 {vlog -work work -sv -stats=none D:/Final/temp/coil_volt.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module coil_volt
+
+Top level modules:
+	coil_volt
+
+} {} {}} D:/Final/temp/brushless_mtr_drv_tb2.sv {1 {vlog -work work -sv -stats=none D:/Final/temp/brushless_mtr_drv_tb2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module brushless_mtr_drv_tb2
+
+Top level modules:
+	brushless_mtr_drv_tb2
+
+} {} {}} D:/Final/temp/nonoverlap.sv {1 {vlog -work work -sv -stats=none D:/Final/temp/nonoverlap.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module nonoverlap
+
+Top level modules:
+	nonoverlap
+
+} {} {}} D:/Final/temp/PWM.sv {1 {vlog -work work -sv -stats=none D:/Final/temp/PWM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module PWM
+
+Top level modules:
+	PWM
+
+} {} {}}

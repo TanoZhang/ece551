@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at reset_synch.sv(3): object "RST_n" differs only in case from object "rst_n" in the same scope File: I:/ece551/final project/FinalSoIN/reset_synch.sv Line: 3
+Info (10281): Verilog HDL Declaration information at inert_intf_test.sv(4): object "rst_n" differs only in case from object "RST_n" in the same scope File: I:/ece551/final project/FinalSoIN/inert_intf_test.sv Line: 4
