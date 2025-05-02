@@ -52,7 +52,7 @@ always_ff @(posedge clk, negedge rst_n) begin
         timerQ <= timerD;   // Remove condition to allow reset on cadence_rise
 end
 
-assign capture_per = cadence_rise;   // Capture on rising edge
+assign capture_per = cadence_rise || (timerQ == THIRD_SEC);   // Capture on rising edge
 
 // The input to the cadence_per register.
 assign cadence_perD = (!rst_n) ? THIRD_SEC_UPPER :

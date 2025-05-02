@@ -1,93 +1,160 @@
-module SPI_mnrch(clk, rst_n, SS_n, SCLK, MOSI, MISO, snd, cmd, done, resp);
+/////////////////////////////////////////////////////
+// Model of a Serial Peripheral Interconnect Master||
+/////////////////////////////////////////////////////
+module SPI_mnrch (
+    input logic clk, //clock
+    input logic rst_n, //asynch active low reset
+    output logic SS_n, //active low serf select
+    output logic SCLK, //serial clock
+    output logic MOSI, //Monarch Out Serf In
+    input logic MISO, //Monarch In Serf Out
+    input logic snd, //send signal
+    input logic [15:0] cmd, //command input
+    output logic done, //done signal
+    output logic [15:0] resp); //response output
 
-typedef enum reg [1:0] {IDLE, SHIFT_STATE, BACKPORCH} state_t;
-state_t state, nxt_state;
+    //initialize intermediate logic
+    logic ld_SCLK;
+    logic [4:0]SCLK_div;
+    logic shft;
+    logic [4:0]bit_cntr;
+    logic init;
+    logic done16;
+    logic [15:0]shft_reg;
+    logic set_done;
 
-input clk, rst_n, snd, MISO;
-input [15:0] cmd;
+    //initialize FSM enum
+    typedef enum reg [1:0] {IDLE, COUNT, DONE} state_t;
+    state_t state, nxt_state;
 
-output SCLK, MOSI;
-output logic SS_n, done;
-output [15:0] resp;
+    //Serial clock generator
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n)begin
+            SCLK_div <= 0;
+        end else begin
+            if (ld_SCLK)
+                SCLK_div <= 5'b10111; //intentional delay before SCLK falls
+            else 
+                SCLK_div <= SCLK_div+1;
+        end
+    end
 
-logic [15:0] shift_reg, shift_mux;
-logic [4:0] SCLK_div, bit_cntr;
-logic full, shift, ld_SCLK, init, set_done, done16;
+    //Assign sclk to be the 4th bit of the counter
+    assign SCLK = SCLK_div[4];
 
-//SCLK logic
-assign SCLK = SCLK_div[4];
-assign full = &SCLK_div;
-assign shift = (SCLK_div == 5'b10001);
+    assign shft = (SCLK_div == 5'b10001) ? 1'b1: 1'b0; //shift signal for shift reg
+    assign full = &SCLK_div; //full signal for backporch response
 
-always_ff@(posedge clk)
-  if(ld_SCLK)
-    SCLK_div <= 5'b10111;
-  else
-    SCLK_div <= SCLK_div + 1;
+    //16 bit counter 
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n)
+            bit_cntr <= 0;
+        else if (init)
+            bit_cntr <= 5'b00000;
+        else if (shft)
+            bit_cntr <= bit_cntr + 1;
+    end
 
-//shift counter logic
-assign done16 = bit_cntr[4];
-always_ff@(posedge clk)
-  if(shift && ~init)
-    bit_cntr <= bit_cntr + 1;
-  else if(init)
-    bit_cntr <= 5'b00000;
-  else
-    bit_cntr <= bit_cntr;
+    //output signal every 16 cycles/bits
+    assign done16 = (bit_cntr == 5'b10000);
 
-//shifter logic
-assign shift_mux = (init) ? cmd : (shift) ? {shift_reg[14:0], MISO} : shift_reg;
-assign MOSI = shift_reg[15];
-assign resp = shift_reg;
-always_ff@(posedge clk)
-  shift_reg <= shift_mux;
+    //Shift register flip flop
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n) begin
+            shft_reg <= 0;
+        end else begin
+            if (init) begin
+                shft_reg <= cmd; //take input if init is 1
+            end else begin
+                if (shft) begin
+                    shft_reg <= {shft_reg[14:0], MISO}; //take serf output if shft is 1
+                end else begin
+                    shft_reg <= shft_reg;
+                end
+            end 
+        end
+    end
 
-//state machine logic
-always_ff @(posedge clk, negedge rst_n)
-  if (!rst_n) begin
-    state <= IDLE;
-  end else begin
-    state <= nxt_state;
-  end
-  
-always_comb begin
-  nxt_state = state;
-  init = 1'b0;
-  ld_SCLK = 1'b0;
-  set_done = 1'b1;
-  
-  case(state)
-    IDLE: if(snd) begin
-	  nxt_state = SHIFT_STATE;
-	  set_done = 1'b0;
-	  init = 1'b1;
-	end else begin
-      ld_SCLK = 1'b1;
-	end
-	SHIFT_STATE: if(done16) begin
-	  nxt_state = BACKPORCH;
-	  set_done = 1'b0;
-	end else begin
-	  set_done = 1'b0;
-	end
-	default: if(full) begin //BACKPORCH
-	  nxt_state = IDLE;
-	  ld_SCLK = 1'b1;
-	  //init = 1'b1;
-	end else begin
-	  set_done = 0;
-	end
-  endcase
-end
+    assign MOSI = shft_reg[15]; //output to serf
 
-//flip-flop logic that drives SS_n and done
-always_ff @(posedge clk, negedge rst_n)
-  if (!rst_n) begin
-    SS_n <= 1'b1;
-	done <= 1'b0;
-  end else begin
-    SS_n <= (set_done);
-	done <= (set_done);
-  end
+    //FSM flip flop
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n) begin
+            state <= IDLE;
+        end else begin
+            state <= nxt_state;
+        end
+    end
+
+    //FSM combinational logic
+    always_comb begin
+        //initialize defaults to prevent latches
+        nxt_state = IDLE;
+        init = 0;
+        set_done = 0;
+        ld_SCLK = 0;
+
+        case(state)
+            IDLE: if (snd) begin
+                nxt_state = COUNT;
+                init = 1; //send init signal to begin
+                ld_SCLK = 1;
+            end else nxt_state = IDLE;
+
+            COUNT: if (done16) begin //wait till count is complete
+                nxt_state = DONE;
+            end else nxt_state = COUNT;
+            
+            DONE: if (full) begin //backpoch generation
+                nxt_state = IDLE;
+                set_done = 1;
+                ld_SCLK = 1;
+            end else nxt_state = DONE;
+
+            default: nxt_state = IDLE;
+        endcase      
+    end
+
+    //Done signal flip flop
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n) begin
+            done <= 0;
+        end else begin
+            if (init) begin
+                done <= 0;
+            end else begin
+                if (set_done) begin
+                    done <= 1;
+                end
+            end
+        end
+    end
+
+    //SS_n signal flip flop
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n) begin
+            SS_n <= 1;
+        end else begin
+            if (init) begin
+                SS_n <= 0;
+            end else begin
+                if (set_done) begin
+                    SS_n <= 1;
+                end
+            end
+        end
+    end
+
+    assign resp = shft_reg;
+
+    //resp output FF
+    //always_ff @(posedge clk, negedge rst_n) begin
+      //  if (!rst_n) begin
+        //    resp <= 16'b0;
+        //end
+        //else if (set_done) begin
+          //  resp <= shft_reg;
+        //end
+    //end
 
 endmodule

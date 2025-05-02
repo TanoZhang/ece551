@@ -1,29 +1,29 @@
 |eBike
 clk => clk.IN8
 RST_n => RST_n.IN1
-A2D_SS_n <= A2D_intf:iA2D_intf.SS_n
-A2D_MOSI <= A2D_intf:iA2D_intf.MOSI
-A2D_SCLK <= A2D_intf:iA2D_intf.SCLK
+A2D_SS_n << A2D_intf:iA2D_intf.SS_n
+A2D_MOSI << A2D_intf:iA2D_intf.MOSI
+A2D_SCLK << A2D_intf:iA2D_intf.SCLK
 A2D_MISO => A2D_MISO.IN1
 hallGrn => hallGrn.IN1
 hallYlw => hallYlw.IN1
 hallBlu => hallBlu.IN1
-highGrn <= mtr_drv:iMtr_drv.highGrn
-lowGrn <= mtr_drv:iMtr_drv.lowGrn
-highYlw <= mtr_drv:iMtr_drv.highYlw
-lowYlw <= mtr_drv:iMtr_drv.lowYlw
-highBlu <= mtr_drv:iMtr_drv.highBlu
-lowBlu <= mtr_drv:iMtr_drv.lowBlu
-inertSS_n <= inert_intf:iInert_intf.SS_n
-inertSCLK <= inert_intf:iInert_intf.SCLK
-inertMOSI <= inert_intf:iInert_intf.MOSI
+highGrn << mtr_drv:iMtr_drv.highGrn
+lowGrn << mtr_drv:iMtr_drv.lowGrn
+highYlw << mtr_drv:iMtr_drv.highYlw
+lowYlw << mtr_drv:iMtr_drv.lowYlw
+highBlu << mtr_drv:iMtr_drv.highBlu
+lowBlu << mtr_drv:iMtr_drv.lowBlu
+inertSS_n << inert_intf:iInert_intf.SS_n
+inertSCLK << inert_intf:iInert_intf.SCLK
+inertMOSI << inert_intf:iInert_intf.MOSI
 inertMISO => inertMISO.IN1
 inertINT => inertINT.IN1
 cadence => cadence.IN1
-TX <= sensorCondition:iSensorCondition.TX
+TX << sensorCondition:iSensorCondition.TX
 tgglMd => tgglMd.IN1
-LED[0] <= PB_intf:iPB_intf.LED
-LED[1] <= PB_intf:iPB_intf.LED
+LED[0] << PB_intf:iPB_intf.LED
+LED[1] << PB_intf:iPB_intf.LED
 
 
 |eBike|rst_synch:iRst_synch
@@ -92,24 +92,24 @@ MOSI <= SPI_mnrch:mnrch.MOSI
 
 
 |eBike|A2D_intf:iA2D_intf|SPI_mnrch:mnrch
-clk => done~reg0.CLK
 clk => SS_n~reg0.CLK
-clk => shift_reg[0].CLK
-clk => shift_reg[1].CLK
-clk => shift_reg[2].CLK
-clk => shift_reg[3].CLK
-clk => shift_reg[4].CLK
-clk => shift_reg[5].CLK
-clk => shift_reg[6].CLK
-clk => shift_reg[7].CLK
-clk => shift_reg[8].CLK
-clk => shift_reg[9].CLK
-clk => shift_reg[10].CLK
-clk => shift_reg[11].CLK
-clk => shift_reg[12].CLK
-clk => shift_reg[13].CLK
-clk => shift_reg[14].CLK
-clk => shift_reg[15].CLK
+clk => done~reg0.CLK
+clk => shft_reg[0].CLK
+clk => shft_reg[1].CLK
+clk => shft_reg[2].CLK
+clk => shft_reg[3].CLK
+clk => shft_reg[4].CLK
+clk => shft_reg[5].CLK
+clk => shft_reg[6].CLK
+clk => shft_reg[7].CLK
+clk => shft_reg[8].CLK
+clk => shft_reg[9].CLK
+clk => shft_reg[10].CLK
+clk => shft_reg[11].CLK
+clk => shft_reg[12].CLK
+clk => shft_reg[13].CLK
+clk => shft_reg[14].CLK
+clk => shft_reg[15].CLK
 clk => bit_cntr[0].CLK
 clk => bit_cntr[1].CLK
 clk => bit_cntr[2].CLK
@@ -121,52 +121,76 @@ clk => SCLK_div[2].CLK
 clk => SCLK_div[3].CLK
 clk => SCLK_div[4].CLK
 clk => state~1.DATAIN
-rst_n => done~reg0.ACLR
+rst_n => shft_reg[0].ACLR
+rst_n => shft_reg[1].ACLR
+rst_n => shft_reg[2].ACLR
+rst_n => shft_reg[3].ACLR
+rst_n => shft_reg[4].ACLR
+rst_n => shft_reg[5].ACLR
+rst_n => shft_reg[6].ACLR
+rst_n => shft_reg[7].ACLR
+rst_n => shft_reg[8].ACLR
+rst_n => shft_reg[9].ACLR
+rst_n => shft_reg[10].ACLR
+rst_n => shft_reg[11].ACLR
+rst_n => shft_reg[12].ACLR
+rst_n => shft_reg[13].ACLR
+rst_n => shft_reg[14].ACLR
+rst_n => shft_reg[15].ACLR
+rst_n => SCLK_div[0].ACLR
+rst_n => SCLK_div[1].ACLR
+rst_n => SCLK_div[2].ACLR
+rst_n => SCLK_div[3].ACLR
+rst_n => SCLK_div[4].ACLR
 rst_n => SS_n~reg0.PRESET
+rst_n => done~reg0.ACLR
+rst_n => bit_cntr[0].ACLR
+rst_n => bit_cntr[1].ACLR
+rst_n => bit_cntr[2].ACLR
+rst_n => bit_cntr[3].ACLR
+rst_n => bit_cntr[4].ACLR
 rst_n => state~3.DATAIN
 SS_n <= SS_n~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SCLK <= SCLK_div[4].DB_MAX_OUTPUT_PORT_TYPE
-MOSI <= shift_reg[15].DB_MAX_OUTPUT_PORT_TYPE
-MISO => shift_mux.DATAB
-snd => nxt_state.OUTPUTSELECT
-snd => nxt_state.OUTPUTSELECT
-snd => nxt_state.OUTPUTSELECT
+MOSI <= shft_reg[15].DB_MAX_OUTPUT_PORT_TYPE
+MISO => shft_reg.DATAB
+snd => Selector1.IN2
 snd => init.DATAB
 snd => Selector3.IN1
-snd => Selector4.IN1
-cmd[0] => shift_mux[0].DATAB
-cmd[1] => shift_mux[1].DATAB
-cmd[2] => shift_mux[2].DATAB
-cmd[3] => shift_mux[3].DATAB
-cmd[4] => shift_mux[4].DATAB
-cmd[5] => shift_mux[5].DATAB
-cmd[6] => shift_mux[6].DATAB
-cmd[7] => shift_mux[7].DATAB
-cmd[8] => shift_mux[8].DATAB
-cmd[9] => shift_mux[9].DATAB
-cmd[10] => shift_mux[10].DATAB
-cmd[11] => shift_mux[11].DATAB
-cmd[12] => shift_mux[12].DATAB
-cmd[13] => shift_mux[13].DATAB
-cmd[14] => shift_mux[14].DATAB
-cmd[15] => shift_mux[15].DATAB
+snd => Selector0.IN1
+cmd[0] => shft_reg.DATAB
+cmd[1] => shft_reg.DATAB
+cmd[2] => shft_reg.DATAB
+cmd[3] => shft_reg.DATAB
+cmd[4] => shft_reg.DATAB
+cmd[5] => shft_reg.DATAB
+cmd[6] => shft_reg.DATAB
+cmd[7] => shft_reg.DATAB
+cmd[8] => shft_reg.DATAB
+cmd[9] => shft_reg.DATAB
+cmd[10] => shft_reg.DATAB
+cmd[11] => shft_reg.DATAB
+cmd[12] => shft_reg.DATAB
+cmd[13] => shft_reg.DATAB
+cmd[14] => shft_reg.DATAB
+cmd[15] => shft_reg.DATAB
 done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
-resp[0] <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-resp[1] <= shift_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-resp[2] <= shift_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-resp[3] <= shift_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-resp[4] <= shift_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-resp[5] <= shift_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-resp[6] <= shift_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-resp[7] <= shift_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-resp[8] <= shift_reg[8].DB_MAX_OUTPUT_PORT_TYPE
-resp[9] <= shift_reg[9].DB_MAX_OUTPUT_PORT_TYPE
-resp[10] <= shift_reg[10].DB_MAX_OUTPUT_PORT_TYPE
-resp[11] <= shift_reg[11].DB_MAX_OUTPUT_PORT_TYPE
-resp[12] <= shift_reg[12].DB_MAX_OUTPUT_PORT_TYPE
-resp[13] <= shift_reg[13].DB_MAX_OUTPUT_PORT_TYPE
-resp[14] <= shift_reg[14].DB_MAX_OUTPUT_PORT_TYPE
-resp[15] <= shift_reg[15].DB_MAX_OUTPUT_PORT_TYPE
+resp[0] <= shft_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+resp[1] <= shft_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+resp[2] <= shft_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+resp[3] <= shft_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+resp[4] <= shft_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+resp[5] <= shft_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+resp[6] <= shft_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+resp[7] <= shft_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+resp[8] <= shft_reg[8].DB_MAX_OUTPUT_PORT_TYPE
+resp[9] <= shft_reg[9].DB_MAX_OUTPUT_PORT_TYPE
+resp[10] <= shft_reg[10].DB_MAX_OUTPUT_PORT_TYPE
+resp[11] <= shft_reg[11].DB_MAX_OUTPUT_PORT_TYPE
+resp[12] <= shft_reg[12].DB_MAX_OUTPUT_PORT_TYPE
+resp[13] <= shft_reg[13].DB_MAX_OUTPUT_PORT_TYPE
+resp[14] <= shft_reg[14].DB_MAX_OUTPUT_PORT_TYPE
+resp[15] <= shft_reg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |eBike|sensorCondition:iSensorCondition
@@ -959,12 +983,12 @@ selBlu[1] => Equal6.IN1
 selBlu[1] => Equal7.IN0
 selBlu[1] => Equal8.IN0
 PWM_synch <= PWM:PWM11.PWM_synch
-highGrn <= nonoverlap:green_nonoverlap.highOut
-lowGrn <= nonoverlap:green_nonoverlap.lowOut
-highYlw <= nonoverlap:yellow_nonoverlap.highOut
-lowYlw <= nonoverlap:yellow_nonoverlap.lowOut
-highBlu <= nonoverlap:blue_nonverlap.highOut
-lowBlu <= nonoverlap:blue_nonverlap.lowOut
+highGrn <= nonoverlap:GRN_NVL.highOut
+lowGrn <= nonoverlap:GRN_NVL.lowOut
+highYlw <= nonoverlap:YLW_NVL.highOut
+lowYlw <= nonoverlap:YLW_NVL.lowOut
+highBlu <= nonoverlap:BLU_NVL.highOut
+lowBlu <= nonoverlap:BLU_NVL.lowOut
 
 
 |eBike|mtr_drv:iMtr_drv|PWM:PWM11
@@ -1007,7 +1031,7 @@ PWM_sig <= PWM_sig~reg0.DB_MAX_OUTPUT_PORT_TYPE
 PWM_synch <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|eBike|mtr_drv:iMtr_drv|nonoverlap:green_nonoverlap
+|eBike|mtr_drv:iMtr_drv|nonoverlap:GRN_NVL
 clk => previous_high.CLK
 clk => previous_low.CLK
 clk => forced_low.CLK
@@ -1042,7 +1066,7 @@ highOut <= highOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lowOut <= lowOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|eBike|mtr_drv:iMtr_drv|nonoverlap:yellow_nonoverlap
+|eBike|mtr_drv:iMtr_drv|nonoverlap:YLW_NVL
 clk => previous_high.CLK
 clk => previous_low.CLK
 clk => forced_low.CLK
@@ -1077,7 +1101,7 @@ highOut <= highOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 lowOut <= lowOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|eBike|mtr_drv:iMtr_drv|nonoverlap:blue_nonverlap
+|eBike|mtr_drv:iMtr_drv|nonoverlap:BLU_NVL
 clk => previous_high.CLK
 clk => previous_low.CLK
 clk => forced_low.CLK
@@ -1137,24 +1161,24 @@ vld <= vld.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |eBike|inert_intf:iInert_intf|SPI_mnrch:iSPI_mnrch
-clk => done~reg0.CLK
 clk => SS_n~reg0.CLK
-clk => shift_reg[0].CLK
-clk => shift_reg[1].CLK
-clk => shift_reg[2].CLK
-clk => shift_reg[3].CLK
-clk => shift_reg[4].CLK
-clk => shift_reg[5].CLK
-clk => shift_reg[6].CLK
-clk => shift_reg[7].CLK
-clk => shift_reg[8].CLK
-clk => shift_reg[9].CLK
-clk => shift_reg[10].CLK
-clk => shift_reg[11].CLK
-clk => shift_reg[12].CLK
-clk => shift_reg[13].CLK
-clk => shift_reg[14].CLK
-clk => shift_reg[15].CLK
+clk => done~reg0.CLK
+clk => shft_reg[0].CLK
+clk => shft_reg[1].CLK
+clk => shft_reg[2].CLK
+clk => shft_reg[3].CLK
+clk => shft_reg[4].CLK
+clk => shft_reg[5].CLK
+clk => shft_reg[6].CLK
+clk => shft_reg[7].CLK
+clk => shft_reg[8].CLK
+clk => shft_reg[9].CLK
+clk => shft_reg[10].CLK
+clk => shft_reg[11].CLK
+clk => shft_reg[12].CLK
+clk => shft_reg[13].CLK
+clk => shft_reg[14].CLK
+clk => shft_reg[15].CLK
 clk => bit_cntr[0].CLK
 clk => bit_cntr[1].CLK
 clk => bit_cntr[2].CLK
@@ -1166,52 +1190,76 @@ clk => SCLK_div[2].CLK
 clk => SCLK_div[3].CLK
 clk => SCLK_div[4].CLK
 clk => state~1.DATAIN
-rst_n => done~reg0.ACLR
+rst_n => shft_reg[0].ACLR
+rst_n => shft_reg[1].ACLR
+rst_n => shft_reg[2].ACLR
+rst_n => shft_reg[3].ACLR
+rst_n => shft_reg[4].ACLR
+rst_n => shft_reg[5].ACLR
+rst_n => shft_reg[6].ACLR
+rst_n => shft_reg[7].ACLR
+rst_n => shft_reg[8].ACLR
+rst_n => shft_reg[9].ACLR
+rst_n => shft_reg[10].ACLR
+rst_n => shft_reg[11].ACLR
+rst_n => shft_reg[12].ACLR
+rst_n => shft_reg[13].ACLR
+rst_n => shft_reg[14].ACLR
+rst_n => shft_reg[15].ACLR
+rst_n => SCLK_div[0].ACLR
+rst_n => SCLK_div[1].ACLR
+rst_n => SCLK_div[2].ACLR
+rst_n => SCLK_div[3].ACLR
+rst_n => SCLK_div[4].ACLR
 rst_n => SS_n~reg0.PRESET
+rst_n => done~reg0.ACLR
+rst_n => bit_cntr[0].ACLR
+rst_n => bit_cntr[1].ACLR
+rst_n => bit_cntr[2].ACLR
+rst_n => bit_cntr[3].ACLR
+rst_n => bit_cntr[4].ACLR
 rst_n => state~3.DATAIN
 SS_n <= SS_n~reg0.DB_MAX_OUTPUT_PORT_TYPE
 SCLK <= SCLK_div[4].DB_MAX_OUTPUT_PORT_TYPE
-MOSI <= shift_reg[15].DB_MAX_OUTPUT_PORT_TYPE
-MISO => shift_mux.DATAB
-snd => nxt_state.OUTPUTSELECT
-snd => nxt_state.OUTPUTSELECT
-snd => nxt_state.OUTPUTSELECT
+MOSI <= shft_reg[15].DB_MAX_OUTPUT_PORT_TYPE
+MISO => shft_reg.DATAB
+snd => Selector1.IN2
 snd => init.DATAB
 snd => Selector3.IN1
-snd => Selector4.IN1
-cmd[0] => shift_mux[0].DATAB
-cmd[1] => shift_mux[1].DATAB
-cmd[2] => shift_mux[2].DATAB
-cmd[3] => shift_mux[3].DATAB
-cmd[4] => shift_mux[4].DATAB
-cmd[5] => shift_mux[5].DATAB
-cmd[6] => shift_mux[6].DATAB
-cmd[7] => shift_mux[7].DATAB
-cmd[8] => shift_mux[8].DATAB
-cmd[9] => shift_mux[9].DATAB
-cmd[10] => shift_mux[10].DATAB
-cmd[11] => shift_mux[11].DATAB
-cmd[12] => shift_mux[12].DATAB
-cmd[13] => shift_mux[13].DATAB
-cmd[14] => shift_mux[14].DATAB
-cmd[15] => shift_mux[15].DATAB
+snd => Selector0.IN1
+cmd[0] => shft_reg.DATAB
+cmd[1] => shft_reg.DATAB
+cmd[2] => shft_reg.DATAB
+cmd[3] => shft_reg.DATAB
+cmd[4] => shft_reg.DATAB
+cmd[5] => shft_reg.DATAB
+cmd[6] => shft_reg.DATAB
+cmd[7] => shft_reg.DATAB
+cmd[8] => shft_reg.DATAB
+cmd[9] => shft_reg.DATAB
+cmd[10] => shft_reg.DATAB
+cmd[11] => shft_reg.DATAB
+cmd[12] => shft_reg.DATAB
+cmd[13] => shft_reg.DATAB
+cmd[14] => shft_reg.DATAB
+cmd[15] => shft_reg.DATAB
 done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
-resp[0] <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
-resp[1] <= shift_reg[1].DB_MAX_OUTPUT_PORT_TYPE
-resp[2] <= shift_reg[2].DB_MAX_OUTPUT_PORT_TYPE
-resp[3] <= shift_reg[3].DB_MAX_OUTPUT_PORT_TYPE
-resp[4] <= shift_reg[4].DB_MAX_OUTPUT_PORT_TYPE
-resp[5] <= shift_reg[5].DB_MAX_OUTPUT_PORT_TYPE
-resp[6] <= shift_reg[6].DB_MAX_OUTPUT_PORT_TYPE
-resp[7] <= shift_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-resp[8] <= shift_reg[8].DB_MAX_OUTPUT_PORT_TYPE
-resp[9] <= shift_reg[9].DB_MAX_OUTPUT_PORT_TYPE
-resp[10] <= shift_reg[10].DB_MAX_OUTPUT_PORT_TYPE
-resp[11] <= shift_reg[11].DB_MAX_OUTPUT_PORT_TYPE
-resp[12] <= shift_reg[12].DB_MAX_OUTPUT_PORT_TYPE
-resp[13] <= shift_reg[13].DB_MAX_OUTPUT_PORT_TYPE
-resp[14] <= shift_reg[14].DB_MAX_OUTPUT_PORT_TYPE
-resp[15] <= shift_reg[15].DB_MAX_OUTPUT_PORT_TYPE
+resp[0] <= shft_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+resp[1] <= shft_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+resp[2] <= shft_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+resp[3] <= shft_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+resp[4] <= shft_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+resp[5] <= shft_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+resp[6] <= shft_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+resp[7] <= shft_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+resp[8] <= shft_reg[8].DB_MAX_OUTPUT_PORT_TYPE
+resp[9] <= shft_reg[9].DB_MAX_OUTPUT_PORT_TYPE
+resp[10] <= shft_reg[10].DB_MAX_OUTPUT_PORT_TYPE
+resp[11] <= shft_reg[11].DB_MAX_OUTPUT_PORT_TYPE
+resp[12] <= shft_reg[12].DB_MAX_OUTPUT_PORT_TYPE
+resp[13] <= shft_reg[13].DB_MAX_OUTPUT_PORT_TYPE
+resp[14] <= shft_reg[14].DB_MAX_OUTPUT_PORT_TYPE
+resp[15] <= shft_reg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |eBike|inert_intf:iInert_intf|inertial_integrator:iInertial_integrator

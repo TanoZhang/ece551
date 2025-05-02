@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu May  1 23:33:39 2025
+Fitter Status : Successful - Fri May  2 14:35:32 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : eBike
 Top-level Entity Name : eBike
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 1,195 / 22,320 ( 5 % )
+Total logic elements : 1,183 / 22,320 ( 5 % )
     Total combinational functions : 1,116 / 22,320 ( 5 % )
     Dedicated logic registers : 475 / 22,320 ( 2 % )
 Total registers : 475

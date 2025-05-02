@@ -42,12 +42,12 @@
   wire [1:0] selGrn, selYlw, selBlu;
   wire signed [12:0] incline;
   wire [11:0] drv_mag;
+  wire vld;
   wire brake_n;
   wire PWM_synch;
   wire [2:0] scale;
   wire [1:0] setting;
   wire cadence;
-  wire vld;
   
   ////////////////////////////////////////////////////////
   // Brake lever input is converted as analog, but     //

@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu May  1 21:19:33 2025
+Fitter Status : Successful - Fri May  2 13:52:50 2025
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : inert_intf_test
 Top-level Entity Name : inert_intf_test
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 458 / 22,320 ( 2 % )
-    Total combinational functions : 417 / 22,320 ( 2 % )
+Total logic elements : 459 / 22,320 ( 2 % )
+    Total combinational functions : 414 / 22,320 ( 2 % )
     Dedicated logic registers : 213 / 22,320 ( < 1 % )
 Total registers : 213
 Total pins : 15 / 154 ( 10 % )

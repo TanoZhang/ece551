@@ -15,38 +15,69 @@ module mtr_drv(
     output logic lowBlu             // Blue low drive
 );
 
-    logic PWM_sig;                  // PWM signal
-    logic green1, green2;               // Intermediate green signals
-    logic yellow1, yellow2;               // Intermediate yellow signals
-    logic blue1, blue2;               // Intermediate blue signals
+    logic PWM_sig;                  // Internal PWM signal
+    logic grn1, grn2;               // Intermediate green signals
+    logic ylw1, ylw2;               // Intermediate yellow signals
+    logic blu1, blu2;               // Intermediate blue signals
 
     // Instantiate PWM
-    PWM PWM11(.clk(clk), .rst_n(rst_n), .duty(duty), .PWM_synch(PWM_synch), .PWM_sig(PWM_sig));
+    PWM PWM11(
+        .clk(clk),
+        .rst_n(rst_n),
+        .duty(duty),
+        .PWM_synch(PWM_synch),      
+        .PWM_sig(PWM_sig)           
+    );
 
-    // Green Instantiate
-    nonoverlap green_nonoverlap(.clk(clk), .rst_n(rst_n), .highIn(green1), .lowIn(green2), .highOut(highGrn), .lowOut(lowGrn));
+    // Green non-overlap driver
+    nonoverlap GRN_NVL(
+        .clk(clk),
+        .rst_n(rst_n),
+        .highIn(grn1),              
+        .lowIn(grn2),              
+        .highOut(highGrn),         
+        .lowOut(lowGrn)             
+    );
 
-    // Yellow Instantiate
-    nonoverlap yellow_nonoverlap(.clk(clk), .rst_n(rst_n), .highIn(yellow1), .lowIn(yellow2), .highOut(highYlw), .lowOut(lowYlw));
+    // Yellow non-overlap driver
+    nonoverlap YLW_NVL(
+        .clk(clk),
+        .rst_n(rst_n),
+        .highIn(ylw1),
+        .lowIn(ylw2),
+        .highOut(highYlw),
+        .lowOut(lowYlw)
+    );
 
-    // Blue Instantiate
-    nonoverlap blue_nonverlap(.clk(clk), .rst_n(rst_n), .highIn(blue1), .lowIn(blue2), .highOut(highBlu), .lowOut(lowBlu));
+    // Blue non-overlap driver
+    nonoverlap BLU_NVL(
+        .clk(clk),
+        .rst_n(rst_n),
+        .highIn(blu1),
+        .lowIn(blu2),
+        .highOut(highBlu),
+        .lowOut(lowBlu)
+    );
 
-    // logic of selector
+    // Selector logic
     always_comb begin
-        {green1, green2} = (selGrn == 2'b01) ? {~PWM_sig, PWM_sig} :  
+        // Green output logic
+        {grn1, grn2} = (selGrn == 2'b01) ? {~PWM_sig, PWM_sig} :  
                        (selGrn == 2'b10) ? {PWM_sig, ~PWM_sig} :   
                        (selGrn == 2'b11) ? {1'b0, PWM_sig} :      
                                            {1'b0, 1'b0};          
 
-        {yellow1, yellow2} = (selYlw == 2'b01) ? {~PWM_sig, PWM_sig} :
+        // Yellow output logic
+        {ylw1, ylw2} = (selYlw == 2'b01) ? {~PWM_sig, PWM_sig} :
                        (selYlw == 2'b10) ? {PWM_sig, ~PWM_sig} :
                        (selYlw == 2'b11) ? {1'b0, PWM_sig} :
                                            {1'b0, 1'b0};
-
-        {blue1, blue2} = (selBlu == 2'b01) ? {~PWM_sig, PWM_sig} :
+        
+        // Blue output logic
+        {blu1, blu2} = (selBlu == 2'b01) ? {~PWM_sig, PWM_sig} :
                        (selBlu == 2'b10) ? {PWM_sig, ~PWM_sig} :
                        (selBlu == 2'b11) ? {1'b0, PWM_sig} :
                                            {1'b0, 1'b0};
     end
+    
 endmodule

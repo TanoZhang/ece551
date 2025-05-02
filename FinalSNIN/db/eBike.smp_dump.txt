@@ -17,10 +17,10 @@ state.AZ_H 0 1 0 0 0 0 0 0 0 0 0 0 0 1
 state.FINISH 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |eBike|inert_intf:iInert_intf|SPI_mnrch:iSPI_mnrch|state
-Name state.IDLE state.BACKPORCH state.SHIFT_STATE 
+Name state.IDLE state.DONE state.COUNT 
 state.IDLE 0 0 0 
-state.SHIFT_STATE 1 0 1 
-state.BACKPORCH 1 1 0 
+state.COUNT 1 0 1 
+state.DONE 1 1 0 
 
 State Machine - |eBike|sensorCondition:iSensorCondition|telemetry:iDUT_tel|state
 Name state.PAYLOAD6 state.PAYLOAD5 state.PAYLOAD4 state.PAYLOAD3 state.PAYLOAD2 state.PAYLOAD1 state.DELIM1 state.IDLE state.WAIT 
@@ -42,7 +42,7 @@ state.Wait 0 1 0 1
 state.ReadData 1 0 0 1 
 
 State Machine - |eBike|A2D_intf:iA2D_intf|SPI_mnrch:mnrch|state
-Name state.IDLE state.BACKPORCH state.SHIFT_STATE 
+Name state.IDLE state.DONE state.COUNT 
 state.IDLE 0 0 0 
-state.SHIFT_STATE 1 0 1 
-state.BACKPORCH 1 1 0 
+state.COUNT 1 0 1 
+state.DONE 1 1 0 
