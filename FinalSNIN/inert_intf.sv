@@ -1,24 +1,29 @@
-`default_nettype none
-/*
-    Determines incline of bike based on inertial sensor readings
-*/
 module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
 
-    input logic clk, rst_n, MISO, INT;
-    output logic SS_n, SCLK, MOSI, vld;
+    input logic clk; 
+    input logic rst_n; 
+    input logic INT;
+    input logic MISO; 
+    output logic SS_n;
+    output logic MOSI;
+    output logic SCLK; 
+    output logic vld;
     output logic signed [12:0] incline;
 
     // Define states
-    typedef enum logic [3:0] {INIT1, INIT2, INIT3, INIT4, WAIT, ROLL_L, ROLL_H, YAW_L, YAW_H, AY_L, AY_H, AZ_L, AZ_H, FINISH} state_t;
+    typedef enum logic [3:0] {INIT1, INIT2, INIT3, INIT4, WAIT, 
+                              READ1, READ2, READ3, READ4, READ5, 
+                              READ6, READ7, READ8, FINISH} state_t;
+
     state_t state, nxt_state;
 
-    // Intermediate signals
+    //intermediate signals
     logic snd, done;
     logic [15:0] cmd, resp;
-    logic [15:0] roll_rt, yaw_rt, AY, AZ;
     logic [15:0] timer;
+    logic [15:0] roll_rt, yaw_rt, AY, AZ;
     logic INT_ff1, INT_ff2;
-    logic C_R_H, C_R_L, C_Y_H, C_Y_L, C_AY_H, C_AY_L, C_AZ_H, C_AZ_L;           // Enable update of correct register with resp
+    logic rollH, rollL, yawH, yawL, AYH, AYL, AZH, AZL;           // Enable update of correct register with resp
 
     // Instantiate SPI_mnrch
     SPI_mnrch iSPI_mnrch(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .MISO(MISO), .snd(snd), .cmd(cmd), .done(done), .resp(resp));
@@ -40,14 +45,14 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
         snd = 0;
         vld = 0;
         nxt_state = state;
-        C_R_L = 0;
-        C_R_H = 0;
-        C_Y_L = 0;
-        C_Y_H = 0;
-        C_AY_L = 0;
-        C_AY_H = 0;
-        C_AZ_L = 0;
-        C_AZ_H = 0;
+        rollL = 0;
+        rollH = 0;
+        yawL = 0;
+        yawH = 0;
+        AYL = 0;
+        AYH = 0;
+        AZL = 0;
+        AZH = 0;
 
         unique case (state)
             INIT1: begin
@@ -81,29 +86,29 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
             WAIT: begin
                 cmd = 16'hxxxx;
                 if (done) begin
-                    nxt_state = ROLL_L;
+                    nxt_state = READ1;
                 end
             end
-            ROLL_L: begin
+            READ1: begin
                 cmd = 16'hA4xx;
                 if (INT_ff2) begin
                     snd = 1;
-                    nxt_state = ROLL_H;
+                    nxt_state = READ2;
                 end
             end
-            ROLL_H: begin
+            READ2: begin
                 cmd = 16'hA5xx;
                 if (done) begin
                     snd = 1;
-                    C_R_L = 1;
-                    nxt_state = YAW_L;
+                    rollL = 1;
+                    nxt_state = READ3;
                 end
             end
-            YAW_L: begin
+            READ3: begin
                 cmd = 16'hA6xx;
                 if (done) begin
                     snd = 1;
-                    C_R_H = 1;
+                    rollH = 1;
                     nxt_state = YAW_H;
                 end
             end
@@ -111,39 +116,39 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 cmd = 16'hA7xx;
                 if (done) begin
                     snd = 1;
-                    C_Y_L = 1;
-                    nxt_state = AY_L;
+                    yawL = 1;
+                    nxt_state = READ5;
                 end
             end
-            AY_L: begin
+            READ5: begin
                 cmd = 16'hAAxx;
                 if (done) begin
                     snd = 1;
-                    C_Y_H = 1;
-                    nxt_state = AY_H;
+                    yawH = 1;
+                    nxt_state = READ6;
                 end
             end
-            AY_H: begin
+            READ6: begin
                 cmd = 16'hABxx;
                 if (done) begin
                     snd = 1;
-                    C_AY_L = 1;
-                    nxt_state = AZ_L;
+                    AYL = 1;
+                    nxt_state = READ7;
                 end
             end
-            AZ_L: begin
+            READ7: begin
                 cmd = 16'hACxx;
                 if (done) begin
                     snd = 1;
-                    C_AY_H = 1;
-                    nxt_state = AZ_H;
+                    AYH = 1;
+                    nxt_state = READ8;
                 end
             end
-            AZ_H: begin
+            READ8: begin
                 cmd = 16'hADxx;
                 if (done) begin
                     snd = 1;
-                    C_AZ_L = 1;
+                    AZL = 1;
                     nxt_state = FINISH;
                 end
             end
@@ -151,18 +156,20 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
             default: begin
                 cmd = 16'hxxxx;
                 if (done) begin
-                    vld = 1;            // Valid delayed by 1 clock cycle in inertial_integrator so asserted at same time as C_AZ_H
-                    C_AZ_H = 1;
-                    nxt_state = ROLL_L;
+                    vld = 1;            // Valid delayed by 1 clock cycle in inertial_integrator so asserted at same time as AZH
+                    AZH = 1;
+                    nxt_state = READ1;
                 end
             end
         endcase
     end
 
-    // Infer timer flop
+    // Timer
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) timer <= 0;
-        else timer <= timer + 1;
+        if (!rst_n) 
+            timer <= 0;
+        else 
+            timer <= timer + 1;
     end
 
     // Synchronize INT signal
@@ -176,37 +183,61 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
         end
     end
 
-    // Infer holding registers
+    // Registers
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) roll_rt[7:0] <= 0;
-        else if (C_R_L) roll_rt[7:0] <= resp[7:0];
+        if (!rst_n)
+            roll_rt[7:0] <= 0;
+        else if (rollL) 
+            roll_rt[7:0] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) roll_rt[15:8] <= 0;
-        else if (C_R_H) roll_rt[15:8] <= resp[7:0];
+        if (!rst_n) 
+            roll_rt[15:8] <= 0;
+        else if (rollH) 
+            roll_rt[15:8] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) yaw_rt[7:0] <= 0;
-        else if (C_Y_L) yaw_rt[7:0] <= resp[7:0];
+        if (!rst_n) 
+            yaw_rt[7:0] <= 0;
+        else if (yawL) 
+            yaw_rt[7:0] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) yaw_rt[15:8] <= 0;
-        else if (C_Y_H) yaw_rt[15:8] <= resp[7:0];
+        if (!rst_n) 
+            yaw_rt[15:8] <= 0;
+        else if (yawH) 
+            yaw_rt[15:8] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) AY[7:0] <= 0;
-        else if (C_AY_L) AY[7:0] <= resp[7:0];
+        if (!rst_n) 
+            AY[7:0] <= 0;
+        else if (AYL) 
+            AY[7:0] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) AY[15:8] <= 0;
-        else if (C_AY_H) AY[15:8] <= resp[7:0];
+        if (!rst_n) 
+            AY[15:8] <= 0;
+        else if (AYH) 
+            AY[15:8] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) AZ[7:0] <= 0;
-        else if (C_AZ_L) AZ[7:0] <= resp[7:0];
+        if (!rst_n) 
+            AZ[7:0] <= 0;
+        else if (AZL) 
+            AZ[7:0] <= resp[7:0];
     end
+
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) AZ[15:8] <= 0;
-        else if (C_AZ_H) AZ[15:8] <= resp[7:0];
+        if (!rst_n) 
+            AZ[15:8] <= 0;
+        else if (AZH) 
+            AZ[15:8] <= resp[7:0];
     end
+
 endmodule
