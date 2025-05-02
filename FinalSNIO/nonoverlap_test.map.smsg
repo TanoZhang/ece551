@@ -1,3 +1,0 @@
-Info (10281): Verilog HDL Declaration information at reset_synch.sv(3): object "RST_n" differs only in case from object "rst_n" in the same scope File: I:/ece551/final project/Final/reset_synch.sv Line: 3
-Info (10281): Verilog HDL Declaration information at nonoverlap_test.sv(4): object "RST_n" differs only in case from object "rst_n" in the same scope File: I:/ece551/final project/Final/nonoverlap_test.sv Line: 4
-Info (10281): Verilog HDL Declaration information at nonoverlap_test.sv(123): object "RISE" differs only in case from object "rise" in the same scope File: I:/ece551/final project/Final/nonoverlap_test.sv Line: 123
