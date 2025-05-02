@@ -30,14 +30,14 @@ end
 always @(posedge clk, negedge rst_n) begin
 if (!rst_n)
 DR_signal <= 2'b0;
-else if start) begin
+else if (start) begin
 DR_signal <= DR_signal + 1;
 end
 end
 
 always@(posedge clk, negedge rst_n) begin
 if(!rst_n) start <= 0;
-else if start) start <= 0;
+else if (start) start <= 0;
 else start <= true;
 end
 
@@ -46,7 +46,7 @@ assign ADC_channel = DR_signal[1] ? (DR_signal[0] ? 3'b100: 3'b011) : DR_signal[
 assign cmd = {2'b0, ADC_channel, 11'h000};
 
 //state machine
-typedef enum logic [1:0] {IDLE, continue, halt, read_data} state_t;
+typedef enum logic [1:0] {IDLE, CONTINUE, halt, read_data} state_t;
 state_t state, nxt_state;
 
 //flipflop of state
@@ -63,10 +63,10 @@ conversion_done = 0;
 nxt_state = state;
 case(state)
 IDLE: if(counter_finish) begin
-  nxt_state = continue;
+  nxt_state = CONTINUE;
   snd = 1;
 end
-continue: if(done) begin
+CONTINUE: if(done) begin
 nxt_state = halt;
 end
 halt: begin

@@ -15,7 +15,7 @@ module brushless (
 
   //metastability local variable
   logic hallGrn1, hallGrn2, hallYLW1, hallYLW2, hallBlu1, hallBlu2;
-  logic SyncGREEN, SynchYELLOW, SyncBLUE;
+  logic SynchGREEN, SynchYELLOW, SynchBLUE;
 
   always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin
@@ -40,17 +40,17 @@ module brushless (
     if (!rst_n) begin
       SynchGREEN <= 1'b0;
       SynchYELLOW <= 1'b0;
-      SyncBLUE <= 1'b0;
+      SynchBLUE <= 1'b0;
     end else if (PWM_synch) begin
       SynchGREEN <= hallGrn2;
       SynchYELLOW <= hallYLW2;
-      SyncBLUE <= hallBlu2;
+      SynchBLUE <= hallBlu2;
     end
   end
 
   //check rotation state
   logic [2:0] rotation_state;
-  assign rotation_state = {SynchGREEN, SynchYELLOW, SyncBLUE};
+  assign rotation_state = {SynchGREEN, SynchYELLOW, SynchBLUE};
 
   //driving state
   typedef enum logic [1:0] {

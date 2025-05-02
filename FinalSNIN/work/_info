@@ -11,647 +11,647 @@ cModel Technology
 dC:/Users/mallo/OneDrive - UW-Madison/ECE551/HW2
 vA2D_intf
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1746217954
+!s110 1746219854
 !i10b 1
-!s100 4nVlRZ5DnQA_a]U6:l7IP3
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IFK]MzXiL6^7DLSNYJDzlF1
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s100 FMkPa]R^0BDP=nnR6O0PZ1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ikk;c=3_M^>C`Kcjk;M_3I3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z4 dC:/Users/mallo/ece551/FinalSNIN
-Z5 w1746215547
+Z3 dC:/Users/mallo/ece551/FinalSNIN
+w1746219707
 8C:/Users/mallo/ece551/FinalSNIN/A2D_intf.sv
 FC:/Users/mallo/ece551/FinalSNIN/A2D_intf.sv
-!i122 32
-L0 1 138
-Z6 OV;L;2020.1;71
+!i122 191
+L0 1 113
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1746217954.000000
+Z5 !s108 1746219854.000000
 !s107 C:/Users/mallo/ece551/FinalSNIN/A2D_intf.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/A2D_intf.sv|
 !i113 1
-Z8 o-work work -sv
-Z9 tCvgOpt 0
+Z6 o-work work -sv
+Z7 tCvgOpt 0
 n@a2@d_intf
 vADC128S
 R0
-R1
+Z8 !s110 1746219855
 !i10b 1
 !s100 iL2zkc^KeI[4_PCXk?lB03
-R2
+R1
 I=L3noX0d8KjeK6_?bXBFE1
-R3
+R2
 S1
-R4
-R5
+R3
+Z9 w1746215547
 8C:/Users/mallo/ece551/FinalSNIN/ADC128S.sv
 FC:/Users/mallo/ece551/FinalSNIN/ADC128S.sv
-!i122 33
+!i122 192
 L0 1 112
-R6
+R4
 r1
 !s85 0
 31
-R7
+R5
 !s107 C:/Users/mallo/ece551/FinalSNIN/ADC128S.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/ADC128S.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@a@d@c128@s
 vAnalogModel
 R0
-R1
+R8
 !i10b 1
 !s100 V5Mo]QPJ?<ojR=o8>V^H10
-R2
+R1
 I<RHF0bEcLl^H[b_h;8?[k3
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/AnalogModel.sv
 FC:/Users/mallo/ece551/FinalSNIN/AnalogModel.sv
-!i122 34
+!i122 193
 Z10 L0 1 111
-R6
+R4
 r1
 !s85 0
 31
-R7
+Z11 !s108 1746219855.000000
 !s107 C:/Users/mallo/ece551/FinalSNIN/AnalogModel.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/AnalogModel.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@analog@model
 vbrushless
 R0
-R1
+R8
 !i10b 1
-!s100 F1RQEmR7Q@?2zI1o`S4Zg1
+!s100 RZz;Bd>c1IQZCRg<`H?og0
+R1
+I<S1^HJUXnci[Jj9lO1Him2
 R2
-I[iCVEK<ZZ1cC_mKA<EHjL3
-R3
 S1
-R4
-R5
+R3
+w1746219851
 8C:/Users/mallo/ece551/FinalSNIN/brushless.sv
 FC:/Users/mallo/ece551/FinalSNIN/brushless.sv
-!i122 35
-L0 25 155
-R6
+!i122 194
+L0 1 121
+R4
 r1
 !s85 0
 31
-R7
+R11
 !s107 C:/Users/mallo/ece551/FinalSNIN/brushless.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/brushless.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vcadence_filt
 R0
-R1
+R8
 !i10b 1
 !s100 Hn]8FAhR]I6@CeB>6GRNK0
-R2
+R1
 I>BZ`ShVEjg;XlXX2A9oeU2
-R3
+R2
 S1
-R4
+R3
 w1746217734
 8C:/Users/mallo/ece551/FinalSNIN/cadence_filt.sv
 FC:/Users/mallo/ece551/FinalSNIN/cadence_filt.sv
-!i122 36
+!i122 195
 L0 13 71
-R6
+R4
 r1
 !s85 0
 31
-R7
+R11
 !s107 C:/Users/mallo/ece551/FinalSNIN/cadence_filt.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/cadence_filt.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vcadence_LU
 R0
-R1
+R8
 !i10b 1
 !s100 BTkJ1lgHmZ_j@E3b@lDg@0
-R2
+R1
 Idj?h=G4HXD@7S1j2^ISWf1
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/cadence_LU.sv
 FC:/Users/mallo/ece551/FinalSNIN/cadence_LU.sv
-!i122 37
+!i122 196
 L0 1 237
-R6
+R4
 r1
 !s85 0
 31
-R7
+R11
 !s107 C:/Users/mallo/ece551/FinalSNIN/cadence_LU.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/cadence_LU.sv|
 !i113 1
-R8
-R9
+R6
+R7
 ncadence_@l@u
 vcadence_meas
 R0
-R1
+R8
 !i10b 1
 !s100 fQG?0z=P3Ce]HGN7mSU562
-R2
+R1
 IOm_?`FL146gLe4z]g5D^O1
-R3
+R2
 S1
-R4
+R3
 w1746217763
 8C:/Users/mallo/ece551/FinalSNIN/cadence_meas.sv
 FC:/Users/mallo/ece551/FinalSNIN/cadence_meas.sv
-!i122 38
+!i122 197
 L0 1 75
-R6
+R4
 r1
 !s85 0
 31
-R7
+R11
 !s107 C:/Users/mallo/ece551/FinalSNIN/cadence_meas.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/cadence_meas.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vcoil_volt
 R0
-Z11 !s110 1746217955
+R8
 !i10b 1
 !s100 4m?i0G0:H=2hDnM2Hd9JV0
-R2
+R1
 I0:2nR:VEHC6d[6_^lSc=d3
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/coil_volt.sv
 FC:/Users/mallo/ece551/FinalSNIN/coil_volt.sv
-!i122 39
+!i122 198
 L0 6 146
-R6
+R4
 r1
 !s85 0
 31
-Z12 !s108 1746217955.000000
+R11
 !s107 C:/Users/mallo/ece551/FinalSNIN/coil_volt.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/coil_volt.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vdesiredDrive
 R0
-R11
+R8
 !i10b 1
-!s100 K65;^DPMeYR54oUXQ8heB3
+!s100 U0IXhWTnaUkJJ7aU_ig:A2
+R1
+IOC==:1>_WF`:iMd^VQeVI3
 R2
-I9INAY`7HQiE::3@hizfGf3
-R3
 S1
-R4
-R5
+R3
+w1746219026
 8C:/Users/mallo/ece551/FinalSNIN/desiredDrive.sv
 FC:/Users/mallo/ece551/FinalSNIN/desiredDrive.sv
-!i122 40
-L0 1 37
-R6
+!i122 199
+L0 1 25
+R4
 r1
 !s85 0
 31
-R12
+R11
 !s107 C:/Users/mallo/ece551/FinalSNIN/desiredDrive.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/desiredDrive.sv|
 !i113 1
-R8
-R9
+R6
+R7
 ndesired@drive
 veBike
 R0
-R11
+Z12 !s110 1746219856
 !i10b 1
 !s100 ?i01@NPOF2kIG:Jh=aQL:3
-R2
+R1
 IHR5M2zfcIF35CUL=mOzbT3
-R3
+R2
 S1
-R4
+R3
 Z13 w1746215568
 8C:/Users/mallo/ece551/FinalSNIN/eBike.sv
 FC:/Users/mallo/ece551/FinalSNIN/eBike.sv
-!i122 41
+!i122 200
 L0 1 98
-R6
+R4
 r1
 !s85 0
 31
-R12
+Z14 !s108 1746219856.000000
 !s107 C:/Users/mallo/ece551/FinalSNIN/eBike.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/eBike.sv|
 !i113 1
-R8
-R9
+R6
+R7
 ne@bike
 veBike_tb
 R0
-R11
+R12
 !i10b 1
 !s100 4U9E[f@:A]jBTzFKe>PH:0
-R2
+R1
 I:>33DaK^SHJk77CA@::3k3
-R3
+R2
 S1
-R4
+R3
 w1746216502
 8C:/Users/mallo/ece551/FinalSNIN/eBike_tb.sv
 FC:/Users/mallo/ece551/FinalSNIN/eBike_tb.sv
-!i122 42
+!i122 201
 L0 1 200
-R6
+R4
 r1
 !s85 0
 31
-R12
+R14
 !s107 C:/Users/mallo/ece551/FinalSNIN/eBike_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/eBike_tb.sv|
 !i113 1
-R8
-R9
+R6
+R7
 ne@bike_tb
 veBikePhysics
 R0
-R11
+R12
 !i10b 1
 !s100 PNjLQzoiQ__SDogeMQ;GT2
-R2
+R1
 IKBz8ckendS57Ph^<J0nV`0
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/eBikePhysics.sv
 FC:/Users/mallo/ece551/FinalSNIN/eBikePhysics.sv
-!i122 43
+!i122 202
 L0 1 530
-R6
+R4
 r1
 !s85 0
 31
-R12
+R14
 !s107 C:/Users/mallo/ece551/FinalSNIN/eBikePhysics.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/eBikePhysics.sv|
 !i113 1
-R8
-R9
+R6
+R7
 ne@bike@physics
 vhub_wheel_model
 R0
-R11
+R12
 !i10b 1
 !s100 Xab4F<9U`I`1mP5@b_nMJ1
-R2
+R1
 IHe:Rc?h]ZOde<bL^0;6Gd3
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/hub_wheel_model.sv
 FC:/Users/mallo/ece551/FinalSNIN/hub_wheel_model.sv
-!i122 44
+!i122 203
 L0 1 171
-R6
+R4
 r1
 !s85 0
 31
-R12
+R14
 !s107 C:/Users/mallo/ece551/FinalSNIN/hub_wheel_model.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/hub_wheel_model.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vincline_sat
 R0
-R11
+R12
 !i10b 1
 !s100 0i0O;5<AX@8H:TOW`Rg]j2
-R2
+R1
 I96`dUfMaYGGYX8mWO]jEa0
-R3
+R2
 S1
-R4
+R3
 R13
 8C:/Users/mallo/ece551/FinalSNIN/incline_sat.sv
 FC:/Users/mallo/ece551/FinalSNIN/incline_sat.sv
-!i122 45
+!i122 204
 L0 1 18
-R6
+R4
 r1
 !s85 0
 31
-R12
+R14
 !s107 C:/Users/mallo/ece551/FinalSNIN/incline_sat.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/incline_sat.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vinert_intf
 R0
-Z14 !s110 1746217956
+R12
 !i10b 1
 !s100 7a0[WfXDHY;fhESmS<E813
-R2
+R1
 IE@g4[K39fT<=T=6LgzI@d3
-R3
+R2
 S1
-R4
+R3
 w1746217874
 8C:/Users/mallo/ece551/FinalSNIN/inert_intf.sv
 FC:/Users/mallo/ece551/FinalSNIN/inert_intf.sv
-!i122 46
+!i122 205
 L0 1 243
-R6
+R4
 r1
 !s85 0
 31
-R12
+R14
 !s107 C:/Users/mallo/ece551/FinalSNIN/inert_intf.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/inert_intf.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vinertial_integrator
 R0
-R14
+Z15 !s110 1746219857
 !i10b 1
 !s100 [6z<Zb`Hh??iFaMz_396V0
-R2
+R1
 IZI1R2G7gUlR;Kh38B=ZJf3
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/inertial_integrator.sv
 FC:/Users/mallo/ece551/FinalSNIN/inertial_integrator.sv
-!i122 47
+!i122 206
 L0 1 106
-R6
+R4
 r1
 !s85 0
 31
-Z15 !s108 1746217956.000000
+Z16 !s108 1746219857.000000
 !s107 C:/Users/mallo/ece551/FinalSNIN/inertial_integrator.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/inertial_integrator.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vmtr_drv
 R0
-R14
+R15
 !i10b 1
-!s100 Rd?^7FTS>OeM9IS<=QAe]2
+!s100 V_ja3QY`75@@3b]eab;[U0
+R1
+I5zKWc4[b[N@bcZEM6olLW1
 R2
-IcZ]jCYbYggfOSKfc0OPlD1
-R3
 S1
-R4
-R13
+R3
+w1746218555
 8C:/Users/mallo/ece551/FinalSNIN/mtr_drv.sv
 FC:/Users/mallo/ece551/FinalSNIN/mtr_drv.sv
-!i122 48
+!i122 207
 L0 2 82
-R6
+R4
 r1
 !s85 0
 31
-R15
+R16
 !s107 C:/Users/mallo/ece551/FinalSNIN/mtr_drv.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/mtr_drv.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vnonoverlap
 R0
-R14
+R15
 !i10b 1
-!s100 W`98GB6_?0Yi4?DKGRl]X0
+!s100 j@?F@E6=]AAiX1ZaL=2d31
+R1
+IjTzk0lgMZieM8bjUNjg<[2
 R2
-ICPM9mlM4JEmgiR@UVT?:=0
-R3
 S1
-R4
-R5
+R3
+w1746218235
 8C:/Users/mallo/ece551/FinalSNIN/nonoverlap.sv
 FC:/Users/mallo/ece551/FinalSNIN/nonoverlap.sv
-!i122 49
-L0 1 43
-R6
+!i122 208
+L0 1 51
+R4
 r1
 !s85 0
 31
-R15
+R16
 !s107 C:/Users/mallo/ece551/FinalSNIN/nonoverlap.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/nonoverlap.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vnonoverlap_test
 R0
-R14
+R15
 !i10b 1
 !s100 Mhg:=KbVI6QLMm^E[Wo1h3
-R2
+R1
 I2kX3:h@7D=QRLnJEn]Q[Z1
-R3
+R2
 S1
+R3
+R9
+Z17 8C:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv
+Z18 FC:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv
+!i122 209
+Z19 L0 1 44
 R4
-R5
-Z16 8C:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv
-Z17 FC:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv
-!i122 50
-Z18 L0 1 44
-R6
 r1
 !s85 0
 31
-R15
-Z19 !s107 C:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv|
-Z20 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv|
+R16
+Z20 !s107 C:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv|
+Z21 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/nonoverlap_test.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vobserver
 R0
-R14
+R15
 !i10b 1
 !s100 clP3o1@M[fii5OXQczY2F2
-R2
+R1
 IOOz3N42im5X>?`lBB[[3[3
-R3
+R2
 S1
-R4
-R5
-R16
+R3
+R9
 R17
-!i122 50
+R18
+!i122 209
 L0 116 112
-R6
+R4
 r1
 !s85 0
 31
-R15
-R19
+R16
 R20
+R21
 !i113 1
-R8
-R9
+R6
+R7
 vPB_intf
 R0
-R14
+R15
 !i10b 1
 !s100 FB[AaPhXHJP9VL:YTUN8A2
-R2
+R1
 Im45<n=hY;ZHd?lk2I;`6E0
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/PB_intf.sv
 FC:/Users/mallo/ece551/FinalSNIN/PB_intf.sv
-!i122 51
-R18
-R6
+!i122 210
+R19
+R4
 r1
 !s85 0
 31
-R15
+R16
 !s107 C:/Users/mallo/ece551/FinalSNIN/PB_intf.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/PB_intf.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@p@b_intf
 vPB_release
 R0
-Z21 !s110 1746217957
+R15
 !i10b 1
 !s100 TNk4PQ[A:6hAb;;EjIMl>2
-R2
+R1
 IC5T:@3Y1=f;VOazVlZFh13
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/pb_release.sv
 FC:/Users/mallo/ece551/FinalSNIN/pb_release.sv
-!i122 52
+!i122 211
 L0 1 30
-R6
+R4
 r1
 !s85 0
 31
-R15
+R16
 !s107 C:/Users/mallo/ece551/FinalSNIN/pb_release.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/pb_release.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@p@b_release
 vPB_rise
 R0
-R21
+Z22 !s110 1746219858
 !i10b 1
 !s100 2XT4C_>3J1d;[o6WUce`T2
-R2
+R1
 I9Ed2Na_]_49e9cU5c3eI?2
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/PB_rise.sv
 FC:/Users/mallo/ece551/FinalSNIN/PB_rise.sv
-!i122 53
+!i122 212
 L0 1 26
-R6
+R4
 r1
 !s85 0
 31
-Z22 !s108 1746217957.000000
+R16
 !s107 C:/Users/mallo/ece551/FinalSNIN/PB_rise.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/PB_rise.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@p@b_rise
 vPID
 R0
-R21
+R22
 !i10b 1
 !s100 Zfbz21eK3ZMeZXB7FePfL1
-R2
+R1
 IPXlPo^0@Nf>k8UX]7k>DE0
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/PID.sv
 FC:/Users/mallo/ece551/FinalSNIN/PID.sv
-!i122 54
+!i122 213
 Z23 L0 1 70
-R6
+R4
 r1
 !s85 0
 31
-R22
+Z24 !s108 1746219858.000000
 !s107 C:/Users/mallo/ece551/FinalSNIN/PID.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/PID.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@p@i@d
 vplant_PID
 !s105 plant_PID_sv_unit
 DXx4 work 17 plant_PID_sv_unit 0 22 1zSYkdGzGm=S9k<BjSf=A2
 R0
-R21
+R22
 !i10b 1
 !s100 YEF^k88elm^9k<=gF8MMY1
-R2
+R1
 IQd7X9QS[O0bBH]S6HiFXb2
-R3
+R2
 S1
-R4
-R5
-Z24 8C:/Users/mallo/ece551/FinalSNIN/plant_PID.sv
-Z25 FC:/Users/mallo/ece551/FinalSNIN/plant_PID.sv
-!i122 55
+R3
+R9
+Z25 8C:/Users/mallo/ece551/FinalSNIN/plant_PID.sv
+Z26 FC:/Users/mallo/ece551/FinalSNIN/plant_PID.sv
+!i122 214
 R23
-R6
+R4
 r1
 !s85 0
 31
-R22
-Z26 !s107 C:/Users/mallo/ece551/FinalSNIN/plant_PID.sv|
-Z27 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/plant_PID.sv|
+R24
+Z27 !s107 C:/Users/mallo/ece551/FinalSNIN/plant_PID.sv|
+Z28 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/plant_PID.sv|
 !i113 1
-R8
-R9
+R6
+R7
 nplant_@p@i@d
 Xplant_PID_sv_unit
 R0
-R21
+R22
 V1zSYkdGzGm=S9k<BjSf=A2
 r1
 !s85 0
@@ -660,249 +660,249 @@ r1
 I1zSYkdGzGm=S9k<BjSf=A2
 !i103 1
 S1
-R4
-R5
-R24
-R25
-!i122 55
-L0 70 0
-R6
-31
-R22
-R26
-R27
-!i113 1
-R8
+R3
 R9
+R25
+R26
+!i122 214
+L0 70 0
+R4
+31
+R24
+R27
+R28
+!i113 1
+R6
+R7
 nplant_@p@i@d_sv_unit
 vPWM
 R0
-R21
+R22
 !i10b 1
 !s100 4RcF4C[S5GbY_QFG2ASSV1
-R2
+R1
 IhVNeMkkcm<i0f79n0RfQI3
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/PWM.sv
 FC:/Users/mallo/ece551/FinalSNIN/PWM.sv
-!i122 56
+!i122 215
 L0 1 27
-R6
+R4
 r1
 !s85 0
 31
-R22
+R24
 !s107 C:/Users/mallo/ece551/FinalSNIN/PWM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/PWM.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@p@w@m
 vrst_synch
 R0
-R21
+R22
 !i10b 1
 !s100 ]FC0EYNgoE0mJjFeYzdC=0
-R2
+R1
 I:OD02@TUd`lE@a3kD][Q=0
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/rst_synch.sv
 FC:/Users/mallo/ece551/FinalSNIN/rst_synch.sv
-!i122 58
+!i122 217
 L0 1 20
-R6
+R4
 r1
 !s85 0
 31
-R22
+R24
 !s107 C:/Users/mallo/ece551/FinalSNIN/rst_synch.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/rst_synch.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vsensorCondition
 R0
-R21
+R22
 !i10b 1
-!s100 zY>mKOU3aH[2SRY4^P3F32
+!s100 59o]=ZGR;eNaFchm3KK4V2
+R1
+IoPLOLQ7j7]enL>;TQ_9;P3
 R2
-IEWXeDSMUL;@DSDJCDb^az2
-R3
 S1
-R4
-R5
+R3
+w1746218977
 8C:/Users/mallo/ece551/FinalSNIN/sensorCondition.sv
 FC:/Users/mallo/ece551/FinalSNIN/sensorCondition.sv
-!i122 59
-L0 1 118
-R6
+!i122 218
+L0 1 126
+R4
 r1
 !s85 0
 31
-R22
+R24
 !s107 C:/Users/mallo/ece551/FinalSNIN/sensorCondition.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/sensorCondition.sv|
 !i113 1
-R8
-R9
+R6
+R7
 nsensor@condition
 vSPI_ADC128S
 R0
-Z28 !s110 1746217958
+R22
 !i10b 1
 !s100 93oj0i;UV@::cHMPGHMJ>1
-R2
+R1
 IBbzM6I6S37;04XJ@hLT7H1
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/SPI_ADC128S.sv
 FC:/Users/mallo/ece551/FinalSNIN/SPI_ADC128S.sv
-!i122 60
+!i122 219
 L0 1 140
-R6
+R4
 r1
 !s85 0
 31
-Z29 !s108 1746217958.000000
+R24
 !s107 C:/Users/mallo/ece551/FinalSNIN/SPI_ADC128S.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/SPI_ADC128S.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@s@p@i_@a@d@c128@s
 vSPI_mnrch
 R0
-R28
+Z29 !s110 1746219859
 !i10b 1
 !s100 4UT3gdkd_eG_GA0k?Lkd]2
-R2
+R1
 In[QO^[7_0io<:i[<V_18j3
-R3
+R2
 S1
-R4
+R3
 R13
 8C:/Users/mallo/ece551/FinalSNIN/SPI_mnrch.sv
 FC:/Users/mallo/ece551/FinalSNIN/SPI_mnrch.sv
-!i122 61
+!i122 220
 L0 4 157
-R6
+R4
 r1
 !s85 0
 31
-R29
+Z30 !s108 1746219859.000000
 !s107 C:/Users/mallo/ece551/FinalSNIN/SPI_mnrch.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/SPI_mnrch.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@s@p@i_mnrch
 vstim
 R0
-R14
+R15
 !i10b 1
 !s100 <MTmhhTUl`miQ9[:hE<Wk2
-R2
+R1
 II=VXf3;GP3^obA4]_FA8B3
-R3
+R2
 S1
-R4
-R5
-R16
+R3
+R9
 R17
-!i122 50
+R18
+!i122 209
 L0 47 68
-R6
+R4
 r1
 !s85 0
 31
-R15
-R19
+R16
 R20
+R21
 !i113 1
-R8
-R9
+R6
+R7
 vtelemetry
 R0
-R28
+R29
 !i10b 1
-!s100 o4XW^8eW4Cb[eOzAa?b2E1
+!s100 QKmDgo`:35]l0[khG@9i71
+R1
+I5>5@h;hkhOOmY69;Z`<7W1
 R2
-I7P0?R6W>]UCglX9CNR]I03
-R3
 S1
-R4
-R5
+R3
+w1746219540
 8C:/Users/mallo/ece551/FinalSNIN/telemetry.sv
 FC:/Users/mallo/ece551/FinalSNIN/telemetry.sv
-!i122 62
-L0 1 108
-R6
+!i122 221
+L0 1 103
+R4
 r1
 !s85 0
 31
-R29
+R30
 !s107 C:/Users/mallo/ece551/FinalSNIN/telemetry.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/telemetry.sv|
 !i113 1
-R8
-R9
+R6
+R7
 vUART_rcv
 R0
-R28
+R29
 !i10b 1
 !s100 e?H4N6Ja[5LK1c7S6k>G20
-R2
+R1
 IgW5kL@nS=DEY:gXHUW7Qg1
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/UART_rcv.sv
 FC:/Users/mallo/ece551/FinalSNIN/UART_rcv.sv
-!i122 63
+!i122 222
 R10
-R6
+R4
 r1
 !s85 0
 31
-R29
+R30
 !s107 C:/Users/mallo/ece551/FinalSNIN/UART_rcv.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/UART_rcv.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@u@a@r@t_rcv
 vUART_tx
 R0
-R28
+R29
 !i10b 1
 !s100 :Q@`FTZ_K_VTzGPje<fZh0
-R2
+R1
 I30aAR=Z3kNKlRKCPT`Wj20
-R3
+R2
 S1
-R4
-R5
+R3
+R9
 8C:/Users/mallo/ece551/FinalSNIN/UART_tx.sv
 FC:/Users/mallo/ece551/FinalSNIN/UART_tx.sv
-!i122 64
+!i122 223
 R10
-R6
+R4
 r1
 !s85 0
 31
-R29
+R30
 !s107 C:/Users/mallo/ece551/FinalSNIN/UART_tx.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mallo/ece551/FinalSNIN/UART_tx.sv|
 !i113 1
-R8
-R9
+R6
+R7
 n@u@a@r@t_tx
