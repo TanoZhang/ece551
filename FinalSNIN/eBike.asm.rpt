@@ -1,5 +1,5 @@
 Assembler report for eBike
-Thu May  1 22:16:55 2025
+Thu May  1 23:33:47 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: I:/ece551/final project/FinalSNIN/eBike.sof
+  5. Assembler Device Options: I:/GitHub/ece551/FinalSNIN/eBike.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu May  1 22:16:55 2025 ;
+; Assembler Status      ; Successful - Thu May  1 23:33:47 2025 ;
 ; Revision Name         ; eBike                                 ;
 ; Top-level Entity Name ; eBike                                 ;
 ; Family                ; Cyclone IV E                          ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+---------------------------------------------+
-; Assembler Generated Files                   ;
-+---------------------------------------------+
-; File Name                                   ;
-+---------------------------------------------+
-; I:/ece551/final project/FinalSNIN/eBike.sof ;
-+---------------------------------------------+
++--------------------------------------+
+; Assembler Generated Files            ;
++--------------------------------------+
+; File Name                            ;
++--------------------------------------+
+; I:/GitHub/ece551/FinalSNIN/eBike.sof ;
++--------------------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Assembler Device Options: I:/ece551/final project/FinalSNIN/eBike.sof ;
-+----------------+------------------------------------------------------+
-; Option         ; Setting                                              ;
-+----------------+------------------------------------------------------+
-; JTAG usercode  ; 0x001D94CE                                           ;
-; Checksum       ; 0x001D94CE                                           ;
-+----------------+------------------------------------------------------+
++----------------------------------------------------------------+
+; Assembler Device Options: I:/GitHub/ece551/FinalSNIN/eBike.sof ;
++----------------+-----------------------------------------------+
+; Option         ; Setting                                       ;
++----------------+-----------------------------------------------+
+; JTAG usercode  ; 0x001D6B2E                                    ;
+; Checksum       ; 0x001D6B2E                                    ;
++----------------+-----------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu May  1 22:16:53 2025
+    Info: Processing started: Thu May  1 23:33:44 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off eBike -c eBike
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4715 megabytes
-    Info: Processing ended: Thu May  1 22:16:56 2025
+    Info: Processing ended: Thu May  1 23:33:47 2025
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

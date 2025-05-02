@@ -47,6 +47,7 @@
   wire [2:0] scale;
   wire [1:0] setting;
   wire cadence;
+  wire vld;
   
   ////////////////////////////////////////////////////////
   // Brake lever input is converted as analog, but     //

@@ -76,6 +76,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "inertINT",
+					"strict" : false
+				},
+				{
 					"name" : "hallYlw",
 					"strict" : false
 				},
@@ -85,10 +89,6 @@
 				},
 				{
 					"name" : "hallBlu",
-					"strict" : false
-				},
-				{
-					"name" : "inertINT",
 					"strict" : false
 				},
 				{

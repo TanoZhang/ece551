@@ -1,29 +1,29 @@
 |eBike
 clk => clk.IN8
 RST_n => RST_n.IN1
-A2D_SS_n << A2D_intf:iA2D_intf.SS_n
-A2D_MOSI << A2D_intf:iA2D_intf.MOSI
-A2D_SCLK << A2D_intf:iA2D_intf.SCLK
+A2D_SS_n <= A2D_intf:iA2D_intf.SS_n
+A2D_MOSI <= A2D_intf:iA2D_intf.MOSI
+A2D_SCLK <= A2D_intf:iA2D_intf.SCLK
 A2D_MISO => A2D_MISO.IN1
 hallGrn => hallGrn.IN1
 hallYlw => hallYlw.IN1
 hallBlu => hallBlu.IN1
-highGrn << mtr_drv:iMtr_drv.highGrn
-lowGrn << mtr_drv:iMtr_drv.lowGrn
-highYlw << mtr_drv:iMtr_drv.highYlw
-lowYlw << mtr_drv:iMtr_drv.lowYlw
-highBlu << mtr_drv:iMtr_drv.highBlu
-lowBlu << mtr_drv:iMtr_drv.lowBlu
-inertSS_n << inert_intf:iInert_intf.SS_n
-inertSCLK << inert_intf:iInert_intf.SCLK
-inertMOSI << inert_intf:iInert_intf.MOSI
+highGrn <= mtr_drv:iMtr_drv.highGrn
+lowGrn <= mtr_drv:iMtr_drv.lowGrn
+highYlw <= mtr_drv:iMtr_drv.highYlw
+lowYlw <= mtr_drv:iMtr_drv.lowYlw
+highBlu <= mtr_drv:iMtr_drv.highBlu
+lowBlu <= mtr_drv:iMtr_drv.lowBlu
+inertSS_n <= inert_intf:iInert_intf.SS_n
+inertSCLK <= inert_intf:iInert_intf.SCLK
+inertMOSI <= inert_intf:iInert_intf.MOSI
 inertMISO => inertMISO.IN1
 inertINT => inertINT.IN1
 cadence => cadence.IN1
-TX << sensorCondition:iSensorCondition.TX
+TX <= sensorCondition:iSensorCondition.TX
 tgglMd => tgglMd.IN1
-LED[0] << PB_intf:iPB_intf.LED
-LED[1] << PB_intf:iPB_intf.LED
+LED[0] <= PB_intf:iPB_intf.LED
+LED[1] <= PB_intf:iPB_intf.LED
 
 
 |eBike|rst_synch:iRst_synch
@@ -1115,28 +1115,28 @@ lowOut <= lowOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 |eBike|inert_intf:iInert_intf
 clk => clk.IN2
 rst_n => rst_n.IN2
-incline[0] <= inertial_integrator:me.incline
-incline[1] <= inertial_integrator:me.incline
-incline[2] <= inertial_integrator:me.incline
-incline[3] <= inertial_integrator:me.incline
-incline[4] <= inertial_integrator:me.incline
-incline[5] <= inertial_integrator:me.incline
-incline[6] <= inertial_integrator:me.incline
-incline[7] <= inertial_integrator:me.incline
-incline[8] <= inertial_integrator:me.incline
-incline[9] <= inertial_integrator:me.incline
-incline[10] <= inertial_integrator:me.incline
-incline[11] <= inertial_integrator:me.incline
-incline[12] <= inertial_integrator:me.incline
-vld <= vld.DB_MAX_OUTPUT_PORT_TYPE
-INT => INT_ff1.DATAIN
-SS_n <= SPI_mnrch:mine.SS_n
-SCLK <= SPI_mnrch:mine.SCLK
-MOSI <= SPI_mnrch:mine.MOSI
+SS_n <= SPI_mnrch:iSPI_mnrch.SS_n
+SCLK <= SPI_mnrch:iSPI_mnrch.SCLK
+MOSI <= SPI_mnrch:iSPI_mnrch.MOSI
 MISO => MISO.IN1
+INT => INT_ff1.DATAIN
+incline[0] <= inertial_integrator:iInertial_integrator.incline
+incline[1] <= inertial_integrator:iInertial_integrator.incline
+incline[2] <= inertial_integrator:iInertial_integrator.incline
+incline[3] <= inertial_integrator:iInertial_integrator.incline
+incline[4] <= inertial_integrator:iInertial_integrator.incline
+incline[5] <= inertial_integrator:iInertial_integrator.incline
+incline[6] <= inertial_integrator:iInertial_integrator.incline
+incline[7] <= inertial_integrator:iInertial_integrator.incline
+incline[8] <= inertial_integrator:iInertial_integrator.incline
+incline[9] <= inertial_integrator:iInertial_integrator.incline
+incline[10] <= inertial_integrator:iInertial_integrator.incline
+incline[11] <= inertial_integrator:iInertial_integrator.incline
+incline[12] <= inertial_integrator:iInertial_integrator.incline
+vld <= vld.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|eBike|inert_intf:iInert_intf|SPI_mnrch:mine
+|eBike|inert_intf:iInert_intf|SPI_mnrch:iSPI_mnrch
 clk => done~reg0.CLK
 clk => SS_n~reg0.CLK
 clk => shift_reg[0].CLK
@@ -1214,7 +1214,7 @@ resp[14] <= shift_reg[14].DB_MAX_OUTPUT_PORT_TYPE
 resp[15] <= shift_reg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|eBike|inert_intf:iInert_intf|inertial_integrator:me
+|eBike|inert_intf:iInert_intf|inertial_integrator:iInertial_integrator
 clk => roll_acc_product[13].CLK
 clk => roll_acc_product[14].CLK
 clk => roll_acc_product[15].CLK
