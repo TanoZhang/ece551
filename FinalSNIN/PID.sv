@@ -14,7 +14,7 @@ module PID (
   // Internal signals
   logic [8:0] D_saturation;
   logic [12:0] flipflop1, flipflop2, flipflop3, dffD;
-  logic [13:0] P_term, I_term, D_term, D_term_in PID_term;
+	logic [13:0] P_term, I_term, D_term, D_term_in, PID_term;
   logic [17:0] integrator, intg_in, error_se, error_added, error_sat;
   logic [19:0] cntr;
   logic signed [12:0] error_ff;
