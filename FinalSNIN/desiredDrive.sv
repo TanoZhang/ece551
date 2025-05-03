@@ -3,14 +3,14 @@ module desiredDrive (
     cadence,
     not_pedaling,
     incline,
-	clk
+    clk,
     scale,
     target_curr
 );
   input [11:0] avg_torque;
   input [4:0] cadence;
   input not_pedaling;
-  input clk,
+  input clk;
   input signed [12:0] incline;
   input [2:0] scale;			// Assist level
   output [11:0] target_curr;
