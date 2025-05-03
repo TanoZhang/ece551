@@ -1,7 +1,7 @@
 #########################
 # Read in source files
 #########################
-read_file -format sverilog { UART_tx.sv telemetry.sv desiredDrive.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv PWM11.sv SPI_mnrch.sv PID.sv brushless.sv mtr_drv.sv A2D_intf.sv inert_intf.sv reset_synch.sv sensorCondition.sv eBike.sv}
+read_file -format sverilog { UART_tx.sv telemetry.sv desiredDrive.sv intertial_integrator.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv PWM.sv SPI_mnrch.sv PID.sv nonoverlap.sv brushless.sv mtr_drv.sv A2D_intf.sv inert_intf.sv reset_synch.sv sensorCondition.sv eBike.sv}
 
 #########################
 # Set top level to be eBike
@@ -23,7 +23,7 @@ set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
 set_input_delay -clock clk 0.3 [copy_collection $prim_inputs]
 set_driving_cell -lib_cell NAND2X1_LVT -library saed32lvt_tt0p85v25c [copy_collection $prim_inputs]
 # tell it rst_n strongly driven so it won't buffer
-set_drive 0.1 rst_n
+set_drive 0.1 RST_n
 
 ##########################
 # Set output delay & load on all outputs
