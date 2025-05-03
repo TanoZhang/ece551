@@ -1,0 +1,23 @@
+
+State Machine - |inert_intf_test|inert_intf:u_dut|state
+Name state.FINISH state.AZ_H state.AZ_L state.AY_H state.AY_L state.YAW_H state.YAW_L state.ROLL_H state.ROLL_L state.WAIT state.INIT4 state.INIT3 state.INIT2 state.INIT1 
+state.INIT1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.INIT2 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.INIT3 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.INIT4 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WAIT 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.ROLL_L 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.ROLL_H 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.YAW_L 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.YAW_H 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.AY_L 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.AY_H 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.AZ_L 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.AZ_H 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FINISH 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |inert_intf_test|inert_intf:u_dut|SPI_mnrch:iSPI_mnrch|state
+Name state.IDLE state.BACKPORCH state.SHIFT_STATE 
+state.IDLE 0 0 0 
+state.SHIFT_STATE 1 0 1 
+state.BACKPORCH 1 1 0 

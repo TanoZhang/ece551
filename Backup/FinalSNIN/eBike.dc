@@ -1,0 +1,67 @@
+#########################
+# Read in source files
+#########################
+read_file -format sverilog { UART_tx.sv telemetry.sv desiredDrive.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv PWM11.sv SPI_mnrch.sv PID.sv brushless.sv mtr_drv.sv A2D_intf.sv inert_intf.sv reset_synch.sv sensorCondition.sv eBike.sv}
+
+#########################
+# Set top level to be eBike
+#########################
+current_design eBike
+link
+
+###########################
+# Define clock and set don't mess with it
+##########################
+create_clock -name "clk" -period 2.5 -waveform { 0 1.25 }  { clk  }
+set_dont_touch_network [find port clk]
+
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+
+#########################
+# Set input delay & drive on all inputs
+########################
+set_input_delay -clock clk 0.3 [copy_collection $prim_inputs]
+set_driving_cell -lib_cell NAND2X1_LVT -library saed32lvt_tt0p85v25c [copy_collection $prim_inputs]
+# tell it rst_n strongly driven so it won't buffer
+set_drive 0.1 rst_n
+
+##########################
+# Set output delay & load on all outputs
+##########################
+set_output_delay -clock clk 0.5 [all_outputs]
+set_load 50 [all_outputs]
+
+#####################################
+# Wire load model allows it to estimate internal parasitics
+####################################
+set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
+
+##################################
+# Set max transition time
+#################################
+set_max_transition 0.20 [current_design]
+
+#########################
+# 1st time synthesis #
+#########################
+compile -map_effort high
+
+#########################
+# Set clk uncertainty & fix hierarcy
+#########################
+set_clock_uncertainty 0.15 clk 
+set_fix_hold clk 
+
+ungroup -all -flatten
+
+########################
+# 2nd compile, report details
+########################
+compile -map_effort medium
+check_design
+report_timing -path full -delay max -nworst 3
+report_timing -path full -delay min -nworst 3
+report_area > area_report.txt
+
+#### write out final netlist ######
+write –format verilog eBike –output eBike.vg

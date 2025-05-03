@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat May  3 15:29:43 2025
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : eBike
+Top-level Entity Name : eBike
+Family : Cyclone IV E
+Device : EP4CE22F17C6
+Timing Models : Final
+Total logic elements : 1,148 / 22,320 ( 5 % )
+    Total combinational functions : 1,071 / 22,320 ( 5 % )
+    Dedicated logic registers : 546 / 22,320 ( 2 % )
+Total registers : 546
+Total pins : 25 / 154 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 39 / 608,256 ( < 1 % )
+Embedded Multiplier 9-bit elements : 5 / 132 ( 4 % )
+Total PLLs : 0 / 4 ( 0 % )
