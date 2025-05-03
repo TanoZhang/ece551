@@ -83,7 +83,7 @@ module PID (
   // Saturate PID output to 12 bits
   assign PID_term = P_term + I_term + D_term;
   //assign drv_mag = (PID_term[13]) ? 12'h000 : PID_term[12] ? 12'hFFF : PID_term[11:0];
-  assign drv_mag_in = (PID[13]) ? 12'h000 : PID[12] ? 12'hFFF : PID[11:0];
+  assign drv_mag_in = (PID_term[13]) ? 12'h000 : PID_term[12] ? 12'hFFF : PID_term[11:0];
 	//pipeline - end of drv_mag
 	always_ff @(posedge clk, negedge rst_n)
 		if(!rst_n) drv_mag <= 12'h000;
