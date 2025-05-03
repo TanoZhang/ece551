@@ -1,19 +1,20 @@
 module brushless (
     input  logic        clk,
     input  logic        rst_n,
-    input  logic [11:0] drv_mag,
+    input  logic [11:0] drv_mag,  // drive magnitude (0~4095)
     input  logic        hallGrn,
     input  logic        hallYlw,
     input  logic        hallBlu,
-    input  logic        brake_n,
-    input  logic        PWM_synch,
+    input  logic        brake_n,  // active low brake input
+    input  logic        PWM_synch,  // synchronize to PWM period
     output logic [10:0] duty,
     output logic [ 1:0] selGrn,
     output logic [ 1:0] selYlw,
     output logic [ 1:0] selBlu
 );
 
-  //metastability local variable
+  // Metastability flop
+
   logic hallGrn1, hallGrn2, hallYLW1, hallYLW2, hallBlu1, hallBlu2;
   logic SynchGREEN, SynchYELLOW, SynchBLUE;
 
@@ -35,24 +36,27 @@ module brushless (
     end
   end
 
-  //sync Hall sensors to PWM_synch and latch Hall state only when PWM_synch=1
-  always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-      SynchGREEN <= 1'b0;
-      SynchYELLOW <= 1'b0;
-      SynchBLUE <= 1'b0;
-    end else if (PWM_synch) begin
-      SynchGREEN <= hallGrn2;
-      SynchYELLOW <= hallYLW2;
-      SynchBLUE <= hallBlu2;
-    end
-  end
+  //rotation state
 
-  //check rotation state
   logic [2:0] rotation_state;
   assign rotation_state = {SynchGREEN, SynchYELLOW, SynchBLUE};
 
+  //sync Hall sensors to PWM_synch and latch Hall state only when PWM_synch=1
+
+  always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
+      SynchGREEN  <= 1'b0;
+      SynchYELLOW <= 1'b0;
+      SynchBLUE   <= 1'b0;
+    end else if (PWM_synch) begin
+      SynchGREEN  <= hallGrn2;
+      SynchYELLOW <= hallYLW2;
+      SynchBLUE   <= hallBlu2;
+    end
+  end
+
   //driving state
+
   typedef enum logic [1:0] {
     highZ = 2'b00,
     reverse = 2'b01,
@@ -61,6 +65,7 @@ module brushless (
   } drive_state_t;
 
   //communication logic
+
   always_comb begin
     //initialization
     selGrn = highZ;
@@ -75,9 +80,11 @@ module brushless (
       duty   = 11'h600;
     end else begin
       //0x400 + (drv_mag >> 2), so if drv_mag=full(12'b1111_1111_1111), 0x400 + 0xFFF>>2 = 0x400 + 0x3FF = 0x7FF
+
       duty = 11'h400 + {1'b0, drv_mag[11:2]};
 
       // Set coil states based on the hall rotation_state
+
       case (rotation_state)
         3'b001: begin
           selGrn = highZ;
