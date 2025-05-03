@@ -14,9 +14,11 @@ module PID (
   // Internal signals
   logic [8:0] D_saturation;
   logic [12:0] flipflop1, flipflop2, flipflop3, dffD;
-  logic [13:0] P_term, I_term, D_term, PID_term;
+  logic [13:0] P_term, I_term, D_term, D_term_in PID_term;
   logic [17:0] integrator, intg_in, error_se, error_added, error_sat;
   logic [19:0] cntr;
+  logic signed [12:0] error_ff;
+  logic [11:0] drv_mag_in;
   logic positions, FullDecimator;
 
   // Decimator logic
@@ -60,9 +62,12 @@ module PID (
       flipflop3 <= flipflop3;
     end
   end
-  
+  //pipeline - for error
+	always_ff @(posedge clk, negedge rst_n)
+		if(!rst_n) error_ff <= 12'h000;
+		else error_ff <= error;
   // Derivative = current error - delayed error
-  assign dffD = error - flipflop3;
+  assign dffD = error_ff - flipflop3;
   assign D_saturation = (dffD[12] & ~&(dffD[11:9])) ? 9'b100000000 : (~dffD[12] & |(dffD[11:9])) ? 9'b011111111 : dffD;
 
   // Proportional and Integral terms
@@ -70,10 +75,17 @@ module PID (
   assign I_term = {2'b00, integrator[16:5]};
   
   // PID output computation
-  assign D_term = {{4{D_saturation[8]}}, D_saturation, 1'b0};
-
+  assign D_term_in = {{4{D_saturation[8]}}, D_saturation, 1'b0};
+  //pipeline - for D term
+	always_ff @(posedge clk, negedge rst_n)
+		if(!rst_n) D_term <= 12'h000;
+		else D_term <= D_term_in;
   // Saturate PID output to 12 bits
   assign PID_term = P_term + I_term + D_term;
-  assign drv_mag = (PID_term[13]) ? 12'h000 : PID_term[12] ? 12'hFFF : PID_term[11:0];
-
+  //assign drv_mag = (PID_term[13]) ? 12'h000 : PID_term[12] ? 12'hFFF : PID_term[11:0];
+  assign drv_mag_in = (PID[13]) ? 12'h000 : PID[12] ? 12'hFFF : PID[11:0];
+	//pipeline - end of drv_mag
+	always_ff @(posedge clk, negedge rst_n)
+		if(!rst_n) drv_mag <= 12'h000;
+		 else drv_mag <= drv_mag_in;
 endmodule

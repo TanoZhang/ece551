@@ -74,6 +74,7 @@ module sensorCondition #(
   desiredDrive idesiredDrive (
       .avg_torque(avg_torque),
       .cadence(cadence),
+	  .clk(clk),
       .not_pedaling(not_pedaling),
       .incline(incline),
       .scale(scale),

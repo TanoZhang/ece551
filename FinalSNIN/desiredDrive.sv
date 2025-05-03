@@ -3,12 +3,14 @@ module desiredDrive (
     cadence,
     not_pedaling,
     incline,
+	clk
     scale,
     target_curr
 );
   input [11:0] avg_torque;
   input [4:0] cadence;
   input not_pedaling;
+  input clk,
   input signed [12:0] incline;
   input [2:0] scale;			// Assist level
   output [11:0] target_curr;
@@ -40,5 +42,25 @@ module desiredDrive (
   //Assist calculation
   assign target_curr = (assist[29:27]) ? 12'hFFF : assist[26:15];
   //target output
-  assign assist = (not_pedaling) ? 30'h00000000 : throttle_position * incline_limit * cadence_factor * scale;
+  //assign assist = (not_pedaling) ? 30'h00000000 : throttle_position * incline_limit * cadence_factor * scale;
+	
+	//pipelining the code
+	logic [11:0] throttle_position_reg;
+	always_ff @(posedge clk) throttle_position_reg <= throttle_position;
+	
+	logic [8:0] incline_limit_reg;
+	always_ff @(posedge clk) incline_limit_reg <= incline_limit;
+	
+	logic [5:0] cadence_factor_reg;
+	always_ff @(posedge clk) cadence_factor_reg <= cadence_factor;
+	
+	logic [23:0] mult1;
+	logic [29:0] mult2;
+	//logic [29:0] mult2_pre;
+	logic [29:0] assist_mult;
+	
+	always_ff @(posedge clk) mult1 <= throttle_position_reg * incline_limit_reg;
+	always_ff @(posedge clk) mult2 <= mult1 * cadence_factor_reg;
+	always_ff @(posedge clk) assist_mult <= mult2 * scale;
+	always_ff @(posedge clk) assist <= (not_pedaling) ? 30'h00000000 : assist_mult;
 endmodule
