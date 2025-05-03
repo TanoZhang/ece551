@@ -1,23 +1,13 @@
 /******************************************************
-
  * File: cadence_filt
-
  * 
-
  * Description:
-
  * - Debounce filter for cadence signal.
-
  * - Synchronizes noisy cadence input.
-
  * - Uses multi-stage flop and stability counter.
-
  * - Outputs stable cadence (`cadence_filt`).
-
  * - Generates `cadence_rise` pulse on rising edge.
-
  *
-
  ******************************************************/
 
 module cadence_filt #(
@@ -70,7 +60,6 @@ module cadence_filt #(
     if (!rst_n) stability_cntr <= 16'h0000;  // Reset counter
     else if (n_updated) stability_cntr <= stability_cntr + 1'b1;  // Increment if stable
     else stability_cntr <= 16'h0000;  // Reset if cadence changes
-
   end
 
   // update cadence_filt when timer is full

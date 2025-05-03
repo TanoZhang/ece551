@@ -30,7 +30,7 @@ module mtr_drv(
     );
 
     // Green non-overlap driver
-    nonoverlap GRN(
+    nonoverlap GREEN(
         .clk(clk),
         .rst_n(rst_n),
         .highIn(grn1),              
@@ -40,7 +40,7 @@ module mtr_drv(
     );
 
     // Yellow non-overlap driver
-    nonoverlap YLW(
+    nonoverlap YELLOW(
         .clk(clk),
         .rst_n(rst_n),
         .highIn(ylw1),
@@ -50,7 +50,7 @@ module mtr_drv(
     );
 
     // Blue non-overlap driver
-    nonoverlap BLU(
+    nonoverlap BLUE(
         .clk(clk),
         .rst_n(rst_n),
         .highIn(blu1),
@@ -61,23 +61,12 @@ module mtr_drv(
 
     // Selector logic
     always_comb begin
-        // Yellow output
-        {ylw1, ylw2} = (selYlw == 2'b01) ? {~PWM_sig, PWM_sig} :
-                       (selYlw == 2'b10) ? {PWM_sig, ~PWM_sig} :
-                       (selYlw == 2'b11) ? {1'b0, PWM_sig} :
-                                           {1'b0, 1'b0};
-
-        // Green output
-        {grn1, grn2} = (selGrn == 2'b01) ? {~PWM_sig, PWM_sig} :  
-                       (selGrn == 2'b10) ? {PWM_sig, ~PWM_sig} :   
-                       (selGrn == 2'b11) ? {1'b0, PWM_sig} :      
-                                           {1'b0, 1'b0};   
-        
-        // Blue output
-        {blu1, blu2} = (selBlu == 2'b01) ? {~PWM_sig, PWM_sig} :
-                       (selBlu == 2'b10) ? {PWM_sig, ~PWM_sig} :
-                       (selBlu == 2'b11) ? {1'b0, PWM_sig} :
-                                           {1'b0, 1'b0};
+        // output for yellow
+        {ylw1, ylw2} = (selYlw == 2'b01) ? {~PWM_sig, PWM_sig} : (selYlw == 2'b10) ? {PWM_sig, ~PWM_sig} : (selYlw == 2'b11) ? {1'b0, PWM_sig} : {1'b0, 1'b0};
+        // output for green
+        {grn1, grn2} = (selGrn == 2'b01) ? {~PWM_sig, PWM_sig} : (selGrn == 2'b10) ? {PWM_sig, ~PWM_sig} : (selGrn == 2'b11) ? {1'b0, PWM_sig} : {1'b0, 1'b0};   
+        // output for blue
+        {blu1, blu2} = (selBlu == 2'b01) ? {~PWM_sig, PWM_sig} : (selBlu == 2'b10) ? {PWM_sig, ~PWM_sig} : (selBlu == 2'b11) ? {1'b0, PWM_sig} : {1'b0, 1'b0};
     end
     
 endmodule

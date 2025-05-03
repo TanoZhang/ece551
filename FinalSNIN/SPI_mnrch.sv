@@ -1,121 +1,113 @@
-/////////////////////////////////////////////////////
-// Model of a Serial Peripheral Interconnect Master||
-/////////////////////////////////////////////////////
 module SPI_mnrch (
-    input logic clk, //clock
-    input logic rst_n, //asynch active low reset
-    output logic SS_n, //active low serf select
-    output logic SCLK, //serial clock
-    output logic MOSI, //Monarch Out Serf In
-    input logic MISO, //Monarch In Serf Out
-    input logic snd, //send signal
-    input logic [15:0] cmd, //command input
-    output logic done, //done signal
-    output logic [15:0] resp); //response output
+    input logic clk, 
+    input logic rst_n, 
+    input logic snd,
+    input logic MISO, 
+    input logic [15:0] cmd,
+    output logic SS_n, 
+    output logic done, 
+    output logic SCLK, 
+    output logic MOSI, 
+    output logic [15:0] resp);
 
-    //initialize intermediate logic
-    logic ld_SCLK;
-    logic [4:0]SCLK_div;
-    logic shft;
-    logic [4:0]bit_cntr;
-    logic init;
-    logic done16;
-    logic [15:0]shft_reg;
-    logic set_done;
+    // Control signals
+    logic shiftT, already_done, init, bits_16, reload_clock_div;
 
-    //initialize FSM enum
-    typedef enum reg [1:0] {IDLE, COUNT, DONE} state_t;
+    // Counters
+    logic [4:0]bit_counter;
+    logic [4:0] clock_div;
+    logic [15:0]shift_register;
+
+    // State machine
+    typedef enum reg [1:0] {idle_state, counting, finished} state_t;
     state_t state, nxt_state;
 
-    //Serial clock generator
+    //clock generator
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n)begin
-            SCLK_div <= 0;
+             clock_div <= 0;
         end else begin
-            if (ld_SCLK)
-                SCLK_div <= 5'b10111; //intentional delay before SCLK falls
+            if (reload_clock_div)
+                 clock_div <= 5'b10111;
             else 
-                SCLK_div <= SCLK_div+1;
+                 clock_div <=  clock_div + 1;
         end
     end
 
-    //Assign sclk to be the 4th bit of the counter
-    assign SCLK = SCLK_div[4];
+    // Bit counter to 16bit
+    assign SCLK =  clock_div[4];
+    // shift pulse
+    assign shiftT = ( clock_div == 5'b10001) ? 1'b1: 1'b0;
+    // divider overflow
+    assign full = & clock_div;
 
-    assign shft = (SCLK_div == 5'b10001) ? 1'b1: 1'b0; //shift signal for shift reg
-    assign full = &SCLK_div; //full signal for backporch response
-
-    //16 bit counter 
+    //bit counter
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n)
-            bit_cntr <= 0;
+            bit_counter <= 0;
         else if (init)
-            bit_cntr <= 5'b00000;
-        else if (shft)
-            bit_cntr <= bit_cntr + 1;
+            bit_counter <= 5'b00000;
+        else if (shiftT)
+            bit_counter <= bit_counter + 1;
     end
+    assign bits_16 = (bit_counter == 5'b10000);
 
-    //output signal every 16 cycles/bits
-    assign done16 = (bit_cntr == 5'b10000);
-
-    //Shift register flip flop
+    // Shift register
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
-            shft_reg <= 0;
+            shift_register <= 0;
         end else begin
             if (init) begin
-                shft_reg <= cmd; //take input if init is 1
+                shift_register <= cmd;
             end else begin
-                if (shft) begin
-                    shft_reg <= {shft_reg[14:0], MISO}; //take serf output if shft is 1
+                if (shiftT) begin
+                    shift_register <= {shift_register[14:0], MISO};
                 end else begin
-                    shft_reg <= shft_reg;
+                    shift_register <= shift_register;
                 end
             end 
         end
     end
+    assign MOSI = shift_register[15]; //output MSB to slave
 
-    assign MOSI = shft_reg[15]; //output to serf
-
-    //FSM flip flop
+    //flipflop of FSM
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
-            state <= IDLE;
+            state <= idle_state;
         end else begin
             state <= nxt_state;
         end
     end
 
-    //FSM combinational logic
+    //combinational logic
     always_comb begin
-        //initialize defaults to prevent latches
-        nxt_state = IDLE;
+        nxt_state = idle_state;
         init = 0;
-        set_done = 0;
-        ld_SCLK = 0;
+        already_done = 0;
+        reload_clock_div = 0;
 
         case(state)
-            IDLE: if (snd) begin
-                nxt_state = COUNT;
-                init = 1; //send init signal to begin
-                ld_SCLK = 1;
-            end else nxt_state = IDLE;
+            idle_state: if (snd) begin
+                nxt_state = counting;
+                init = 1;
+                reload_clock_div = 1;
+            end else nxt_state = idle_state;
 
-            COUNT: if (done16) begin //wait till count is complete
-                nxt_state = DONE;
-            end else nxt_state = COUNT;
+            counting: if (bits_16) begin
+                nxt_state = finished;
+            end else nxt_state = counting;
             
-            DONE: if (full) begin //backpoch generation
-                nxt_state = IDLE;
-                set_done = 1;
-                ld_SCLK = 1;
-            end else nxt_state = DONE;
+            finished: if (full) begin
+                nxt_state = idle_state;
+                already_done = 1;
+                reload_clock_div = 1;
+            end else nxt_state = finished;
 
-            default: nxt_state = IDLE;
+            default: nxt_state = idle_state;
         endcase      
     end
 
-    //Done signal flip flop
+    // Done signal generation
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
             done <= 0;
@@ -123,14 +115,14 @@ module SPI_mnrch (
             if (init) begin
                 done <= 0;
             end else begin
-                if (set_done) begin
+                if (already_done) begin
                     done <= 1;
                 end
             end
         end
     end
 
-    //SS_n signal flip flop
+    // Slave Select control
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
             SS_n <= 1;
@@ -138,23 +130,11 @@ module SPI_mnrch (
             if (init) begin
                 SS_n <= 0;
             end else begin
-                if (set_done) begin
+                if (already_done) begin
                     SS_n <= 1;
                 end
             end
         end
     end
-
-    assign resp = shft_reg;
-
-    //resp output FF
-    //always_ff @(posedge clk, negedge rst_n) begin
-      //  if (!rst_n) begin
-        //    resp <= 16'b0;
-        //end
-        //else if (set_done) begin
-          //  resp <= shft_reg;
-        //end
-    //end
-
+    assign resp = shift_register;
 endmodule

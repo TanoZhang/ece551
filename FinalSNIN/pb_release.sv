@@ -21,10 +21,6 @@ module PB_release (
         end
     end
 
-    // The final gate from the diagram can be done as a NOR:
-    // "released" = NOT (pre2 OR pre3).
-    // That means 'released' is high only when both pre2 and pre3 are low
-    // (i.e. the button has been stably released).
     assign released = ~(pre2 || pre3);
 
 endmodule

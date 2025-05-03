@@ -1,5 +1,4 @@
 module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
-
     input logic clk; 
     input logic rst_n; 
     input logic INT;
@@ -10,176 +9,162 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
     output logic vld;
     output logic signed [12:0] incline;
 
-    // Define states
-    typedef enum logic [3:0] {INIT1, INIT2, INIT3, INIT4, WAIT, 
-                              READ1, READ2, READ3, READ4, READ5, 
-                              READ6, READ7, READ8, FINISH} state_t;
-
-    state_t state, nxt_state;
-
-    //intermediate signals
-    logic snd, done;
+    //local signals
     logic [15:0] cmd, resp;
-    logic [15:0] timer;
+    logic [15:0] timekeeper;
+    logic snd, done;
     logic [15:0] roll_rt, yaw_rt, AY, AZ;
-    logic INT_ff1, INT_ff2;
-    logic rollH, rollL, yawH, yawL, AYH, AYL, AZH, AZL;           // Enable update of correct register with resp
+    logic sync_int1, sync_int2, RH_en, RL_en, YH_en, YL_en, AH_en, AL_en, AZH_en, AZL_en;
 
-    // Instantiate SPI_mnrch
-    SPI_mnrch iSPI_mnrch(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .MISO(MISO), .snd(snd), .cmd(cmd), .done(done), .resp(resp));
+    // different states
+    typedef enum logic [3:0] {phase1, phase2, phase3, phase4, phase_halt, acquiring1, acquiring2, acquiring3, acquiring4, acquiring5, acquiring6, acquring7, acquiring8, phase_stop} state_t;
+    state_t state, next_state;
 
-    // Instantiate inertial_integrator
+    //inertia integrator instantiation
     inertial_integrator iInertial_integrator(.clk(clk), .rst_n(rst_n), .vld(vld), .roll_rt(roll_rt), .yaw_rt(yaw_rt), .AY(AY), .AZ(AZ), .incline(incline), .LED());
 
-    // Infer state flops
+    // SPI_mnrch Instantiation
+    SPI_mnrch iSPI_mnrch(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), .MISO(MISO), .snd(snd), .cmd(cmd), .done(done), .resp(resp));
+
+    //start state flipflop
     always_ff @(posedge clk, negedge rst_n) begin
-        if (!rst_n) state <= INIT1;
-        else state <= nxt_state;
+        if (!rst_n) state <= phase1;
+        else state <= next_state;
     end
 
-    // State machine logic
     always_comb begin
-
-        // Default outputs
+        // initialization
         cmd = 16'h0D02;
-        snd = 0;
-        vld = 0;
-        nxt_state = state;
-        rollL = 0;
-        rollH = 0;
-        yawL = 0;
-        yawH = 0;
-        AYL = 0;
-        AYH = 0;
-        AZL = 0;
-        AZH = 0;
+        snd = 0;        vld = 0;
+        next_state = state;
+        RL_en = 0;        RH_en = 0;
+        YL_en = 0;        YH_en = 0;
+        AL_en = 0;        AH_en = 0;
+        AZL_en = 0;        AZH_en = 0;
 
         unique case (state)
-            INIT1: begin
-                // Default cmd = 16'h0D02
-                if (&timer) begin
+            phase1: begin
+                if (&timekeeper) begin
                     snd = 1;
-                    nxt_state = INIT2;
+                    next_state = phase2;
                 end
             end
-            INIT2: begin
+            phase2: begin
                 cmd = 16'h1053;
                 if (done) begin
                     snd = 1;
-                    nxt_state = INIT3;
+                    next_state = phase3;
                 end
             end
-            INIT3: begin 
+            phase3: begin 
                 cmd = 16'h1150;
                 if (done) begin
                     snd = 1;
-                    nxt_state = INIT4;
+                    next_state = phase4;
                 end
             end
-            INIT4: begin
+            phase4: begin
                 cmd = 16'h1460;
                 if (done) begin
                     snd = 1;
-                    nxt_state = WAIT;
+                    next_state = phase_halt;
                 end
             end
-            WAIT: begin
+            phase_halt: begin
                 cmd = 16'hxxxx;
                 if (done) begin
-                    nxt_state = READ1;
+                    next_state = acquiring1;
                 end
             end
-            READ1: begin
+            acquiring1: begin
                 cmd = 16'hA4xx;
-                if (INT_ff2) begin
+                if (sync_int2) begin
                     snd = 1;
-                    nxt_state = READ2;
+                    next_state = acquiring2;
                 end
             end
-            READ2: begin
+            acquiring2: begin
                 cmd = 16'hA5xx;
                 if (done) begin
                     snd = 1;
-                    rollL = 1;
-                    nxt_state = READ3;
+                    RL_en = 1;
+                    next_state = acquiring3;
                 end
             end
-            READ3: begin
+            acquiring3: begin
                 cmd = 16'hA6xx;
                 if (done) begin
                     snd = 1;
-                    rollH = 1;
-                    nxt_state = READ4;
+                    RH_en = 1;
+                    next_state = acquiring4;
                 end
             end
-            READ4: begin
+            acquiring4: begin
                 cmd = 16'hA7xx;
                 if (done) begin
                     snd = 1;
-                    yawL = 1;
-                    nxt_state = READ5;
+                    YL_en = 1;
+                    next_state = acquiring5;
                 end
             end
-            READ5: begin
+            acquiring5: begin
                 cmd = 16'hAAxx;
                 if (done) begin
                     snd = 1;
-                    yawH = 1;
-                    nxt_state = READ6;
+                    YH_en = 1;
+                    next_state = acquiring6;
                 end
             end
-            READ6: begin
+            acquiring6: begin
                 cmd = 16'hABxx;
                 if (done) begin
                     snd = 1;
-                    AYL = 1;
-                    nxt_state = READ7;
+                    AL_en = 1;
+                    next_state = acquring7;
                 end
             end
-            READ7: begin
+            acquring7: begin
                 cmd = 16'hACxx;
                 if (done) begin
                     snd = 1;
-                    AYH = 1;
-                    nxt_state = READ8;
+                    AH_en = 1;
+                    next_state = acquiring8;
                 end
             end
-            READ8: begin
+            acquiring8: begin
                 cmd = 16'hADxx;
                 if (done) begin
                     snd = 1;
-                    AZL = 1;
-                    nxt_state = FINISH;
+                    AZL_en = 1;
+                    next_state = phase_stop;
                 end
             end
-            // Default = FINISH
-            default: begin
+                default: begin
                 cmd = 16'hxxxx;
                 if (done) begin
-                    vld = 1;            // Valid delayed by 1 clock cycle in inertial_integrator so asserted at same time as AZH
-                    AZH = 1;
-                    nxt_state = READ1;
+                    vld = 1;
+                    next_state = acquiring1;
                 end
             end
         endcase
     end
 
-    // Timer
+    // timekeeper
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
-            timer <= 0;
+            timekeeper <= 0;
         else 
-            timer <= timer + 1;
+            timekeeper <= timekeeper + 1;
     end
 
-    // Synchronize INT signal
+    // int signal come in
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
-            INT_ff1 <= 0;
-            INT_ff2 <= 0;
+            sync_int1 <= 0;
+            sync_int2 <= 0;
         end else begin
-            INT_ff1 <= INT;
-            INT_ff2 <= INT_ff1;
+            sync_int1 <= INT;
+            sync_int2 <= sync_int1;
         end
     end
 
@@ -187,56 +172,56 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n)
             roll_rt[7:0] <= 0;
-        else if (rollL) 
+        else if (RL_en) 
             roll_rt[7:0] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             roll_rt[15:8] <= 0;
-        else if (rollH) 
+        else if (RH_en) 
             roll_rt[15:8] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             yaw_rt[7:0] <= 0;
-        else if (yawL) 
+        else if (YL_en) 
             yaw_rt[7:0] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             yaw_rt[15:8] <= 0;
-        else if (yawH) 
+        else if (YH_en) 
             yaw_rt[15:8] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             AY[7:0] <= 0;
-        else if (AYL) 
+        else if (AL_en) 
             AY[7:0] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             AY[15:8] <= 0;
-        else if (AYH) 
+        else if (AH_en) 
             AY[15:8] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             AZ[7:0] <= 0;
-        else if (AZL) 
+        else if (AZL_en) 
             AZ[7:0] <= resp[7:0];
     end
 
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) 
             AZ[15:8] <= 0;
-        else if (AZH) 
+        else if (AZH_en) 
             AZ[15:8] <= resp[7:0];
     end
 
