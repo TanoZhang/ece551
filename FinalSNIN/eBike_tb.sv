@@ -88,12 +88,12 @@ module eBike_tb;
           $display("Test 1: Assist up increases speed/current");
           torque_v = 12'h500;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           force dut.setting = 2'b11;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_after  = phys.omega; curr_after  = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
@@ -105,12 +105,12 @@ module eBike_tb;
           $display("Test 2: More torque -> higher speed/current");
           torque_v = 12'h600;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           torque_v = 12'hA00;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_after  = phys.omega; curr_after  = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
@@ -122,12 +122,12 @@ module eBike_tb;
           $display("Test 3: Downhill->uphill slows bike");
           yaw_rate = 16'h2000;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           yaw_rate = 16'h8000; // steep downhill
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
@@ -140,11 +140,11 @@ module eBike_tb;
 		  $display("Test 4: Higher cadence rate boosts bike");
 		  yaw_rate = 16'h2000;
           pedal_cycle(2048, 256);
-          //check_error();
+          check_error();
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 		  
           pedal_cycle(4096, 128); // faster by halved low period
-          //check_error();
+          check_error();
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
@@ -156,12 +156,12 @@ module eBike_tb;
           $display("Test 5: Uphill->downhill increases effort");
           yaw_rate = 16'h0000;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           yaw_rate = 16'hA800;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after < omega_before && curr_after < curr_before))
@@ -173,7 +173,7 @@ module eBike_tb;
           $display("Test 6: Stopping pedaling slows bike");
           torque_v = 12'hA00;
           pedal_cycle(512, 512);
-          //check_error();
+          check_error();
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           repeat(2048) begin
@@ -182,7 +182,7 @@ module eBike_tb;
 						cadence_p = 0;  // NO CADENCE
 						repeat(2048) @(posedge clk);
 					end
-          //check_error();
+          check_error();
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after < omega_before && curr_after < curr_before)) begin
