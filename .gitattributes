@@ -1,0 +1,4 @@
+# Scripts run on Linux EDA servers must keep LF line endings
+*.sh  text eol=lf
+*.tcl text eol=lf
+*.tpl text eol=lf
