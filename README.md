@@ -69,6 +69,12 @@ gate-level netlist `eBike.vg` plus an area report. The FPGA build uses
 `eBike.qpf` / `eBike.qsf` in Quartus. Set `FAST_SIM = 0` (the default in
 `eBike.sv`) for real hardware timing.
 
+The DE0-Nano's Cyclone IV E needs Quartus Prime Lite/Standard. As a portability
+check, the same RTL was also run through Quartus Prime Pro 26.1 targeting an
+Agilex 3 (`A3CW135BM16AE6S`): synthesis and fit with 0 errors and no inferred
+latches, 470 ALMs / 724 registers / 3 DSP blocks, and the 50 MHz clock met with
+15.7 ns of setup slack.
+
 ## Repository layout
 
 | Branch | Contents |

@@ -39,8 +39,8 @@ always_ff @(posedge clk, negedge rst_n) begin
 end
 
 // The input to the timer.
-assign timerD = (!rst_n) ? 24'b0:     // Reset timer on rst_n
-                (cadence_rise) ? 24'b0 : // timer reset to 0 on cadence rise
+// (reset is handled asynchronously by the flop, keep it out of the datapath)
+assign timerD = (cadence_rise) ? 24'b0 : // timer reset to 0 on cadence rise
                 (timerQ == THIRD_SEC) ? timerQ : 
                 timerQ + 1'b1; // increment timer
 
@@ -55,8 +55,7 @@ end
 assign capture_per = cadence_rise || (timerQ == THIRD_SEC);   // Capture on rising edge
 
 // The input to the cadence_per register.
-assign cadence_perD = (!rst_n) ? THIRD_SEC_UPPER :
-                      (!capture_per) ? cadence_per : // Hold current value if not capturing
+assign cadence_perD = (!capture_per) ? cadence_per : // Hold current value if not capturing
                       (timerQ == THIRD_SEC) ? THIRD_SEC_UPPER : // If timer reached max, use UPPER value
                       (FAST_SIM) ? timerQ[14:7] :    // For fast sim, use bits [14:7]
                       timerQ[23:16];                // For real time, use bits [23:16]
