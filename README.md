@@ -1,13 +1,34 @@
-# eBike Motor Controller (ECE 551, UW–Madison, Spring 2025)
+# Pedal-Assist eBike Motor Controller
+
+![SystemVerilog](https://img.shields.io/badge/RTL-SystemVerilog-1f6feb)
+![ModelSim](https://img.shields.io/badge/Sim-ModelSim-555)
+![Quartus](https://img.shields.io/badge/FPGA-Intel%20Quartus-0071c5)
+![Genus](https://img.shields.io/badge/ASIC-Cadence%20Genus%20%7C%20FreePDK45-c41230)
+![Tests](https://img.shields.io/badge/regression-8%2F8%20passing-2ea44f)
 
 A complete digital controller for a pedal-assist electric bicycle, written in
-SystemVerilog. It was synthesized to a 32 nm standard-cell library with
-Synopsys Design Compiler and mapped to an Intel Cyclone IV FPGA (DE0-Nano) to
-drive a real 250 W brushless hub motor.
+SystemVerilog and run on a DE0-Nano FPGA (Intel Cyclone IV) driving a real
+250 W brushless hub motor. It measures how hard and how fast the rider pedals
+and how steep the hill is, decides how much motor current to add, and drives
+the motor's six power MOSFETs to deliver it.
 
-The controller measures how hard and how fast the rider pedals and how steep
-the hill is, works out how much motor current to add, and drives the motor's
-six power MOSFETs to deliver that current.
+UW–Madison ECE 551 (Digital System Design & Synthesis), Spring 2025.
+
+## Highlights
+
+- **Full sensor-to-motor datapath:** SPI ADC and SPI IMU interfaces, sensor
+  conditioning, an assist law, a PID current loop, six-step BLDC commutation and
+  dead-time-protected PWM, plus UART telemetry.
+- **Pipelining the assist datapath raised Fmax 3.8×** on the FPGA
+  (36.3 → 139.6 MHz) while using 4.6 % fewer logic elements.
+- **ASIC synthesis** with Cadence Genus on the FreePDK45 45 nm library:
+  4,304 standard cells (~18.3k µm² cell area) at a 200 MHz clock. Pipelining
+  more than doubles the fastest achievable clock (308 → ≥ 667 MHz) and, at the
+  same clock, uses up to 26 % fewer cells.
+- **Self-checking closed-loop verification:** 8 tests against a physics model
+  of the motor, wheel and IMU, 56 M clock cycles per regression.
+
+## Architecture
 
 ```
                  ┌──────────────── eBike.sv (synthesized top) ────────────────┐
@@ -21,35 +42,109 @@ six power MOSFETs to deliver that current.
                  └────────────────────────────────────────────────────────────┘
 ```
 
-## How it works
-
 | Stage | Module(s) | What it does |
 |---|---|---|
-| Sensing | `A2D_intf`, `SPI_mnrch` | Round-robin reads of battery voltage, motor current, brake lever and pedal torque from an ADC128S022 over SPI, one channel every 2¹⁴ clocks (~328 µs) |
-| Incline | `inert_intf`, `inertial_integrator` | Configures an LSM6DS3 6-axis IMU over SPI. On each data-ready interrupt it reads gyro and accelerometer data, then fuses them into a 13-bit incline (zeroed when the bike leans hard into a turn) |
-| Cadence | `cadence_filt`, `cadence_meas`, `cadence_LU` | Debounces the noisy pedal sensor, measures the pulse period and maps it non-linearly to a 5-bit cadence value. Flags `not_pedaling` |
-| Conditioning | `sensorCondition` | Exponential averages of current (W=4) and torque (W=32, seeded when pedaling resumes). Produces the signed loop error `target − avg_curr`, forced to 0 on low battery or when the rider stops pedaling |
-| Assist law | `desiredDrive` | `target_curr = torque_pos × incline_lim × cadence_factor × scale`, pipelined, scaled down and saturated to 12 bits |
-| Control loop | `PID` | P + I (anti-windup, clipped, cleared when not pedaling) + D (3-sample difference, saturated). Output is clipped to 12-bit `drv_mag` |
-| Commutation | `brushless` | Synchronizes the Hall sensors and picks forward, reverse, high-Z or regen-brake for each of the three coils. Sets duty = `0x400 + drv_mag/4` |
-| Power stage | `mtr_drv`, `PWM`, `nonoverlap` | 11-bit PWM (~24 kHz) routed to the high/low FETs, with a guaranteed 32-clock dead time so a high and low FET are never on together |
-| User I/O | `PB_intf`, `PB_rise`, `telemetry`, `UART_tx` | Push button cycles the assist level (off/low/med/high) shown on LEDs. Sends an 8-byte telemetry packet (`AA 55` + battery, current, torque) about 48 times a second |
-| Reset | `reset_synch` (`rst_synch`) | Asynchronous assert, synchronous deassert of the global reset |
+| Sensing | `A2D_intf`, `SPI_mnrch` | Round-robin reads of battery voltage, motor current, brake lever and pedal torque from an ADC128S022 over SPI (mode 3, clk/32), one channel every 2¹⁴ clocks (~328 µs) |
+| Incline | `inert_intf`, `inertial_integrator` | Configures a 6-axis IMU over SPI; on each data-ready interrupt reads gyro and accelerometer data and fuses them (complementary filter) into a 13-bit incline, zeroed when the bike leans hard into a turn |
+| Cadence | `cadence_filt`, `cadence_meas`, `cadence_LU` | Debounces the noisy pedal sensor, measures the pulse period and maps it non-linearly to a 5-bit cadence. Flags `not_pedaling` after 0.3 s without a pulse |
+| Conditioning | `sensorCondition` | Exponential averages of current (W=4) and torque (W=32, seeded when pedaling resumes). Produces the signed loop error `target − avg_curr`, forced to 0 on low battery or when not pedaling |
+| Assist law | `desiredDrive`, `incline_sat` | `target_curr = torque_pos × incline_lim × cadence_factor × scale`: a pipelined 30-bit product, scaled and saturated to 12 bits |
+| Control loop | `PID` | P + I (anti-windup, clipped, cleared when not pedaling) + D (3-sample difference, saturated), updated at 48 Hz. Output clipped to 12-bit `drv_mag` |
+| Commutation | `brushless` | Synchronizes the Hall sensors and picks forward, reverse, high-Z or regenerative braking for each coil; duty = `0x400 + drv_mag/4` |
+| Power stage | `mtr_drv`, `PWM`, `nonoverlap` | 11-bit PWM (24.4 kHz) to the high/low FETs with a 32-clock (640 ns) dead time, so the two FETs of a leg are never on together |
+| User I/O | `PB_intf`, `PB_rise`, `telemetry`, `UART_tx` | Push button cycles the assist level (off/low/med/high) shown on LEDs; an 8-byte telemetry packet (`AA 55` + battery, current, torque) is sent ~48 times a second |
+| Reset | `reset_synch` | Asynchronous assert, synchronous deassert |
 
-The models in `tb/models/` (`eBikePhysics`: motor, wheel and IMU;
-`AnalogModel` + `SPI_ADC128S`: the ADC) are behavioral models used by the
-testbench. They are not part of the synthesized design.
+## Results
 
-## Requirements
+### FPGA — DE0-Nano (Cyclone IV E, EP4CE22F17C6, Quartus Prime Lite)
 
-The professor's project specification is
-[`docs/ProjectSpec.pdf`](docs/ProjectSpec.pdf). The per-module requirement
-handouts and the synthesis/timing course material are indexed in
-[`docs/`](docs/README.md).
+| | Before pipelining | After pipelining |
+|---|---|---|
+| Logic elements | 1,203 | **1,148** (5 %) |
+| Registers | 475 | 546 |
+| 9-bit multipliers | 5 | 5 |
+| Fmax (slow 85 °C) | 36.3 MHz ✗ | **139.6 MHz** ✓ |
 
-## Running the simulation
+The design has to run at 50 MHz. Splitting the four-way assist multiply into
+register stages cut the critical path from ~27.5 ns to ~7.2 ns. The extra
+latency is irrelevant to a control loop that updates at 48 Hz.
 
-Requires ModelSim / Questa (tested with ModelSim–Intel FPGA Starter 2020.1).
+The same RTL also maps to an Intel Agilex 3 in Quartus Prime Pro (465 ALMs,
+716 registers, 3 DSP blocks, no inferred latches, +15.6 ns setup slack at
+50 MHz).
+
+### ASIC — Cadence Genus 25.1, OSU FreePDK45 (gscl45nm)
+
+Physical-aware synthesis (PLE: wire delay estimated from the cell LEF),
+constraints from the course flow (0.15 ns clock uncertainty, 0.3/0.5 ns I/O
+delay, NAND2X1 drive, 50 fF load, 0.2 ns max transition). Every run is checked
+for a fully mapped netlist with no latches or unresolved modules. Scripts:
+[`syn/genus/`](syn/genus/).
+
+**Same 5 ns (200 MHz) constraint — final design vs. original un-pipelined datapath**
+
+| | Pipelined (final) | Un-pipelined | Change |
+|---|---|---|---|
+| Standard cells | **4,304** | 5,147 | −16.4 % |
+| Flip-flops | 689 | 585 | +104 |
+| Cell area (µm²) | **18,302** | 19,908 | −8.1 % |
+| Cell + estimated wire area (µm²) | 26,784 | 30,151 | −11.2 % |
+| Worst setup slack | **+1.81 ns** | +0.007 ns | |
+| Total power (Genus estimate) | | | −8.9 % |
+
+**Clock sweep** — each design re-synthesized at tighter clocks until timing fails:
+
+| Clock period | Pipelined: cells / cell area | Un-pipelined: cells / cell area |
+|---|---|---|
+| 5.0 ns (200 MHz) | 4,304 / 18,302 | 5,147 / 19,908 |
+| 4.0 ns (250 MHz) | 4,499 / 18,482 | 5,503 / 20,320 |
+| 3.25 ns (308 MHz) | 4,629 / 18,627 | 6,293 / 21,624 ← fastest it can go |
+| 3.0 ns (333 MHz) | 4,669 / 18,812 | ✗ fails (−0.22 ns) |
+| 2.5 ns (400 MHz) | 5,257 / 19,652 | |
+| 2.0 ns (500 MHz) | 5,611 / 20,403 | |
+| 1.5 ns (667 MHz) | 6,724 / 22,555 ← still met (sweep floor) | |
+
+- The un-pipelined design tops out at **3.25 ns**: its critical path runs from
+  the cadence period register through the four-way assist product and the
+  error subtraction into the PID integrator.
+- The pipelined design still meets timing at **1.5 ns**, the end of the sweep.
+  There the critical path is no longer the assist datapath but an SPI shift
+  register, so the pipelining moved the bottleneck out of the datapath entirely.
+- At the same 3.25 ns clock, the pipelined design needs **26 % fewer cells and
+  14 % less cell area**: without the long path, the tool does not have to upsize
+  and restructure logic to meet timing. The 104 extra flip-flops cost less than
+  the logic they save.
+- Pushing the pipelined design from 5 ns to 1.5 ns costs +23 % cell area
+  (larger, faster cells), the expected area-for-speed trade-off.
+
+Synthesis-only results (no place-and-route); the OSU gscl45nm library is an
+academic 45 nm library, so absolute numbers are not comparable to commercial
+processes.
+
+## Verification
+
+`tb/eBike_tb.sv` is a closed-loop, self-checking full-chip testbench: the
+controller drives a behavioral model of the motor, wheel and IMU, and the model
+feeds back Hall signals, motor current and inertial data.
+
+| # | Stimulus | Check |
+|---|---|---|
+| 1 | Assist level medium → high | wheel speed and current rise |
+| 2 | Pedal torque up | wheel speed and current rise |
+| 3 | Incline change | wheel speed and current rise |
+| 4 | Faster cadence | wheel speed and current rise |
+| 5 | Incline change (other direction) | wheel speed and current fall |
+| 6 | Rider stops pedaling | wheel speed and current fall |
+| 7 | Brake lever pulled | all coils in regenerative braking, wheel slows |
+| 8 | Battery below threshold | loop error forced to 0, drive falls |
+
+In every phase the current loop must settle to within ±45 counts of its target
+(or be at full drive) before the check, or the test fails.
+
+## Running it
+
+**Simulation** (ModelSim / Questa):
 
 ```bash
 vlib work
@@ -57,52 +152,32 @@ vlog -sv rtl/*.sv tb/models/*.sv tb/eBike_tb.sv
 vsim -c eBike_tb -do "run -all; quit -f"
 ```
 
-`eBike_tb` runs a full-chip closed-loop test against the physics model,
-with `FAST_SIM=1` to shorten the internal timers. It checks that the motor
-responds the right way to changes in assist level, torque, incline, cadence and
-pedaling stopping, that the brake engages regenerative braking and that a low
-battery inhibits drive. In every phase the current loop must settle to within
-±45 counts of its target (or be at full drive). All 8 tests pass in about
-8.5 minutes.
+**FPGA:** open `fpga/eBike.qpf` in Quartus Prime Lite (Cyclone IV E). The
+50 MHz constraint is in `fpga/eBike.sdc`. `FAST_SIM = 0` (default in
+`rtl/eBike.sv`) gives real hardware timing.
 
-## Synthesis
+**ASIC synthesis:**
 
 ```bash
-cd syn && dc_shell -f eBike.dc
+cd syn/genus && bash run_genus.sh     # Cadence Genus, FreePDK45
+cd syn && dc_shell -f eBike.dc         # original course Design Compiler flow
 ```
 
-`syn/eBike.dc` is the course Design Compiler flow: reads the RTL, constrains the
-`clk` port, compiles, flattens and writes the gate-level netlist `eBike.vg` plus
-an area report. The FPGA build is `fpga/eBike.qpf` in Quartus, with the 50 MHz
-clock in `fpga/eBike.sdc`. `FAST_SIM = 0` (the default in `rtl/eBike.sv`) gives
-real hardware timing.
-
-The DE0-Nano's Cyclone IV E needs Quartus Prime Lite/Standard. As a portability
-check, the same RTL was also run through Quartus Prime Pro 26.1 targeting an
-Agilex 3 (`A3CW135BM16AE6S`): synthesis and fit with 0 errors and no inferred
-latches, 465 ALMs / 716 registers / 3 DSP blocks, and the 50 MHz clock met with
-15.6 ns of setup slack.
-
-## Repository layout
+## Repository structure
 
 | Folder | Contents |
 |---|---|
-| `rtl/` | The 21 synthesizable SystemVerilog files (`eBike.sv` is the top) |
-| `tb/` | Full-chip testbench `eBike_tb.sv`; `tb/models/` holds the physics and ADC models |
-| `fpga/` | Quartus projects and timing constraints for the DE0-Nano, plus two FPGA unit-test tops (`inert_intf_test`, `nonoverlap_test`) |
-| `syn/` | ASIC synthesis scripts |
-| `docs/` | Project specification and course requirement handouts |
+| `rtl/` | 21 synthesizable SystemVerilog files (`eBike.sv` is the top) |
+| `tb/` | Full-chip testbench; `tb/models/` holds the physics and ADC models |
+| `fpga/` | Quartus projects and constraints, plus two FPGA unit-test tops |
+| `syn/` | Genus and Design Compiler synthesis scripts |
+| `docs/` | [Project specification](docs/ProjectSpec.pdf) and [course requirement handouts](docs/README.md) |
 
-| Branch | Contents |
-|---|---|
-| `main` | Final working design (formerly the `FinalSNIN/` folder), cleaned up and bug-fixed, with fixes merged in from the other versions |
-| `old-versions` | The repository as it was at the end of the semester: every integration attempt (`Final/`, `FinalSNIO/`, `FinalSoIN/`, `Backup/`, `old/`, ...) plus the `cvandenboom` and `may2nd` branches under `branch-*/` |
+The `old-versions` branch keeps every earlier integration attempt from the
+semester.
 
-## Team
+---
 
-Daichi (Tano) Zhang ([@TanoZhang](https://github.com/TanoZhang)),
-Chris Vanden Boom ([@boomchrisvanden](https://github.com/boomchrisvanden)),
-[@simondpuebla](https://github.com/simondpuebla) — ECE 551
-(Digital System Design & Synthesis), University of Wisconsin–Madison.
-Course-provided models (`UART_tx`, `inertial_integrator`,
-`cadence_LU`, the physics/ADC models) are credited to the course staff.
+Team project with Chris Vanden Boom ([@boomchrisvanden](https://github.com/boomchrisvanden)),
+Simon Puebla ([@simondpuebla](https://github.com/simondpuebla)) and Y. Wu. Course-provided blocks:
+`UART_tx`, `inertial_integrator`, `cadence_LU` and the testbench models.
