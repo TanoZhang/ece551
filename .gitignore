@@ -1,0 +1,34 @@
+# Quartus build output
+db/
+incremental_db/
+output_files/
+*.rpt
+*.smsg
+*.summary
+*.done
+*.jdi
+*.pin
+*.qws
+*.sld
+*.sof
+*.pof
+*_assignment_defaults.qdf
+
+# ModelSim / Questa
+work/
+temp/
+transcript
+*.wlf
+*.cr.mti
+*.mpf
+modelsim.ini
+
+# Synopsys
+*.vg
+*.svf
+*.mr
+*.pvl
+*.syn
+
+# Editor backups
+*.bak

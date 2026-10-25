@@ -1,5 +1,0 @@
-v1
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,sensorCondition:iSensorCondition|desiredDrive:idesiredDrive|lpm_mult:Mult1|mult_lbt:auto_generated|mac_out2,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,sensorCondition:iSensorCondition|desiredDrive:idesiredDrive|lpm_mult:Mult1|mult_lbt:auto_generated|mac_out4,
-DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,sensorCondition:iSensorCondition|desiredDrive:idesiredDrive|lpm_mult:Mult0|mult_ibt:auto_generated|mac_out2,
-PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,sensorCondition:iSensorCondition|desiredDrive:idesiredDrive|lpm_mult:Mult1|mult_lbt:auto_generated|mac_mult3,
