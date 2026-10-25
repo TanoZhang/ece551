@@ -4,48 +4,46 @@ module PB_intf (
     input  logic       tgglMd,
     output logic [1:0] setting,
     output logic [2:0] scale,
-    output logic [2:0] LED
+    output logic [1:0] LED
 );
 
-  logic tgglMd_F1, tgglMd_F2;
+  logic released;
 
-  // Rising edge detection
+  // Push button is asynch and active low: 3 flops (preset high) and
+  // detect the rising edge, i.e. the button being released
 
-  always_ff @(posedge clk or negedge rst_n) begin
-    if (!rst_n) begin
-      tgglMd_F1 <= 0;
-      tgglMd_F2 <= 0;
-    end else begin
-      tgglMd_F1 <= tgglMd;
-      tgglMd_F2 <= tgglMd_F1;
-    end
-  end
+  PB_rise iPB_rise (
+      .clk(clk),
+      .rst_n(rst_n),
+      .PB(tgglMd),
+      .rise(released)
+  );
 
   // Mode counter
 
   always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) setting <= 2'b10;  // default to "normal"
 
-    else if (tgglMd_F1 && !tgglMd_F2) setting <= setting + 2'd1;
+    else if (released) setting <= setting + 2'd1;
   end
 
   // Output scale based on setting
 
   always_comb begin
     case (setting)
-      2'b00: scale = 3'd0;  // off
+      2'b00: scale = 3'b000;  // off
 
-      2'b01: scale = 3'd1;  // hard
+      2'b01: scale = 3'b011;  // hard
 
-      2'b10: scale = 3'd2;  // normal
+      2'b10: scale = 3'b101;  // normal
 
-      2'b11: scale = 3'd3;  // easy
+      2'b11: scale = 3'b111;  // easy
 
     endcase
 
-    // could be deleted here: LED display matches setting
+    // LEDs display the setting directly
 
-    LED = 1 << setting;
+    LED = setting;
   end
 
 endmodule

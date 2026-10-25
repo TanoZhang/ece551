@@ -10,9 +10,9 @@ module PB_release (
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            pre1 <= 1'b0;
-            pre2 <= 1'b0;
-            pre3 <= 1'b0;
+            pre1 <= 1'b1;   // button is active low, idles high
+            pre2 <= 1'b1;
+            pre3 <= 1'b1;
         end
         else begin
             pre1 <= PB;    // 1st stage
@@ -21,6 +21,7 @@ module PB_release (
         end
     end
 
-    assign released = ~(pre2 || pre3);
+    // single clock pulse on the rising edge (button released)
+    assign released = pre2 & ~pre3;
 
 endmodule
