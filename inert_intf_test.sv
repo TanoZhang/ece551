@@ -10,7 +10,7 @@ output SCLK; // SPI clock signal
 output MOSI; // SPI Master Out Slave In signal
 input MISO; // SPI Master In Slave Out signal
 input INT; // Interrupt signal from the DUT
-output [7:0] LED; // LED output for incline data
+output logic [7:0] LED; // LED output for incline data
 
   // Reset synchronizer (from your reset_synch module)
   rst_synch u_reset (

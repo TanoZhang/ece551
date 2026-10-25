@@ -1,7 +1,7 @@
 #########################
 # Read in source files
 #########################
-read_file -format sverilog { UART_tx.sv telemetry.sv desiredDrive.sv intertial_integrator.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv PWM.sv SPI_mnrch.sv PID.sv nonoverlap.sv brushless.sv mtr_drv.sv A2D_intf.sv inert_intf.sv reset_synch.sv sensorCondition.sv eBike.sv}
+read_file -format sverilog { UART_tx.sv telemetry.sv desiredDrive.sv inertial_integrator.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv PWM.sv SPI_mnrch.sv PID.sv nonoverlap.sv brushless.sv mtr_drv.sv A2D_intf.sv inert_intf.sv reset_synch.sv PB_rise.sv PB_intf.sv sensorCondition.sv eBike.sv}
 
 #########################
 # Set top level to be eBike
@@ -64,4 +64,4 @@ report_timing -path full -delay min -nworst 3
 report_area > area_report.txt
 
 #### write out final netlist ######
-write –format verilog eBike –output eBike.vg
+write -format verilog eBike -output eBike.vg
