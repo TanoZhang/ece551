@@ -40,6 +40,13 @@ six power MOSFETs to deliver that current.
 `SPI_ADC128S.sv` and `ADC128S.sv` are behavioral models of the bike, motor, IMU
 and ADC used by the testbench. They are not part of the synthesized design.
 
+## Requirements
+
+The professor's project specification is
+[`docs/ProjectSpec.pdf`](docs/ProjectSpec.pdf). The per-module requirement
+handouts and the synthesis/timing course material are indexed in
+[`docs/`](docs/README.md).
+
 ## Running the simulation
 
 Requires ModelSim / Questa (tested with ModelSim–Intel FPGA Starter 2020.1).
