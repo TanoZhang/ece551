@@ -34,7 +34,7 @@ module nonoverlap (
       previous_high <= 0;
     end else begin
 
-      // If input changed → start (or restart) forced low period
+      // If input changed -> start (or restart) forced low period
       if (change) begin
         forced_low <= 1;
         cnt <= 0;
