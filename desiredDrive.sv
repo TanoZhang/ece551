@@ -27,7 +27,10 @@ module desiredDrive (
   localparam TORQUE_MIN = 12'h380;
 
   //Incline Saturation limit to signed 10bit
-  assign incline_saturation = (incline[12] && ~&incline[11:9]) ? 10'b1000000000 : (!incline[12] && |incline[11:9]) ? 10'b0111111111 : incline[9:0];
+  incline_sat iIncline_sat (
+      .incline(incline),
+      .incline_sat(incline_saturation)
+  );
   //throuttle position
   assign throttle_position = (zero_torque[12]) ? 12'h000 : zero_torque[11:0];
 
