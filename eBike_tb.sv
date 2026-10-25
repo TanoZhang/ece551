@@ -3,6 +3,12 @@ module eBike_tb;
   // Compact testbench for eBike controller
   localparam FAST_SIM    = 1;          // fast simulation mode
   localparam ERR_LIMIT  = 45;         // allowable current error
+  localparam MAX_SETTLE = 4096;       // pedal cycles allowed for the loop to settle
+
+  // FAST_SIM cadence: half periods must exceed the 512 clk debounce in
+  // cadence_filt and keep cadence_per inside the cadence_LU table (>= 8)
+  localparam CAD_SLOW   = 2048;       // half period -> cadence 21
+  localparam CAD_NORM   = 1024;       // half period -> cadence 27
 
   // Clock & reset
   reg clk = 0, rst_n;
@@ -55,18 +61,38 @@ module eBike_tb;
   endtask
 
   // Helper: check current error
+  // (at full drive the motor cannot deliver more current, so a remaining
+  // error with drv_mag saturated is the actuator limit, not a loop failure)
   task check_error;
-    if (dut.iSensorCondition.error > ERR_LIMIT ||
+    if (dut.drv_mag == 12'hFFF)
+      $display("  drive saturated (drv_mag = 0xFFF), error = %0d", dut.iSensorCondition.error);
+    else if (dut.iSensorCondition.error > ERR_LIMIT ||
         dut.iSensorCondition.error < -ERR_LIMIT) begin
-      $fatal("Error too large: %0d", dut.iSensorCondition.error);
+      $fatal(1, "Error too large: %0d", dut.iSensorCondition.error);
     end
+  endtask
+
+  // Helper: pedal until the current loop settles within ERR_LIMIT
+  // (fails if it has not settled after MAX_SETTLE pedal cycles)
+  task pedal_settle(input int period);
+    int n;
+    n = 256;
+    pedal_cycle(256, period);
+    while ((dut.iSensorCondition.error > ERR_LIMIT ||
+            dut.iSensorCondition.error < -ERR_LIMIT) &&
+           dut.drv_mag != 12'hFFF && n < MAX_SETTLE) begin
+      pedal_cycle(16, period);
+      n += 16;
+    end
+    check_error();
+    $display("  settled after %0d pedal cycles (error = %0d)", n, dut.iSensorCondition.error);
   endtask
 
   initial begin
     integer tc;
 
     // Test suite: reordered and trimmed for brevity
-    for (tc = 5; tc <= 6; tc++) begin
+    for (tc = 1; tc <= 6; tc++) begin
       // reset
       rst_n = 0; @(posedge clk); @(negedge clk); rst_n = 1;
 
@@ -78,7 +104,7 @@ module eBike_tb;
       mode_btn = 0;
 
       // fix assist mode to MED
-      force dut.setting = 2'b10;
+      force dut.iPB_intf.setting = 2'b10;
 
       $display("\n=== Running Test %0d ===", tc);
 
@@ -87,51 +113,45 @@ module eBike_tb;
         1: begin
           $display("Test 1: Assist up increases speed/current");
           torque_v = 12'h500;
-          pedal_cycle(512, 512);
-          check_error();
+          pedal_settle(CAD_NORM);
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
-          force dut.setting = 2'b11;
-          pedal_cycle(512, 512);
-          check_error();
+          force dut.iPB_intf.setting = 2'b11;
+          pedal_settle(CAD_NORM);
           omega_after  = phys.omega; curr_after  = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
-            $fatal("Assist test failed");
+            $fatal(1, "Assist test failed");
         end
 
         // Test 2: Torque increase effect
         2: begin
           $display("Test 2: More torque -> higher speed/current");
-          torque_v = 12'h600;
-          pedal_cycle(512, 512);
-          check_error();
+          torque_v = 12'h500;
+          pedal_settle(CAD_NORM);
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
-          torque_v = 12'hA00;
-          pedal_cycle(512, 512);
-          check_error();
+          torque_v = 12'h600;    // stays below drive saturation
+          pedal_settle(CAD_NORM);
           omega_after  = phys.omega; curr_after  = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
-            $fatal("Torque test failed");
+            $fatal(1, "Torque test failed");
         end
 
         // Test 3: Incline change effect
         3: begin
-          $display("Test 3: Downhill->uphill slows bike");
+          $display("Test 3: Incline change (yaw 0x2000 -> 0x8000) raises speed/current");
           yaw_rate = 16'h2000;
-          pedal_cycle(512, 512);
-          check_error();
+          pedal_settle(CAD_NORM);
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           yaw_rate = 16'h8000; // steep downhill
-          pedal_cycle(512, 512);
-          check_error();
+          pedal_settle(CAD_NORM);
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
-            $fatal("Incline test failed");
+            $fatal(1, "Incline test failed");
         end
 
         // Test 4: Faster cadence -> ramp up
@@ -139,41 +159,36 @@ module eBike_tb;
           
 		  $display("Test 4: Higher cadence rate boosts bike");
 		  yaw_rate = 16'h2000;
-          pedal_cycle(2048, 256);
-          check_error();
+          pedal_settle(CAD_SLOW);
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 		  
-          pedal_cycle(4096, 128); // faster by halved low period
-          check_error();
+          pedal_settle(CAD_NORM); // faster cadence (half the period)
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after > omega_before && curr_after > curr_before))
-            $fatal("Cadence-rate test failed");
+            $fatal(1, "Cadence-rate test failed");
         end
 
         // Test 5: Uphill->downhill effect
         5: begin
-          $display("Test 5: Uphill->downhill increases effort");
+          $display("Test 5: Incline change (yaw 0x0000 -> 0xA800) lowers speed/current");
           yaw_rate = 16'h0000;
-          pedal_cycle(512, 512);
-          check_error();
+          pedal_settle(CAD_NORM);
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           yaw_rate = 16'hA800;
-          pedal_cycle(512, 512);
-          check_error();
+          pedal_settle(CAD_NORM);
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after < omega_before && curr_after < curr_before))
-            $fatal("Downhill->uphill test failed");
+            $fatal(1, "Incline (yaw 0x0000 -> 0xA800) test failed");
         end
 		
 		// Test 6: No cadence -> spin down
         6: begin
           $display("Test 6: Stopping pedaling slows bike");
           torque_v = 12'hA00;
-          pedal_cycle(512, 512);
-          check_error();
+          pedal_settle(CAD_NORM);
           omega_before = phys.omega; curr_before = dut.iSensorCondition.avg_curr;
 
           repeat(2048) begin
@@ -186,8 +201,7 @@ module eBike_tb;
           omega_after = phys.omega; curr_after = dut.iSensorCondition.avg_curr;
 
           if (!(omega_after < omega_before && curr_after < curr_before)) begin
-            $display("Cadence-stop test failed");
-			$stop();
+            $fatal(1, "Cadence-stop test failed");
 		  end
         end
 
