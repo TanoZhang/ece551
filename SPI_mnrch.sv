@@ -11,7 +11,7 @@ module SPI_mnrch (
     output logic [15:0] resp);
 
     // Control signals
-    logic shiftT, already_done, init, bits_16, reload_clock_div;
+    logic shiftT, already_done, init, bits_16, reload_clock_div, full;
 
     // Counters
     logic [4:0]bit_counter;

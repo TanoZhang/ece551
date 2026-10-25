@@ -20,7 +20,7 @@ module PWM (
     else counter <= counter + 1;
 
   //logic of output
-  assign PWM_sig_in = !(counter > duty);
+  assign PWM_sig_in = (counter < duty);
   always @(posedge clk or negedge rst_n)
     if (!rst_n) PWM_sig <= 0;
     else PWM_sig <= PWM_sig_in;

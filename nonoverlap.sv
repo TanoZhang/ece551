@@ -15,9 +15,10 @@ module nonoverlap (
 
   // internal singlas
 
-  logic [5:0] cnt;  //counter
+  logic [4:0] cnt;  //counter
   logic change, previous_low, previous_high, forced_low;
-  assign change = ((!forced_low) && (highIn != previous_high)) || ((!forced_low) && (lowIn != previous_low));
+  // any change (even during the dead time) restarts the forced low period
+  assign change = (highIn != previous_high) || (lowIn != previous_low);
 
   //Main sequential logic
 
@@ -33,30 +34,30 @@ module nonoverlap (
       previous_high <= 0;
     end else begin
 
-      // If input changed → start forced low period
+      // If input changed → start (or restart) forced low period
       if (change) begin
         forced_low <= 1;
         cnt <= 0;
-      end
+        lowOut <= 0;
+        highOut <= 0;
 
-      // Forced low peiod logic
-      if (forced_low) begin
+        // Forced low peiod logic
+      end else if (forced_low) begin
         // during low period, set highOut and lowOut to 0
         lowOut <= 0;
         highOut <= 0;
         cnt <= cnt + 1;
 
         //exit after 32 cycle
-        if (cnt == 31) begin
+        if (&cnt) begin
           highOut <= highIn;
           lowOut <= lowIn;
           forced_low <= 0;
-          cnt <= 0;
         end
         // Normal operation when no change
       end else begin
-        highOut <= (change) ? 0 : highIn;
-        lowOut  <= (change) ? 0 : lowIn;
+        highOut <= highIn;
+        lowOut  <= lowIn;
       end
       // Save current inputs for next change detection
       previous_high <= highIn;
