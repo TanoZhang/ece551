@@ -1,0 +1,122 @@
+module sensorCondition (
+    input  logic clk, rst_n,
+    input  logic [11:0] torque,         // torque measurement
+    input  logic [11:0] batt,           // raw battery voltage
+    input  logic cadence,               // unfiltered cadence
+    input  logic [11:0] curr,           // current through the motor
+    input  logic signed [12:0] incline, // positive for uphill, negative for downhill
+    input  logic [1:0] setting,         // assist level
+    output logic TX,                    // output from telemetry module
+    output logic signed [12:0] error,   // signed signal to PID
+    output logic not_pedaling           // asserted when cadence_rises < 2
+);
+
+    localparam LOW_BATT_THRES = 12'hA98; // Low battery threshold
+
+    // Parameters
+    parameter FAST_SIM = 1;
+    
+    // Intermediate signals
+    logic [7:0]  cadence_per;           // Timer counter         
+    logic [4:0]  cadence_out;           // cadence from LU
+    logic        cadence_rise;          // Rising edge detect
+    logic        not_pedaling_flopped;  // Flopped not pedaling signal
+
+    // Signals for current and torque averaging
+    logic [11:0] avg_curr;              // Average current
+    logic [11:0] target_curr;           // Target current
+    logic [13:0] curr_accum;            // Current accumulator
+    logic        curr_accum_full;       // Accumulator sample trigger
+    logic [21:0] avg_curr_smpl;         // Current sampling counter
+    logic [16:0] torque_accum;          // Torque accumulator
+    logic [11:0] avg_torque;            // Average torque
+
+    // Fast simulation support
+    generate 
+        if (FAST_SIM)
+            assign clr = &cadence_per[15:0];
+        else
+            assign clr = &cadence_per;
+    endgenerate
+
+    // Instantiate cadence modules
+    cadence_filt #(FAST_SIM) iCadence_Filt (
+        .clk(clk),
+        .rst_n(rst_n),
+        .cadence(cadence),
+        .cadence_filt(cadence_filt),
+        .cadence_rise(cadence_rise)
+    );
+
+    cadence_meas #(FAST_SIM) iCadence_Meas (
+        .clk(clk),
+        .rst_n(rst_n),
+        .cadence_filt(cadence_filt),
+        .cadence_per(cadence_per)
+    );
+
+    cadence_LU iCadence_LU (
+        .cadence_per(cadence_per),
+        .cadence(cadence_out)
+    );
+
+	//Falling edge detector for not pedaling
+	always @(posedge clk, negedge rst_n) begin
+		if(!rst_n)
+			not_pedaling_flopped <= 0;
+		else
+			not_pedaling_flopped <= not_pedaling;
+	end
+
+	assign not_pedaling_fall = (~not_pedaling & not_pedaling_flopped);
+
+    // Current averaging logic
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n) begin
+            avg_curr_smpl <= 1'b0;
+            curr_accum <= 1'b0;
+        end else begin
+            avg_curr_smpl <= avg_curr_smpl + 1'b1;
+            if (curr_accum_full)
+                curr_accum <= ((curr_accum * 3) >> 2) + curr;
+        end
+    end
+
+    assign avg_curr = curr_accum >> 2;
+
+    // Torque averaging logic
+    always_ff @(posedge clk, negedge rst_n) begin
+        if (!rst_n)
+            torque_accum <= 1'b0;
+        else if (not_pedaling_fall)
+            torque_accum <= {1'b0, torque, 4'b0};
+        else if (cadence_rise)
+            torque_accum <= ((torque_accum * 31) >> 5) + torque;
+    end
+
+    assign avg_torque = torque_accum >> 5;
+
+    // Instantiate desired drive calculator
+    desiredDrive iDesired (
+        .avg_torque(avg_torque),
+        .cadence(cadence_out),
+        .not_pedaling(not_pedaling),
+        .incline(incline),
+        .scale(scale),
+        .target_curr(target_curr)
+    );
+
+    // Calculate error signal
+    assign error = ((batt < LOW_BATT_THRES) || not_pedaling) ? 1'b0 : (target_curr - avg_curr);
+
+    // Instantiate telemetry module
+    telemetry iTelemetry (
+        .clk(clk),
+        .rst_n(rst_n),
+        .batt_v(batt),
+        .avg_curr(avg_curr),
+        .avg_torque(avg_torque),
+        .TX(TX)
+    );
+
+endmodule
