@@ -53,8 +53,10 @@ vsim -c eBike_tb -do "run -all; quit -f"
 `eBike_tb` runs a full-chip closed-loop test against the physics model,
 with `FAST_SIM=1` to shorten the internal timers. It checks that the motor
 responds the right way to changes in assist level, torque, incline, cadence and
-pedaling stopping, and that the current loop settles to within ±45 counts of
-its target (or is at full drive). All 6 tests pass in about 7 minutes.
+pedaling stopping, that the brake engages regenerative braking and that a low
+battery inhibits drive. In every phase the current loop must settle to within
+±45 counts of its target (or be at full drive). All 8 tests pass in about
+8.5 minutes.
 
 ## Synthesis
 
@@ -71,10 +73,8 @@ gate-level netlist `eBike.vg` plus an area report. The FPGA build uses
 
 | Branch | Contents |
 |---|---|
-| `main` | Final working design (formerly the `FinalSNIN/` folder), cleaned up and bug-fixed |
-| `variant/Final`, `variant/FinalSNIO`, `variant/FinalSoIN` | Earlier integration attempts kept for reference |
-| `variant/Backup`, `variant/old` | Earlier unit-level work and course exercises |
-| `archive/original-main` | The repository exactly as it was at the end of the semester |
+| `main` | Final working design (formerly the `FinalSNIN/` folder), cleaned up and bug-fixed, with fixes merged in from the other versions |
+| `old-versions` | The repository as it was at the end of the semester: every integration attempt (`Final/`, `FinalSNIO/`, `FinalSoIN/`, `Backup/`, `old/`, ...) plus the `cvandenboom` and `may2nd` branches under `branch-*/` |
 
 ## Team
 
