@@ -11,7 +11,7 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:24:21 FEBRUARY 17,201
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
 set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
-#set_global_assignment -name SDC_FILE FirstFPGA.SDC
+#set_global_assignment -name SDC_FILE test_tops.sdc
 
 #============================================================
 # CLOCK
@@ -65,8 +65,8 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE reset_synch.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/reset_synch.sv
 set_global_assignment -name SYSTEMVERILOG_FILE nonoverlap_test.sv
-set_global_assignment -name SYSTEMVERILOG_FILE nonoverlap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PB_release.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/nonoverlap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pb_release.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

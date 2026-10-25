@@ -36,9 +36,9 @@ six power MOSFETs to deliver that current.
 | User I/O | `PB_intf`, `PB_rise`, `telemetry`, `UART_tx` | Push button cycles the assist level (off/low/med/high) shown on LEDs. Sends an 8-byte telemetry packet (`AA 55` + battery, current, torque) about 48 times a second |
 | Reset | `reset_synch` (`rst_synch`) | Asynchronous assert, synchronous deassert of the global reset |
 
-`eBikePhysics.sv`, `hub_wheel_model.sv`, `coil_volt.sv`, `AnalogModel.sv`,
-`SPI_ADC128S.sv` and `ADC128S.sv` are behavioral models of the bike, motor, IMU
-and ADC used by the testbench. They are not part of the synthesized design.
+The models in `tb/models/` (`eBikePhysics`: motor, wheel and IMU;
+`AnalogModel` + `SPI_ADC128S`: the ADC) are behavioral models used by the
+testbench. They are not part of the synthesized design.
 
 ## Requirements
 
@@ -53,7 +53,7 @@ Requires ModelSim / Questa (tested with ModelSim–Intel FPGA Starter 2020.1).
 
 ```bash
 vlib work
-vlog -sv *.sv
+vlog -sv rtl/*.sv tb/models/*.sv tb/eBike_tb.sv
 vsim -c eBike_tb -do "run -all; quit -f"
 ```
 
@@ -68,21 +68,30 @@ battery inhibits drive. In every phase the current loop must settle to within
 ## Synthesis
 
 ```bash
-dc_shell -f eBike.dc
+cd syn && dc_shell -f eBike.dc
 ```
 
-Reads the RTL, constrains the `clk` port, compiles, flattens and writes the
-gate-level netlist `eBike.vg` plus an area report. The FPGA build uses
-`eBike.qpf` / `eBike.qsf` in Quartus. Set `FAST_SIM = 0` (the default in
-`eBike.sv`) for real hardware timing.
+`syn/eBike.dc` is the course Design Compiler flow: reads the RTL, constrains the
+`clk` port, compiles, flattens and writes the gate-level netlist `eBike.vg` plus
+an area report. The FPGA build is `fpga/eBike.qpf` in Quartus, with the 50 MHz
+clock in `fpga/eBike.sdc`. `FAST_SIM = 0` (the default in `rtl/eBike.sv`) gives
+real hardware timing.
 
 The DE0-Nano's Cyclone IV E needs Quartus Prime Lite/Standard. As a portability
 check, the same RTL was also run through Quartus Prime Pro 26.1 targeting an
 Agilex 3 (`A3CW135BM16AE6S`): synthesis and fit with 0 errors and no inferred
-latches, 470 ALMs / 724 registers / 3 DSP blocks, and the 50 MHz clock met with
-15.7 ns of setup slack.
+latches, 465 ALMs / 716 registers / 3 DSP blocks, and the 50 MHz clock met with
+15.6 ns of setup slack.
 
 ## Repository layout
+
+| Folder | Contents |
+|---|---|
+| `rtl/` | The 21 synthesizable SystemVerilog files (`eBike.sv` is the top) |
+| `tb/` | Full-chip testbench `eBike_tb.sv`; `tb/models/` holds the physics and ADC models |
+| `fpga/` | Quartus projects and timing constraints for the DE0-Nano, plus two FPGA unit-test tops (`inert_intf_test`, `nonoverlap_test`) |
+| `syn/` | ASIC synthesis scripts |
+| `docs/` | Project specification and course requirement handouts |
 
 | Branch | Contents |
 |---|---|
@@ -92,8 +101,8 @@ latches, 470 ALMs / 724 registers / 3 DSP blocks, and the 50 MHz clock met with
 ## Team
 
 Daichi (Tano) Zhang ([@TanoZhang](https://github.com/TanoZhang)),
-Chris Vanden Boom, [@simondpuebla](https://github.com/simondpuebla),
-[@ywu647](https://github.com/ywu647) — ECE 551
+Chris Vanden Boom ([@boomchrisvanden](https://github.com/boomchrisvanden)),
+[@simondpuebla](https://github.com/simondpuebla) — ECE 551
 (Digital System Design & Synthesis), University of Wisconsin–Madison.
-Course-provided models (`UART_tx`, `UART_rcv`, `inertial_integrator`,
+Course-provided models (`UART_tx`, `inertial_integrator`,
 `cadence_LU`, the physics/ADC models) are credited to the course staff.

@@ -120,26 +120,26 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE SPI_mnrch.sv
-set_global_assignment -name SYSTEMVERILOG_FILE reset_synch.sv
-set_global_assignment -name SYSTEMVERILOG_FILE cadence_filt.sv
-set_global_assignment -name SYSTEMVERILOG_FILE cadence_meas.sv
-set_global_assignment -name SYSTEMVERILOG_FILE cadence_LU.sv
-set_global_assignment -name SYSTEMVERILOG_FILE sensorCondition.sv
-set_global_assignment -name SYSTEMVERILOG_FILE UART_tx.sv
-set_global_assignment -name SYSTEMVERILOG_FILE telemetry.sv
-set_global_assignment -name SYSTEMVERILOG_FILE incline_sat.sv
-set_global_assignment -name SYSTEMVERILOG_FILE desiredDrive.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PID.sv
-set_global_assignment -name SYSTEMVERILOG_FILE nonoverlap.sv
-set_global_assignment -name SYSTEMVERILOG_FILE brushless.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PWM.sv
-set_global_assignment -name SYSTEMVERILOG_FILE mtr_drv.sv
-set_global_assignment -name SYSTEMVERILOG_FILE inertial_integrator.sv
-set_global_assignment -name SYSTEMVERILOG_FILE inert_intf.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PB_rise.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PB_intf.sv
-set_global_assignment -name SYSTEMVERILOG_FILE eBike.sv
-set_global_assignment -name SYSTEMVERILOG_FILE A2D_intf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/SPI_mnrch.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/reset_synch.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/cadence_filt.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/cadence_meas.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/cadence_LU.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/sensorCondition.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/UART_tx.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/telemetry.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/incline_sat.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/desiredDrive.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/PID.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/nonoverlap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/brushless.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/PWM.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/mtr_drv.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/inertial_integrator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/inert_intf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/PB_rise.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/PB_intf.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/eBike.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../rtl/A2D_intf.sv
 set_global_assignment -name SDC_FILE eBike.sdc
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

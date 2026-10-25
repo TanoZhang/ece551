@@ -1,7 +1,8 @@
 #########################
-# Read in source files
+# Read in source files (run dc_shell from syn/)
 #########################
-read_file -format sverilog { UART_tx.sv telemetry.sv incline_sat.sv desiredDrive.sv inertial_integrator.sv cadence_filt.sv cadence_meas.sv cadence_LU.sv PWM.sv SPI_mnrch.sv PID.sv nonoverlap.sv brushless.sv mtr_drv.sv A2D_intf.sv inert_intf.sv reset_synch.sv PB_rise.sv PB_intf.sv sensorCondition.sv eBike.sv}
+set RTL ../rtl
+read_file -format sverilog [list $RTL/UART_tx.sv $RTL/telemetry.sv $RTL/incline_sat.sv $RTL/desiredDrive.sv $RTL/inertial_integrator.sv $RTL/cadence_filt.sv $RTL/cadence_meas.sv $RTL/cadence_LU.sv $RTL/PWM.sv $RTL/SPI_mnrch.sv $RTL/PID.sv $RTL/nonoverlap.sv $RTL/brushless.sv $RTL/mtr_drv.sv $RTL/A2D_intf.sv $RTL/inert_intf.sv $RTL/reset_synch.sv $RTL/PB_rise.sv $RTL/PB_intf.sv $RTL/sensorCondition.sv $RTL/eBike.sv ]
 
 #########################
 # Set top level to be eBike
