@@ -1,1359 +1,909 @@
 m255
 K4
 z2
-!s11f MIXED_VERSIONS
+!s11f vlog 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/WINDOWS/System32
+dC:/intelFPGA_lite/23.1std
 vA2D_intf
-Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1746132023
+2I:/test/FinalSNIN/A2D_intf.sv
+Z0 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1746303519
 !i10b 1
-!s100 gc8TI>8YiGlZT`CEVi<092
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IhYCS28Be=R1DH78m[;jfF3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s100 4nVlRZ5DnQA_a]U6:l7IP3
+I@6lFOUU^3T9HMI7XEgfCk2
 S1
-Z4 dC:/Users/Simon/Documents/GitHub/ece551
-w1746111877
-8C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv
-FC:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv
-!i122 1885
-L0 1 83
-Z5 OV;L;2020.1;71
+Z1 dI:/test/FinalSNIN
+w1745000452
+8I:/test/FinalSNIN/A2D_intf.sv
+FI:/test/FinalSNIN/A2D_intf.sv
+!i122 0
+L0 1 138
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z6 !s108 1746132023.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/A2D_intf.sv|
-!i113 1
-Z7 o-work work -sv
-Z8 tCvgOpt 0
+Z4 !s108 1746303519.000000
+!s107 I:/test/FinalSNIN/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/A2D_intf.sv|
+!i113 0
+Z5 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z6 tCvgOpt 0
 n@a2@d_intf
-vA2D_test
-R0
-R1
-!i10b 1
-!s100 @a>9HQ:>L61M`Q]T>ULHM3
-R2
-IQQ97Z19aS:VC>A6NdiB>:0
-R3
-S1
-R4
-Z9 w1746111027
-8C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv
-FC:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv
-!i122 1886
-L0 1 66
-R5
-r1
-!s85 0
-31
-R6
-!s107 C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/A2D_test.sv|
-!i113 1
-R7
-R8
-n@a2@d_test
 vADC128S
+2I:/test/FinalSNIN/ADC128S.sv
 R0
-Z10 !s110 1746132024
+Z7 !s110 1746303520
 !i10b 1
 !s100 iL2zkc^KeI[4_PCXk?lB03
-R2
-InYaZCUM^62XjUDnm[?g=I1
-R3
+IjQZhE9QoCGebL8O15okLV3
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv
-FC:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv
-!i122 1887
+R1
+w1744993271
+8I:/test/FinalSNIN/ADC128S.sv
+FI:/test/FinalSNIN/ADC128S.sv
+!i122 1
 L0 1 112
-R5
+R2
+R3
 r1
 !s85 0
 31
+R4
+!s107 I:/test/FinalSNIN/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/ADC128S.sv|
+!i113 0
+R5
 R6
-!s107 C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/ADC128S.sv|
-!i113 1
-R7
-R8
 n@a@d@c128@s
 vAnalogModel
+2I:/test/FinalSNIN/AnalogModel.sv
 R0
-R10
+R7
 !i10b 1
 !s100 V5Mo]QPJ?<ojR=o8>V^H10
-R2
-Iek6eP[f2?jHja7]jSgR3M1
-R3
+Il3zeWGiM7KJaF>FW4W_b10
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv
-FC:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv
-!i122 1888
-Z11 L0 1 111
-R5
+R1
+Z8 w1746149540
+8I:/test/FinalSNIN/AnalogModel.sv
+FI:/test/FinalSNIN/AnalogModel.sv
+!i122 2
+Z9 L0 1 111
+R2
+R3
 r1
 !s85 0
 31
-Z12 !s108 1746132024.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/AnalogModel.sv|
-!i113 1
-R7
-R8
+Z10 !s108 1746303520.000000
+!s107 I:/test/FinalSNIN/AnalogModel.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/AnalogModel.sv|
+!i113 0
+R5
+R6
 n@analog@model
 vbrushless
+2I:/test/FinalSNIN/brushless.sv
 R0
-R10
+Z11 !s110 1746303521
 !i10b 1
 !s100 F1RQEmR7Q@?2zI1o`S4Zg1
-R2
-IK0`LQR838M;67ME`[D4US2
-R3
+IFXbc^?YU@67d_4d4bE^5h3
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv
-FC:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv
-!i122 1892
+R1
+Z12 w1746149541
+8I:/test/FinalSNIN/brushless.sv
+FI:/test/FinalSNIN/brushless.sv
+!i122 3
 L0 25 155
-R5
-r1
-!s85 0
-31
-R12
-!s107 C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/brushless-1.sv|
-!i113 1
-R7
-R8
-vbrushless_mtr_drv_tb
-R0
-R10
-!i10b 1
-!s100 Ei>B7[Q>[kjDVCd1G:iWm1
 R2
-IX=0eE8ZUV1IaT1JCa6PT03
 R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv
-FC:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv
-!i122 1890
-L0 9 143
-R5
 r1
 !s85 0
 31
-R12
-!s107 C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb-1.sv|
-!i113 1
-R7
-R8
-vbrushless_mtr_drv_tb2
-R0
 R10
-!i10b 1
-!s100 ffFOXXBZ<flceXO`0M_880
-R2
-IQI0nng:ZglU9WKTSRaS3z2
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv
-FC:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv
-!i122 1891
-L0 1 59
+!s107 I:/test/FinalSNIN/brushless.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/brushless.sv|
+!i113 0
 R5
-r1
-!s85 0
-31
-R12
-!s107 C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/brushless_mtr_drv_tb2.sv|
-!i113 1
-R7
-R8
+R6
 vcadence_filt
+2I:/test/FinalSNIN/cadence_filt.sv
 R0
-Z13 !s110 1746132025
+R11
 !i10b 1
-!s100 N5QI9E=LNWJh1KFcc?IX:2
-R2
-Ie9D7GNJU=67Bc`VHfFPJ80
-R3
+!s100 B<S`[LClBRmlWD_?a9NP]1
+IHbe@9bA6zZ>NOgzDF@ckJ3
 S1
-R4
-w1746124046
-8C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv
-FC:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv
-!i122 1894
-L0 13 93
-R5
+R1
+Z13 w1746301640
+8I:/test/FinalSNIN/cadence_filt.sv
+FI:/test/FinalSNIN/cadence_filt.sv
+!i122 4
+L0 13 60
+R2
+R3
 r1
 !s85 0
 31
-Z14 !s108 1746132025.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_filter.sv|
-!i113 1
-R7
-R8
-vcadence_filt_tb
-R0
-R13
-!i10b 1
-!s100 lMYPF8gb[]z]i2Y4g2^=c0
-R2
-I]R^SU]NOmV;HeBEV3k@0V3
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv
-!i122 1893
-L0 1 95
+Z14 !s108 1746303521.000000
+!s107 I:/test/FinalSNIN/cadence_filt.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/cadence_filt.sv|
+!i113 0
 R5
-r1
-!s85 0
-31
-R12
-!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_filt_tb.sv|
-!i113 1
-R7
-R8
+R6
 vcadence_LU
+2I:/test/FinalSNIN/cadence_LU.sv
 R0
-R13
+Z15 !s110 1746303522
 !i10b 1
 !s100 BTkJ1lgHmZ_j@E3b@lDg@0
-R2
-I:AQak`8McSlZi`H7OJiQ53
-R3
+I5L@A>V9;iajlzO>lE=I>?3
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv
-FC:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv
-!i122 1895
+R1
+R12
+8I:/test/FinalSNIN/cadence_LU.sv
+FI:/test/FinalSNIN/cadence_LU.sv
+!i122 5
 L0 1 237
-R5
+R2
+R3
 r1
 !s85 0
 31
 R14
-!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_LU.sv|
-!i113 1
-R7
-R8
+!s107 I:/test/FinalSNIN/cadence_LU.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/cadence_LU.sv|
+!i113 0
+R5
+R6
 ncadence_@l@u
 vcadence_meas
+2I:/test/FinalSNIN/cadence_meas.sv
 R0
-R13
+R15
 !i10b 1
-!s100 5?3m:jGUA`H]R6BO3Tm]33
-R2
-IKK7C@odeN_KYlKQziHgd_0
-R3
+!s100 fQG?0z=P3Ce]HGN7mSU562
+IedH@EHYI=@L9[U2<EfEl?3
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv
-FC:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv
-!i122 1896
-Z15 L0 1 75
-R5
+R1
+R13
+8I:/test/FinalSNIN/cadence_meas.sv
+FI:/test/FinalSNIN/cadence_meas.sv
+!i122 6
+L0 1 75
+R2
+R3
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/cadence_meas.sv|
-!i113 1
-R7
-R8
-vcadence_meas_tb
-R0
-R13
-!i10b 1
-!s100 CPBYzobo6;Y5GN0nOMQd33
-R2
-I>`2VaOoTzHhVV_L?zi;:j3
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv
-!i122 1897
-L0 3 103
+Z16 !s108 1746303522.000000
+!s107 I:/test/FinalSNIN/cadence_meas.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/cadence_meas.sv|
+!i113 0
 R5
-r1
-!s85 0
-31
-R14
-!s107 C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/candence_meas_tb.sv|
-!i113 1
-R7
-R8
+R6
 vcoil_volt
+2I:/test/FinalSNIN/coil_volt.sv
 R0
-R13
+R15
 !i10b 1
 !s100 4m?i0G0:H=2hDnM2Hd9JV0
-R2
-ITYzHIV4nnF:HODEXfVEeT0
-R3
+IIhShUmBljT[O56jT]ME:41
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv
-FC:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv
-!i122 1898
+R1
+R12
+8I:/test/FinalSNIN/coil_volt.sv
+FI:/test/FinalSNIN/coil_volt.sv
+!i122 7
 L0 6 146
-R5
-r1
-!s85 0
-31
-R14
-!s107 C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/coil_volt.sv|
-!i113 1
-R7
-R8
-vcounter
-R0
-R13
-!i10b 1
-!s100 nzzAZ[DG_Oej8G9FRYF@n0
 R2
-ImbGCH>?JXSTD]FV6^8ST51
 R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/counter.sv
-FC:/Users/Simon/Documents/GitHub/ece551/counter.sv
-!i122 1899
-L0 1 25
-R5
 r1
 !s85 0
 31
-R14
-!s107 C:/Users/Simon/Documents/GitHub/ece551/counter.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/counter.sv|
-!i113 1
-R7
-R8
+R16
+!s107 I:/test/FinalSNIN/coil_volt.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/coil_volt.sv|
+!i113 0
+R5
+R6
 vdesiredDrive
+2I:/test/FinalSNIN/desiredDrive.sv
 R0
-Z16 !s110 1746132026
+Z17 !s110 1746303523
 !i10b 1
-!s100 @a6z9b:X4`_PFWXQDbzz81
-R2
-I?C0]ThV:8B5k0OClcnma70
-R3
+!s100 K65;^DPMeYR54oUXQ8heB3
+IX`37h]27c3QU`=E=?06@H1
 S1
-R4
-w1739847536
-8C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv
-FC:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv
-!i122 1902
+R1
+w1746156102
+8I:/test/FinalSNIN/desiredDrive.sv
+FI:/test/FinalSNIN/desiredDrive.sv
+!i122 8
 L0 1 37
-R5
+R2
+R3
 r1
 !s85 0
 31
-Z17 !s108 1746132026.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/desiredDrive.sv|
-!i113 1
-R7
-R8
+Z18 !s108 1746303523.000000
+!s107 I:/test/FinalSNIN/desiredDrive.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/desiredDrive.sv|
+!i113 0
+R5
+R6
 ndesired@drive
-vdff
-R16
-!i10b 1
-!s100 HCnK_>zhS>[GBLoK9HcO[2
-R2
-IdUIMfB8Fb`EB5NkbV6_5c0
-R3
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/dff.v
-FC:/Users/Simon/Documents/GitHub/ece551/dff.v
-!i122 1903
-L0 1 10
-R5
-r1
-!s85 0
-31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/dff.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/dff.v|
-!i113 1
-Z18 o-work work
-R8
 veBike
+2I:/test/FinalSNIN/eBike.sv
 R0
-R16
+R17
 !i10b 1
-!s100 _n2k3mI<1@j69ffSbPUk_3
-R2
-IQn>Wo?WSP^<KK6VlWATkO1
-R3
+!s100 ?i01@NPOF2kIG:Jh=aQL:3
+Iz@>35;SbZFCI^M7?W?S]M2
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/eBike.sv
-FC:/Users/Simon/Documents/GitHub/ece551/eBike.sv
-!i122 1904
-L0 1 97
-R5
+R1
+w1746210369
+8I:/test/FinalSNIN/eBike.sv
+FI:/test/FinalSNIN/eBike.sv
+!i122 9
+L0 1 98
+R2
+R3
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/eBike.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBike.sv|
-!i113 1
-R7
-R8
+R18
+!s107 I:/test/FinalSNIN/eBike.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/eBike.sv|
+!i113 0
+R5
+R6
 ne@bike
 veBike_tb
+2I:/test/FinalSNIN/eBike_tb.sv
 R0
-R16
+Z19 !s110 1746303524
 !i10b 1
 !s100 Q]eACgfbQ8b_[Sb<O8WJ>2
-R2
-IoYYn>A7JTZOznZM_d2=5Y3
-R3
+I^a[CXakHUiMz`;0AoZbg@1
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv
-!i122 1905
+R1
+Z20 w1746149543
+8I:/test/FinalSNIN/eBike_tb.sv
+FI:/test/FinalSNIN/eBike_tb.sv
+!i122 10
 L0 1 596
-R5
-r1
-!s85 0
-31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBike_tb.sv|
-!i113 1
-R7
-R8
-ne@bike_tb
-veBike_tb2
-R0
-!s110 1746132031
-!i10b 1
-!s100 R^L<O4L`QNEo?<6kjinM00
 R2
-IggWNM_edDUiAecD_gNNh>0
 R3
-S1
-R4
-w1746129338
-8C:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv
-FC:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv
-!i122 1937
-Z19 L0 1 70
-R5
 r1
 !s85 0
 31
-Z20 !s108 1746132030.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBike_tb2.sv|
-!i113 1
-R7
-R8
-ne@bike_tb2
+R18
+!s107 I:/test/FinalSNIN/eBike_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/eBike_tb.sv|
+!i113 0
+R5
+R6
+ne@bike_tb
 veBikePhysics
+2I:/test/FinalSNIN/eBikePhysics.sv
 R0
-R16
+R19
 !i10b 1
 !s100 PNjLQzoiQ__SDogeMQ;GT2
-R2
-IWEZ?[LTbbb4dSINR[m?7h2
-R3
+IFTznXgnJoO6>1SJ0i82Jg1
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv
-FC:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv
-!i122 1906
+R1
+w1746149542
+8I:/test/FinalSNIN/eBikePhysics.sv
+FI:/test/FinalSNIN/eBikePhysics.sv
+!i122 11
 L0 1 530
-R5
+R2
+R3
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/eBikePhysics.sv|
-!i113 1
-R7
-R8
+Z21 !s108 1746303524.000000
+!s107 I:/test/FinalSNIN/eBikePhysics.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/eBikePhysics.sv|
+!i113 0
+R5
+R6
 ne@bike@physics
 vhub_wheel_model
+2I:/test/FinalSNIN/hub_wheel_model.sv
 R0
-R16
+Z22 !s110 1746303525
 !i10b 1
 !s100 Xab4F<9U`I`1mP5@b_nMJ1
-R2
-IYPNQW]9LCSCFmRzUNPKOi0
-R3
+Izo<0HjHMZgEB9GY2=`_kJ0
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv
-FC:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv
-!i122 1907
+R1
+R20
+8I:/test/FinalSNIN/hub_wheel_model.sv
+FI:/test/FinalSNIN/hub_wheel_model.sv
+!i122 12
 L0 1 171
-R5
-r1
-!s85 0
-31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/hub_wheel_model.sv|
-!i113 1
-R7
-R8
-vHW4P6
-R0
-Z21 !s110 1746132027
-!i10b 1
-!s100 9S3SHW9Co6_[QfM?7LjYB1
 R2
-Iz8[WzJA=7D0KAhYAT1fzQ0
 R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv
-FC:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv
-!i122 1908
-L0 1 64
-R5
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/HW4P6.sv|
-!i113 1
-R7
-R8
-n@h@w4@p6
-vinert_intf
-R0
 R21
-!i10b 1
-!s100 >4@iHJAE;5dhO5XQIb0_N1
-R2
-IQ=TSb[WQnRY:_70^fID363
-R3
-S1
-R4
-w1746128688
-8C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv
-FC:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv
-!i122 1909
-L0 1 222
+!s107 I:/test/FinalSNIN/hub_wheel_model.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/hub_wheel_model.sv|
+!i113 0
 R5
-r1
-!s85 0
-31
-Z22 !s108 1746132027.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/inert_intf.sv|
-!i113 1
-R7
-R8
-vinert_intf_test
+R6
+vincline_sat
+2I:/test/FinalSNIN/incline_sat.sv
 R0
-R21
-!i10b 1
-!s100 LjUCCde@9ZK8ADS:UQ5z_2
-R2
-Ikll;5PhEi2_JmU3:Q@^6R2
-R3
-S1
-R4
-w1746115361
-8C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv
-FC:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv
-!i122 1910
-L0 1 71
-R5
-r1
-!s85 0
-31
 R22
-!s107 C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/inert_intf_test.sv|
-!i113 1
-R7
-R8
-vinertial_integrator
+!i10b 1
+!s100 0i0O;5<AX@8H:TOW`Rg]j2
+I5lKKYl7Sn<M2j^SMT_gMc1
+S1
+R1
+w1746214462
+8I:/test/FinalSNIN/incline_sat.sv
+FI:/test/FinalSNIN/incline_sat.sv
+!i122 13
+L0 1 18
+R2
+R3
+r1
+!s85 0
+31
+Z23 !s108 1746303525.000000
+!s107 I:/test/FinalSNIN/incline_sat.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/incline_sat.sv|
+!i113 0
+R5
+R6
+vinert_intf
+2I:/test/FinalSNIN/inert_intf.sv
 R0
-R21
+Z24 !s110 1746303526
+!i10b 1
+!s100 ^k3CiH`lVRff1Y9;cg=S50
+IHgL0do`UNX]WUH>1n15d61
+S1
+R1
+w1746161152
+8I:/test/FinalSNIN/inert_intf.sv
+FI:/test/FinalSNIN/inert_intf.sv
+!i122 14
+L0 5 208
+R2
+R3
+r1
+!s85 0
+31
+R23
+!s107 I:/test/FinalSNIN/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/inert_intf.sv|
+!i113 0
+R5
+R6
+vinertial_integrator
+2I:/test/FinalSNIN/inertial_integrator.sv
+R0
+R24
 !i10b 1
 !s100 [6z<Zb`Hh??iFaMz_396V0
-R2
-IOVznKfm1Znm7HPM@lff4L2
-R3
+I:G`Bbl6[LgzMjeJ?kM[Gb3
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv
-FC:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv
-!i122 1911
+R1
+R20
+8I:/test/FinalSNIN/inertial_integrator.sv
+FI:/test/FinalSNIN/inertial_integrator.sv
+!i122 15
 L0 1 106
-R5
+R2
+R3
 r1
 !s85 0
 31
-R22
-!s107 C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/inertial_integrator.sv|
-!i113 1
-R7
-R8
+Z25 !s108 1746303526.000000
+!s107 I:/test/FinalSNIN/inertial_integrator.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/inertial_integrator.sv|
+!i113 0
+R5
+R6
 vmtr_drv
+2I:/test/FinalSNIN/mtr_drv.sv
 R0
-R21
+Z26 !s110 1746303527
 !i10b 1
-!s100 eF2?jJRMozb_PWmcgX<ha3
-R2
-IMD@FiG6d8CCTgc@HmCEK03
-R3
+!s100 Rd?^7FTS>OeM9IS<=QAe]2
+IC<@m<j7QEeOa?XZhUoX@?1
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv
-FC:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv
-!i122 1913
-L0 1 131
-R5
+R1
+w1746213752
+8I:/test/FinalSNIN/mtr_drv.sv
+FI:/test/FinalSNIN/mtr_drv.sv
+!i122 16
+L0 2 82
+R2
+R3
 r1
 !s85 0
 31
-R22
-!s107 C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/mtr_drv-1.sv|
-!i113 1
-R7
-R8
-vmult_accum
-R0
-R21
-!i10b 1
-!s100 YUm>nOE`:[Zb:A>3fNm4R0
-R2
-In1JQ3^JkDBX4Z3jQ0mfd]0
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv
-FC:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv
-!i122 1914
-Z23 L0 1 29
+R25
+!s107 I:/test/FinalSNIN/mtr_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/mtr_drv.sv|
+!i113 0
 R5
-r1
-!s85 0
-31
-R22
-!s107 C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/mult_accum.sv|
-!i113 1
-R7
-R8
+R6
 vnonoverlap
+2I:/test/FinalSNIN/nonoverlap.sv
 R0
-Z24 !s110 1746132028
+R26
 !i10b 1
-!s100 d?6O4:3Flc]i87Q7AaNAl2
-R2
-IV4d7ZoPi<A@oRIG0FKD[d3
-R3
+!s100 W`98GB6_?0Yi4?DKGRl]X0
+IA2GA2fZ<CY:CMJ2lk]:>00
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv
-FC:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv
-!i122 1916
-L0 9 58
-R5
+R1
+Z27 w1746149544
+8I:/test/FinalSNIN/nonoverlap.sv
+FI:/test/FinalSNIN/nonoverlap.sv
+!i122 17
+L0 1 43
+R2
+R3
 r1
 !s85 0
 31
-Z25 !s108 1746132028.000000
-!s107 C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/nonoverlap-1.sv|
-!i113 1
-R7
-R8
+Z28 !s108 1746303527.000000
+!s107 I:/test/FinalSNIN/nonoverlap.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/nonoverlap.sv|
+!i113 0
+R5
+R6
 vnonoverlap_test
+Z29 2I:/test/FinalSNIN/nonoverlap_test.sv
 R0
-R24
+Z30 !s110 1746303528
 !i10b 1
-!s100 d`hhB_aRC]ncW4V[dEe]:2
-R2
-I_fBD;[<Rc6QRM8dK7NZDJ2
-R3
+!s100 Mhg:=KbVI6QLMm^E[Wo1h3
+IRG[noiO@MWi673Z@iBnk@3
 S1
-R4
-R9
-Z26 8C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv
-Z27 FC:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv
-!i122 1915
-Z28 L0 1 44
-R5
+R1
+Z31 w1746150725
+Z32 8I:/test/FinalSNIN/nonoverlap_test.sv
+Z33 FI:/test/FinalSNIN/nonoverlap_test.sv
+!i122 18
+Z34 L0 1 44
+R2
+R3
 r1
 !s85 0
 31
-R22
-Z29 !s107 C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv|
-Z30 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/nonoverlap_test.sv|
-!i113 1
-R7
-R8
+R28
+Z35 !s107 I:/test/FinalSNIN/nonoverlap_test.sv|
+Z36 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/nonoverlap_test.sv|
+!i113 0
+R5
+R6
 vobserver
+R29
 R0
-R24
+R30
 !i10b 1
 !s100 clP3o1@M[fii5OXQczY2F2
-R2
-IaFW@B:fI9?XH2?;J>CHOS2
-R3
+IcUXkz?5Czec9`T7GaQnJ_3
 S1
-R4
-R9
-R26
-R27
-!i122 1915
+R1
+R31
+R32
+R33
+!i122 18
 L0 116 112
-R5
+R2
+R3
 r1
 !s85 0
 31
-R22
-R29
-R30
-!i113 1
-R7
-R8
+R28
+R35
+R36
+!i113 0
+R5
+R6
 vPB_intf
+2I:/test/FinalSNIN/PB_intf.sv
 R0
-R24
+R30
 !i10b 1
 !s100 FB[AaPhXHJP9VL:YTUN8A2
-R2
-I:E7JK6[<8P]IAe92e_:eE0
-R3
+I@L2J^nf7MlgH<[43WDC:L2
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv
-!i122 1917
-R28
-R5
+R1
+w1746149625
+8I:/test/FinalSNIN/PB_intf.sv
+FI:/test/FinalSNIN/PB_intf.sv
+!i122 19
+R34
+R2
+R3
 r1
 !s85 0
 31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PB_inft.sv|
-!i113 1
-R7
-R8
+Z37 !s108 1746303528.000000
+!s107 I:/test/FinalSNIN/PB_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/PB_intf.sv|
+!i113 0
+R5
+R6
 n@p@b_intf
-vPB_rise
+vPB_release
+2I:/test/FinalSNIN/pb_release.sv
 R0
-R24
+Z38 !s110 1746303529
+!i10b 1
+!s100 TNk4PQ[A:6hAb;;EjIMl>2
+IHdXLBDGUQJ3B<m9nh<<5_2
+S1
+R1
+w1742402903
+8I:/test/FinalSNIN/pb_release.sv
+FI:/test/FinalSNIN/pb_release.sv
+!i122 20
+L0 1 30
+R2
+R3
+r1
+!s85 0
+31
+R37
+!s107 I:/test/FinalSNIN/pb_release.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/pb_release.sv|
+!i113 0
+R5
+R6
+n@p@b_release
+vPB_rise
+2I:/test/FinalSNIN/PB_rise.sv
+R0
+R38
 !i10b 1
 !s100 2XT4C_>3J1d;[o6WUce`T2
-R2
-IEo^[I[6hlBID0YKl<8i>V3
-R3
+IhDIDCbA3RZRPb_1Q8Rlk90
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv
-!i122 1918
-Z31 L0 1 26
-R5
+R1
+w1744993542
+8I:/test/FinalSNIN/PB_rise.sv
+FI:/test/FinalSNIN/PB_rise.sv
+!i122 21
+L0 1 26
+R2
+R3
 r1
 !s85 0
 31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PB_rise.sv|
-!i113 1
-R7
-R8
+Z39 !s108 1746303529.000000
+!s107 I:/test/FinalSNIN/PB_rise.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/PB_rise.sv|
+!i113 0
+R5
+R6
 n@p@b_rise
 vPID
+2I:/test/FinalSNIN/PID.sv
 R0
-R24
+R38
 !i10b 1
 !s100 Zfbz21eK3ZMeZXB7FePfL1
-R2
-IWWmX]J250:SFHF<NB5@<e0
-R3
+ITWmmgaBRH>OVB?5[KjncW2
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PID.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PID.sv
-!i122 1919
-R19
-R5
+R1
+R8
+8I:/test/FinalSNIN/PID.sv
+FI:/test/FinalSNIN/PID.sv
+!i122 22
+Z40 L0 1 70
+R2
+R3
 r1
 !s85 0
 31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PID.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID.sv|
-!i113 1
-R7
-R8
+R39
+!s107 I:/test/FinalSNIN/PID.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/PID.sv|
+!i113 0
+R5
+R6
 n@p@i@d
-vPID_cntrl
-R0
-R24
-!i10b 1
-!s100 Zh@>jaIR<zZfAWg;gd;=i2
-R2
-IZ;8SX6D:QDjd]=MnWg6oF3
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv
-!i122 1920
-R15
-R5
-r1
-!s85 0
-31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl.sv|
-!i113 1
-R7
-R8
-n@p@i@d_cntrl
-vPID_cntrl_tb
-R0
-R24
-!i10b 1
-!s100 dlj;]VRTUj2nQA3MUM]3i2
-R2
-I<]lYd4MZ6@_EbLjz:kFfS0
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv
-!i122 1921
-L0 1 42
-R5
-r1
-!s85 0
-31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID_cntrl_tb.sv|
-!i113 1
-R7
-R8
-n@p@i@d_cntrl_tb
-vPID_tb
-R0
-R24
-!i10b 1
-!s100 3]TVDE]JZ`U:E=I_YzXEX2
-R2
-IXb?[29Fj04;_kW>b4QNN]0
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv
-!i122 1922
-Z32 L0 1 20
-R5
-r1
-!s85 0
-31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PID_tb.sv|
-!i113 1
-R7
-R8
-n@p@i@d_tb
-vplant
-R0
-Z33 !s110 1746132029
-!i10b 1
-!s100 5k7Pg;`moWdl<G;d`WG_83
-R2
-ITY2PC6cNo1T0m:BJPOzZ71
-R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/plant.sv
-FC:/Users/Simon/Documents/GitHub/ece551/plant.sv
-!i122 1923
-L0 1 49
-R5
-r1
-!s85 0
-31
-R25
-!s107 C:/Users/Simon/Documents/GitHub/ece551/plant.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/plant.sv|
-!i113 1
-R7
-R8
 vplant_PID
+Z41 2I:/test/FinalSNIN/plant_PID.sv
 !s105 plant_PID_sv_unit
-DXx4 work 17 plant_PID_sv_unit 0 22 AM[2VY<=oZ:d[e7H7iE`f0
+DXx4 work 17 plant_PID_sv_unit 0 22 biE6dgIXa[7k6dAXP>k8;1
 R0
-R33
+Z42 !s110 1746303530
 !i10b 1
 !s100 YEF^k88elm^9k<=gF8MMY1
-R2
-I]n6XL[4<9K_3e=9HjW]^_1
-R3
+I<k=hk7`M_=bFB[>X@Lo4o0
 S1
-R4
-R9
-Z34 8C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv
-Z35 FC:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv
-!i122 1924
-R19
-R5
+R1
+Z43 w1648841624
+Z44 8I:/test/FinalSNIN/plant_PID.sv
+Z45 FI:/test/FinalSNIN/plant_PID.sv
+!i122 23
+R40
+R2
+R3
 r1
 !s85 0
 31
-Z36 !s108 1746132029.000000
-Z37 !s107 C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv|
-Z38 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/plant_PID.sv|
-!i113 1
-R7
-R8
+R39
+Z46 !s107 I:/test/FinalSNIN/plant_PID.sv|
+Z47 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/plant_PID.sv|
+!i113 0
+R5
+R6
 nplant_@p@i@d
 Xplant_PID_sv_unit
+R41
 R0
-R33
-VAM[2VY<=oZ:d[e7H7iE`f0
+R42
+VbiE6dgIXa[7k6dAXP>k8;1
 r1
 !s85 0
 !i10b 1
 !s100 gQWL:;1Q99DccZB@5@1nH0
-IAM[2VY<=oZ:d[e7H7iE`f0
+IbiE6dgIXa[7k6dAXP>k8;1
 !i103 1
 S1
-R4
-R9
-R34
-R35
-!i122 1924
+R1
+R43
+R44
+R45
+!i122 23
 L0 70 0
-R5
+R3
 31
-R36
-R37
-R38
-!i113 1
-R7
-R8
+R39
+R46
+R47
+!i113 0
+R5
+R6
 nplant_@p@i@d_sv_unit
 vPWM
+2I:/test/FinalSNIN/PWM.sv
 R0
-R33
+R42
 !i10b 1
 !s100 4RcF4C[S5GbY_QFG2ASSV1
-R2
-IEf3OIVB>8D1alGf]WiIld2
-R3
+I1mHCIAI<IFgHJX>E_zaaG3
 S1
-R4
-w1746119396
-8C:/Users/Simon/Documents/GitHub/ece551/PWM.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PWM.sv
-!i122 1925
+R1
+R8
+8I:/test/FinalSNIN/PWM.sv
+FI:/test/FinalSNIN/PWM.sv
+!i122 24
 L0 1 27
-R5
-r1
-!s85 0
-31
-R36
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PWM.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PWM.sv|
-!i113 1
-R7
-R8
-n@p@w@m
-vPWM_tb
-R0
-R33
-!i10b 1
-!s100 QXGKeo_Gj`2BZ<RD]8SEU3
 R2
-Ij8ZJX`:6m:8Al0437D2kW3
 R3
-S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv
-!i122 1926
-L0 12 40
-R5
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/PWM_tb.sv|
-!i113 1
-R7
-R8
-n@p@w@m_tb
+Z48 !s108 1746303530.000000
+!s107 I:/test/FinalSNIN/PWM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/PWM.sv|
+!i113 0
+R5
+R6
+n@p@w@m
 vrst_synch
+2I:/test/FinalSNIN/reset_synch.sv
 R0
-R33
+Z49 !s110 1746303531
 !i10b 1
 !s100 ]FC0EYNgoE0mJjFeYzdC=0
-R2
-IQOZUPcZooe=k4BG_lL4RK3
-R3
+IIJCVAZcZJ>ZSYA0Elhi;D0
 S1
-R4
-Z39 w1746111028
-8C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv
-FC:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv
-!i122 1927
-R32
-R5
+R1
+R27
+8I:/test/FinalSNIN/reset_synch.sv
+FI:/test/FinalSNIN/reset_synch.sv
+!i122 25
+L0 1 20
+R2
+R3
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/rst_synch.sv|
-!i113 1
-R7
-R8
+R48
+!s107 I:/test/FinalSNIN/reset_synch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/reset_synch.sv|
+!i113 0
+R5
+R6
 vsensorCondition
+2I:/test/FinalSNIN/sensorCondition.sv
 R0
-R33
+R49
 !i10b 1
-!s100 h<D_ERh?0zlG@;FNl_lfl0
-R2
-I?_3UkM?nG6B[i;46^=QmV1
-R3
+!s100 zY>mKOU3aH[2SRY4^P3F32
+IYc>NJ1oXad@l=zf;z12<F1
 S1
-R4
-w1746132020
-8C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv
-FC:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv
-!i122 1928
-L0 1 132
-R5
+R1
+w1746153378
+8I:/test/FinalSNIN/sensorCondition.sv
+FI:/test/FinalSNIN/sensorCondition.sv
+!i122 26
+L0 1 118
+R2
+R3
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/sensorCondition.sv|
-!i113 1
-R7
-R8
+Z50 !s108 1746303531.000000
+!s107 I:/test/FinalSNIN/sensorCondition.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/sensorCondition.sv|
+!i113 0
+R5
+R6
 nsensor@condition
-vsensorCondition_tb
-R0
-R33
-!i10b 1
-!s100 ?[jDT=]EoP@;@Xz<GZjMb3
-R2
-ImzVUhR6bcN<G]74VA5<N^3
-R3
-S1
-R4
-w1746126004
-8C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv
-FC:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv
-!i122 1929
-R31
-R5
-r1
-!s85 0
-31
-R36
-!s107 C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/sensorCondition_tb.sv|
-!i113 1
-R7
-R8
-nsensor@condition_tb
 vSPI_ADC128S
+2I:/test/FinalSNIN/SPI_ADC128S.sv
 R0
-Z40 !s110 1746132030
+Z51 !s110 1746303532
 !i10b 1
 !s100 93oj0i;UV@::cHMPGHMJ>1
-R2
-IbMLcRUJ<CAe;BnRI;aUga2
-R3
+Id]hS^_gn8QGIN[_:]h5b`0
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv
-FC:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv
-!i122 1930
+R1
+w1744993270
+8I:/test/FinalSNIN/SPI_ADC128S.sv
+FI:/test/FinalSNIN/SPI_ADC128S.sv
+!i122 27
 L0 1 140
-R5
+R2
+R3
 r1
 !s85 0
 31
-R36
-!s107 C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/SPI_ADC128S.sv|
-!i113 1
-R7
-R8
+R50
+!s107 I:/test/FinalSNIN/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/SPI_ADC128S.sv|
+!i113 0
+R5
+R6
 n@s@p@i_@a@d@c128@s
 vSPI_mnrch
+2I:/test/FinalSNIN/SPI_mnrch.sv
 R0
-R40
+R51
 !i10b 1
-!s100 50o`dWSZH>`Y?MVPSa?7]1
-R2
-I[>8MZ?5o2SQn2AUhT0L0>2
-R3
+!s100 4UT3gdkd_eG_GA0k?Lkd]2
+I]PM]zA^e_zUh^9]e0fOo?1
 S1
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv
-FC:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv
-!i122 1931
-L0 1 124
-R5
+R1
+w1746212666
+8I:/test/FinalSNIN/SPI_mnrch.sv
+FI:/test/FinalSNIN/SPI_mnrch.sv
+!i122 28
+L0 4 157
+R2
+R3
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/SPI_mnrch.sv|
-!i113 1
-R7
-R8
+Z52 !s108 1746303532.000000
+!s107 I:/test/FinalSNIN/SPI_mnrch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/SPI_mnrch.sv|
+!i113 0
+R5
+R6
 n@s@p@i_mnrch
 vstim
+R29
 R0
-R24
+R30
 !i10b 1
 !s100 <MTmhhTUl`miQ9[:hE<Wk2
-R2
-IKIQA?>g98H=O7cWhDn:T13
-R3
+IK8VNMV@41HfA>Gle1KBbG1
 S1
-R4
-R9
-R26
-R27
-!i122 1915
+R1
+R31
+R32
+R33
+!i122 18
 L0 47 68
-R5
-r1
-!s85 0
-31
-R22
-R29
-R30
-!i113 1
-R7
-R8
-vsynch_detect_tb
-R40
-!i10b 1
-!s100 _iF?go?NPbzh>PM5jeRG91
 R2
-IVDdV98P9`0ZQmKV8V;i<D2
 R3
-R4
-R39
-8C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v
-FC:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v
-!i122 1932
-L0 1 50
-R5
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/synch_detect_tb.v|
-!i113 1
-R18
-R8
+R28
+R35
+R36
+!i113 0
+R5
+R6
 vtelemetry
+2I:/test/FinalSNIN/telemetry.sv
 R0
-R40
+Z53 !s110 1746303533
 !i10b 1
-!s100 h9`T`E>YWa^Ol<jfBL=i`0
-R2
-ICzH0LKKUMDRI^2Uo?Mf6i3
-R3
+!s100 o4XW^8eW4Cb[eOzAa?b2E1
+ICFdI_O7Ab:19>I?Si?:>20
 S1
-R4
-R39
-8C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv
-FC:/Users/Simon/Documents/GitHub/ece551/telemetry.sv
-!i122 1933
-L0 19 160
-R5
+R1
+R27
+8I:/test/FinalSNIN/telemetry.sv
+FI:/test/FinalSNIN/telemetry.sv
+!i122 29
+L0 1 108
+R2
+R3
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/telemetry.sv|
-!i113 1
-R7
-R8
-vthrottle
-R0
-R40
-!i10b 1
-!s100 94l2aWJUemMMD;HHRHjae2
-R2
-IcHKZ2eYJVL:mc@[]dB8XR2
-R3
-S1
-R4
-R39
-8C:/Users/Simon/Documents/GitHub/ece551/throttle.sv
-FC:/Users/Simon/Documents/GitHub/ece551/throttle.sv
-!i122 1934
-L0 1 200
+R52
+!s107 I:/test/FinalSNIN/telemetry.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/telemetry.sv|
+!i113 0
 R5
-r1
-!s85 0
-31
-R20
-!s107 C:/Users/Simon/Documents/GitHub/ece551/throttle.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/throttle.sv|
-!i113 1
-R7
-R8
+R6
 vUART_rcv
+2I:/test/FinalSNIN/UART_rcv.sv
 R0
-R40
+R53
 !i10b 1
 !s100 e?H4N6Ja[5LK1c7S6k>G20
-R2
-IkNSaB1>kV46RdKGTUZLO[2
-R3
+ID`E8I`kQz`nDYPYzdc]C:3
 S1
-R4
+R1
+R12
+8I:/test/FinalSNIN/UART_rcv.sv
+FI:/test/FinalSNIN/UART_rcv.sv
+!i122 30
 R9
-8C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv
-FC:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv
-!i122 1935
-R11
-R5
+R2
+R3
 r1
 !s85 0
 31
-R20
-!s107 C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/UART_rcv.sv|
-!i113 1
-R7
-R8
+Z54 !s108 1746303533.000000
+!s107 I:/test/FinalSNIN/UART_rcv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/UART_rcv.sv|
+!i113 0
+R5
+R6
 n@u@a@r@t_rcv
 vUART_tx
+2I:/test/FinalSNIN/UART_tx.sv
 R0
-R40
+R53
 !i10b 1
 !s100 :Q@`FTZ_K_VTzGPje<fZh0
-R2
-IM^V]l>g1eeYC;k11d^chU3
-R3
+IVf:V;K:4UO>E9VIRD[7H82
 S1
-R4
+R1
+R12
+8I:/test/FinalSNIN/UART_tx.sv
+FI:/test/FinalSNIN/UART_tx.sv
+!i122 31
 R9
-8C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv
-FC:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv
-!i122 1936
-R11
-R5
-r1
-!s85 0
-31
-R20
-!s107 C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/UART_tx.sv|
-!i113 1
-R7
-R8
-n@u@a@r@t_tx
-vup_dwn_tb
-R16
-!i10b 1
-!s100 OPj73?<`C1gXgkbCoan<C1
 R2
-Il=ZS^]S:z3E3[hJEiWVNi1
 R3
-R4
-R9
-8C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v
-FC:/Users/Simon/Documents/GitHub/ece551/counter_tb.v
-!i122 1901
-R23
-R5
 r1
 !s85 0
 31
-R17
-!s107 C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Simon/Documents/GitHub/ece551/counter_tb.v|
-!i113 1
-R18
-R8
+R54
+!s107 I:/test/FinalSNIN/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/test/FinalSNIN/UART_tx.sv|
+!i113 0
+R5
+R6
+n@u@a@r@t_tx
