@@ -91,7 +91,10 @@ module SPI_mnrch (
                 nxt_state = counting;
                 init = 1;
                 reload_clock_div = 1;
-            end else nxt_state = idle_state;
+            end else begin
+                nxt_state = idle_state;
+                reload_clock_div = 1;  // hold SCLK high while idle
+            end
 
             counting: if (bits_16) begin
                 nxt_state = finished;

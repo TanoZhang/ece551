@@ -71,20 +71,20 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             phase_halt: begin
-                cmd = 16'hxxxx;
+                cmd = 16'h0000;
                 if (done) begin
                     next_state = acquiring1;
                 end
             end
             acquiring1: begin
-                cmd = 16'hA4xx;
+                cmd = 16'hA400;
                 if (sync_int2) begin
                     snd = 1;
                     next_state = acquiring2;
                 end
             end
             acquiring2: begin
-                cmd = 16'hA5xx;
+                cmd = 16'hA500;
                 if (done) begin
                     snd = 1;
                     RL_en = 1;
@@ -92,7 +92,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             acquiring3: begin
-                cmd = 16'hA6xx;
+                cmd = 16'hA600;
                 if (done) begin
                     snd = 1;
                     RH_en = 1;
@@ -100,7 +100,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             acquiring4: begin
-                cmd = 16'hA7xx;
+                cmd = 16'hA700;
                 if (done) begin
                     snd = 1;
                     YL_en = 1;
@@ -108,7 +108,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             acquiring5: begin
-                cmd = 16'hAAxx;
+                cmd = 16'hAA00;
                 if (done) begin
                     snd = 1;
                     YH_en = 1;
@@ -116,7 +116,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             acquiring6: begin
-                cmd = 16'hABxx;
+                cmd = 16'hAB00;
                 if (done) begin
                     snd = 1;
                     AL_en = 1;
@@ -124,7 +124,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             acquring7: begin
-                cmd = 16'hACxx;
+                cmd = 16'hAC00;
                 if (done) begin
                     snd = 1;
                     AH_en = 1;
@@ -132,7 +132,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             acquiring8: begin
-                cmd = 16'hADxx;
+                cmd = 16'hAD00;
                 if (done) begin
                     snd = 1;
                     AZL_en = 1;
@@ -140,7 +140,7 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                 end
             end
             phase_stop: begin
-                cmd = 16'hxxxx;
+                cmd = 16'h0000;
                 if (done) begin
                     AZH_en = 1;
                     vld = 1;

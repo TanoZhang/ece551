@@ -83,7 +83,8 @@ module sensorCondition #(
 
   // current averaging
 
-  assign include_curr = (FAST_SIM) ? (&timer_current[15:0]) : timer_current[21];
+  // one sample every 2^22 clocks (84ms); a single bit like timer_current[21] would be high for 2^21 clocks in a row
+  assign include_curr = (FAST_SIM) ? (&timer_current[15:0]) : (&timer_current);
 
   always_ff @(posedge clk or negedge rst_n) begin
     if (!rst_n) timer_current <= 0;

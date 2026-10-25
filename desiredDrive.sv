@@ -34,7 +34,7 @@ module desiredDrive (
   //incline factor shift incline_saturation to center at 512
   assign incline_factor = {incline_saturation[9], incline_saturation} + 10'b0100000000;
   assign incline_limit = (incline_factor[10]) ? 9'b000000000 : (!incline_factor[10] && |incline_factor[9]) ? 9'b111111111 : incline_factor[8:0];
-  assign cadence_factor = (~|cadence) ? 5'b00000 : cadence + 6'b100000;
+  assign cadence_factor = (cadence > 5'd1) ? cadence + 6'b100000 : 6'b000000;  // cadence < 2 => not really pedaling
 
   //Zero torque
   assign zero_torque = avg_torque - TORQUE_MIN;
