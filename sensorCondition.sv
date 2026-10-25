@@ -6,10 +6,10 @@ module sensorCondition #(
     input [11:0] torque,
     input cadence_raw,
     input [11:0] curr,
-    input [12:0] incline,
+    input signed [12:0] incline,
     input [2:0] scale,
     input [11:0] batt,
-    output logic [12:0] error,
+    output logic signed [12:0] error,
     output not_pedaling,
     output TX
 );
@@ -119,6 +119,6 @@ module sensorCondition #(
   // compute error
   always_comb begin
     if (batt < LOW_BATT_THRES || not_pedaling) error = 13'd0;
-    else error = $signed(target_curr) - $signed(avg_curr);
+    else error = $signed({1'b0, target_curr}) - $signed({1'b0, avg_curr});
   end
 endmodule

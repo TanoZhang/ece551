@@ -49,9 +49,9 @@ module PID (
   //logic of Dterm
   always_ff @(posedge clk, negedge rst_n) begin
     if (!rst_n) begin
-      flipflop1 <= 13'h00000;
-      flipflop2 <= 13'h00000;
-      flipflop3 <= 13'h00000;
+      flipflop1 <= 13'h0000;
+      flipflop2 <= 13'h0000;
+      flipflop3 <= 13'h0000;
     end else if (FullDecimator) begin
       flipflop1 <= error[12:0];
       flipflop2 <= flipflop1;
@@ -64,11 +64,11 @@ module PID (
   end
   //pipeline - for error
 	always_ff @(posedge clk, negedge rst_n)
-		if(!rst_n) error_ff <= 12'h000;
+		if(!rst_n) error_ff <= 13'h0000;
 		else error_ff <= error;
   // Derivative = current error - delayed error
   assign dffD = error_ff - flipflop3;
-  assign D_saturation = (dffD[12] & ~&(dffD[11:9])) ? 9'b100000000 : (~dffD[12] & |(dffD[11:9])) ? 9'b011111111 : dffD;
+  assign D_saturation = (dffD[12] & ~&(dffD[11:8])) ? 9'b100000000 : (~dffD[12] & |(dffD[11:8])) ? 9'b011111111 : dffD;
 
   // Proportional and Integral terms
   assign P_term = error;
@@ -78,7 +78,7 @@ module PID (
   assign D_term_in = {{4{D_saturation[8]}}, D_saturation, 1'b0};
   //pipeline - for D term
 	always_ff @(posedge clk, negedge rst_n)
-		if(!rst_n) D_term <= 12'h000;
+		if(!rst_n) D_term <= 14'h0000;
 		else D_term <= D_term_in;
   // Saturate PID output to 12 bits
   assign PID_term = P_term + I_term + D_term;
