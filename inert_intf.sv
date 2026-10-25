@@ -139,13 +139,15 @@ module inert_intf(clk, rst_n, SS_n, SCLK, MOSI, MISO, INT, incline, vld);
                     next_state = phase_stop;
                 end
             end
-                default: begin
+            phase_stop: begin
                 cmd = 16'hxxxx;
                 if (done) begin
+                    AZH_en = 1;
                     vld = 1;
                     next_state = acquiring1;
                 end
             end
+            default: next_state = phase1;
         endcase
     end
 
