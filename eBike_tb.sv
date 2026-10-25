@@ -92,7 +92,7 @@ module eBike_tb;
     integer tc;
 
     // Test suite: reordered and trimmed for brevity
-    for (tc = 1; tc <= 6; tc++) begin
+    for (tc = 1; tc <= 8; tc++) begin
       // reset
       rst_n = 0; @(posedge clk); @(negedge clk); rst_n = 1;
 
@@ -203,6 +203,38 @@ module eBike_tb;
           if (!(omega_after < omega_before && curr_after < curr_before)) begin
             $fatal(1, "Cadence-stop test failed");
 		  end
+        end
+
+        // Test 7: Brake lever -> regen braking slows bike
+        7: begin
+          $display("Test 7: Applying the brake slows bike (regen braking)");
+          pedal_settle(CAD_NORM);
+          omega_before = phys.omega;
+
+          brake_v = 12'h400;           // below mid rail => brake_n low
+          pedal_cycle(512, CAD_NORM);
+          omega_after = phys.omega;
+
+          if ({dut.selGrn, dut.selYlw, dut.selBlu} !== 6'b11_11_11 || dut.duty !== 11'h600)
+            $fatal(1, "Brake test failed: coils not in regen braking (sel=%b duty=%h)",
+                   {dut.selGrn, dut.selYlw, dut.selBlu}, dut.duty);
+          if (!(omega_after < omega_before))
+            $fatal(1, "Brake test failed: omega %0d -> %0d", omega_before, omega_after);
+        end
+
+        // Test 8: Low battery -> loop error forced to zero
+        8: begin
+          $display("Test 8: Low battery inhibits drive");
+          pedal_settle(CAD_NORM);
+          curr_before = dut.drv_mag;
+
+          batt_v = 12'hA00;            // below LOW_BATT_THRES (0xA98)
+          pedal_cycle(512, CAD_NORM);
+
+          if (dut.iSensorCondition.error !== 0)
+            $fatal(1, "Low battery test failed: error = %0d", dut.iSensorCondition.error);
+          if (!(dut.drv_mag < curr_before))
+            $fatal(1, "Low battery test failed: drv_mag %0d -> %0d", curr_before, dut.drv_mag);
         end
 
       endcase
